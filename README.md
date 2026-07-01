@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Wine Sommelier RAG" width="100%">
+</p>
+
 # Wine Sommelier RAG
 
 Ask for a wine in plain English — *"a bold red under $25 for steak night"*, *"a
@@ -15,13 +19,11 @@ cheaper"*) or a chatbot that hallucinates vintages and scores. RAG fixes both:
 every pick so you can trust it.
 
 ## How it works
-```
-your request ─▶ local embedding ─▶ Chroma vector search ─▶ rerank by
-              (all-MiniLM-L6-v2)     (+ price/country/         relevance × rating
-                                       variety filters)                │
-                                                                       ▼
-                          cited recommendation ◀── Claude ◀── top wines as context
-```
+
+<p align="center">
+  <img src="assets/architecture.png" alt="Wine Sommelier RAG pipeline" width="760">
+</p>
+
 - **Retrieval** is 100% local and free (`sentence-transformers` + Chroma) — no API
   key, no data leaves your machine.
 - **Generation** runs on the **Claude CLI** by default (uses your Claude

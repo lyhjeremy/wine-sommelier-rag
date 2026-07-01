@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Wine Sommelier RAG" width="100%">
+</p>
+
 # Building a Wine Sommelier with RAG
 
 *How I turned 130,000 wine reviews into a recommender that never invents a bottle.*
@@ -23,6 +27,10 @@ grounded corpus of exactly the thing an LLM tends to hallucinate: concrete
 bottles with real scores and prices.
 
 ## The pipeline
+
+<p align="center">
+  <img src="assets/architecture.png" alt="Wine Sommelier RAG pipeline" width="760">
+</p>
 
 1. **Documents.** Each review becomes a short passage — `title — variety from
    region, country.\n<tasting note>` — with score, price and origin kept as
