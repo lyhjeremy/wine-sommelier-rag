@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Wine Sommelier RAG — recommendations grounded in 130k real reviews</title>
+<meta name="description" content="Ask for a wine in plain English and get 2-3 real recommendations, cited to professional reviews, from a local semantic index of ~130,000 Wine Enthusiast tastings. Retrieval-augmented generation with Claude — no hallucinated bottles." />
+<style>
+  :root{--ink:#2a1520;--paper:#FBF6F2;--rule:#E7D8CE;--soft:#7a6b6f;--accent:#B8873B;--wine:#7B2233;--plum:#5B2A4A}
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.7;font-size:18px}
+  .hero{width:100%;background:#2a0e18;overflow:hidden}.hero svg{width:100%;height:250px;display:block}
+  .container{max-width:820px;margin:0 auto;padding:38px 24px 80px}
+  .kicker{text-transform:uppercase;letter-spacing:.16em;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:var(--plum);font-weight:700;text-align:center;margin-bottom:12px}
+  h1{font-size:40px;line-height:1.16;text-align:center;margin:0 0 14px}
+  .lede{font-size:20px;color:#43323a;text-align:center;margin:0 auto 6px;max-width:680px}
+  .byline{color:var(--soft);font-style:italic;text-align:center;margin:18px 0 30px}
+  h2{font-size:26px;margin:50px 0 14px;border-bottom:1px solid var(--rule);padding-bottom:8px}
+  p{margin:0 0 16px} a{color:var(--wine)}
+  .chat{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:22px;margin:26px 0;font-family:'Helvetica Neue',Arial,sans-serif}
+  .turn{display:flex;gap:12px;margin:12px 0;align-items:flex-start}
+  .who{flex:0 0 58px;font-weight:700;font-size:13px;padding-top:9px}
+  .u .who{color:var(--soft)} .s .who{color:var(--wine)}
+  .bubble{background:#f6f2e8;border-radius:12px;padding:10px 15px;font-size:15.5px;color:#222}
+  .u .bubble{background:#f2eef0} .s .bubble{background:#f8eef0}
+  .cite{color:var(--wine);font-weight:700}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:26px 0}
+  .card{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:20px;font-family:'Helvetica Neue',Arial,sans-serif}
+  .card .ico{font-size:24px}.card h3{margin:8px 0 6px;font-size:18px}.card p{font-size:15px;color:#444;margin:0;line-height:1.6}
+  .steps{counter-reset:step;list-style:none;padding:0;margin:24px 0}
+  .steps li{position:relative;padding:12px 0 12px 54px;border-bottom:1px dashed var(--rule);font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:10px;width:34px;height:34px;border-radius:50%;background:var(--wine);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .note{background:#fff;border:1px solid var(--rule);border-left:4px solid var(--wine);border-radius:8px;padding:14px 20px;font-size:14.5px;color:#444;font-family:'Helvetica Neue',Arial,sans-serif;margin:24px 0}
+  .btnrow{text-align:center;margin:40px 0 8px}
+  .btn{display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;font-weight:600;text-decoration:none;padding:13px 24px;border-radius:8px;margin:6px}
+  .btn-solid{background:var(--wine);color:#fff}.btn-ghost{border:1px solid var(--wine);color:var(--wine)}
+  .footer{text-align:center;color:var(--soft);font-size:14px;margin-top:54px;font-family:'Helvetica Neue',Arial,sans-serif}
+  @media(max-width:600px){h1{font-size:30px}.features{grid-template-columns:1fr}.hero svg{height:200px}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <svg viewBox="0 0 820 250" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A wine glass beside a stack of review cards">
+    <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#360f1c"/><stop offset="1" stop-color="#22090f"/></linearGradient></defs>
+    <rect width="820" height="250" fill="url(#bg)"/>
+    <!-- glass -->
+    <g transform="translate(250,40)">
+      <path d="M-52 0 h104 a52 52 0 0 1 -52 78 a52 52 0 0 1 -52 -78 z" fill="none" stroke="#E7D8CE" stroke-width="5"/>
+      <path d="M-40 6 h80 a40 40 0 0 1 -40 52 a40 40 0 0 1 -40 -52 z" fill="#7B2233"/>
+      <line x1="0" y1="78" x2="0" y2="150" stroke="#E7D8CE" stroke-width="5"/>
+      <line x1="-38" y1="150" x2="38" y2="150" stroke="#E7D8CE" stroke-width="5"/>
+    </g>
+    <!-- retrieved review cards -->
+    <g font-family="Helvetica Neue,Arial,sans-serif">
+      <g transform="translate(470,52) rotate(-6)"><rect width="230" height="46" rx="8" fill="#fff" opacity="0.95"/><rect x="14" y="12" width="150" height="8" rx="4" fill="#c9b8ad"/><rect x="14" y="28" width="110" height="8" rx="4" fill="#e3d6cd"/><circle cx="205" cy="23" r="14" fill="#B8873B"/></g>
+      <g transform="translate(480,104) rotate(3)"><rect width="230" height="46" rx="8" fill="#fff" opacity="0.95"/><rect x="14" y="12" width="150" height="8" rx="4" fill="#c9b8ad"/><rect x="14" y="28" width="90" height="8" rx="4" fill="#e3d6cd"/><circle cx="205" cy="23" r="14" fill="#7B2233"/></g>
+      <g transform="translate(470,156) rotate(-4)"><rect width="230" height="46" rx="8" fill="#fff" opacity="0.95"/><rect x="14" y="12" width="150" height="8" rx="4" fill="#c9b8ad"/><rect x="14" y="28" width="120" height="8" rx="4" fill="#e3d6cd"/><circle cx="205" cy="23" r="14" fill="#5B2A4A"/></g>
+    </g>
+  </svg>
+</div>
+<div class="container">
+  <p class="kicker">Retrieval-augmented, cited, free</p>
+  <h1>Wine Sommelier RAG</h1>
+  <p class="lede">Ask for a wine in plain English and get <strong>real recommendations, cited to professional reviews</strong> — drawn from a local index of ~130,000 Wine Enthusiast tastings. No invented bottles, no made-up scores.</p>
+  <p class="byline">By Jeremy Lee · WSET Level 3</p>
+
+  <div class="chat">
+    <div class="turn u"><div class="who">You</div><div class="bubble">A bold, full-bodied red for a steak dinner — not too expensive.</div></div>
+    <div class="turn s"><div class="who">Somm</div><div class="bubble">For a wine to stand up to steak you want power and dark tannins. <strong>Mouchão 2007, Alentejano — 95 pts, $36</strong> <span class="cite">[4]</span>: dense and concentrated with big dark fruit and a rustic grip that loves charred, fatty beef. Great value for this level of heft.</div></div>
+  </div>
+
+  <h2>Why RAG?</h2>
+  <p>Wine search is either rigid keyword filters — useless for <em>"something like a Rhône but cheaper"</em> — or a chatbot that confidently invents vintages, scores and prices. Retrieval-augmented generation gets the best of both: a semantic index <strong>retrieves</strong> the most relevant <em>real</em> reviews, then Claude recommends <strong>only</strong> from what was retrieved, citing every pick. If nothing truly fits, it says so.</p>
+
+  <div class="features">
+    <div class="card"><div class="ico">🍷</div><h3>130k real reviews</h3><p>Grounded in the Wine Enthusiast corpus — actual tasting notes, scores, prices and regions.</p></div>
+    <div class="card"><div class="ico">🔎</div><h3>Grounded &amp; cited</h3><p>Every recommendation carries a <span class="cite">[n]</span> citation back to the review it came from. No hallucinated bottles.</p></div>
+    <div class="card"><div class="ico">🆓</div><h3>Free &amp; local</h3><p>Embeddings and vector search run on your machine with sentence-transformers + Chroma — no API key, no data leaves your laptop.</p></div>
+    <div class="card"><div class="ico">🎚️</div><h3>Filters that compose</h3><p>Layer price, country, grape and minimum score onto any natural-language request.</p></div>
+  </div>
+
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li>Your request is embedded locally and matched against the review index (cosine similarity in Chroma).</li>
+    <li>Candidates are filtered by any price / country / variety / score constraints, then reranked by relevance × rating.</li>
+    <li>The top reviews become context; Claude recommends 2–3 wines, citing each one.</li>
+    <li>You see the answer plus the exact reviews it was built from.</li>
+  </ol>
+
+  <div class="note"><strong>Under the hood:</strong> generation runs on the Claude CLI by default (uses your Claude subscription, no per-token cost); set <code>ANTHROPIC_API_KEY</code> to use the API instead. Retrieval is always local and free.</div>
+
+  <div class="btnrow">
+    <a class="btn btn-solid" href="https://github.com/lyhjeremy/wine-sommelier-rag">Get it on GitHub</a>
+    <a class="btn btn-ghost" href="https://github.com/lyhjeremy/wine-sommelier-rag#quick-start">Read the setup guide</a>
+  </div>
+
+  <p class="footer">Built with Python · sentence-transformers · Chroma · Claude · © 2026 Jeremy Lee · MIT License</p>
+</div>
+</body>
+</html>
