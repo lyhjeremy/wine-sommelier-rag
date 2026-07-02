@@ -13,6 +13,9 @@ class WineHit:
     doc: str
     meta: dict
     distance: float
+    # Populated by the hybrid pipeline: the cross-encoder's relevance score for
+    # this (query, document) pair. ``None`` for plain dense retrieval.
+    rerank_score: float | None = None
 
     @property
     def points(self) -> int | None:
@@ -29,6 +32,32 @@ class WineHit:
         if self.price:
             bits.append(f"${self.price:g}")
         return " · ".join(bits)
+
+
+def meta_passes(
+    meta: dict,
+    *,
+    max_price: float | None = None,
+    min_price: float | None = None,
+    country: str | None = None,
+    variety: str | None = None,
+    min_points: int | None = None,
+) -> bool:
+    """In-memory equivalent of ``Retriever._where`` for candidates that did not
+    come straight from Chroma (e.g. the BM25 side of the hybrid retriever)."""
+    price = meta.get("price")
+    points = meta.get("points")
+    if max_price is not None and (price is None or price > float(max_price)):
+        return False
+    if min_price is not None and (price is None or price < float(min_price)):
+        return False
+    if min_points is not None and (points is None or points < int(min_points)):
+        return False
+    if country and meta.get("country") != country:
+        return False
+    if variety and meta.get("variety") != variety:
+        return False
+    return True
 
 
 class Retriever:

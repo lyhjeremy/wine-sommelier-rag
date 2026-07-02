@@ -31,12 +31,12 @@ def _filters(args) -> dict:
 
 
 def cmd_ask(args) -> None:
-    som = Sommelier()
+    som = Sommelier(hybrid=not args.no_hybrid, rerank=not args.no_rerank)
     _print_reco(som.recommend(args.query, k=args.k, **_filters(args)))
 
 
 def cmd_chat(args) -> None:
-    som = Sommelier()
+    som = Sommelier(hybrid=not args.no_hybrid, rerank=not args.no_rerank)
     print("🍷 Wine Sommelier — ask for a recommendation (Ctrl-C to quit).")
     try:
         while True:
@@ -57,6 +57,10 @@ def _add_filters(p) -> None:
     p.add_argument("--variety", type=str, default=None)
     p.add_argument("--min-points", type=int, default=None)
     p.add_argument("-k", type=int, default=6, help="Wines to retrieve.")
+    p.add_argument("--no-hybrid", action="store_true",
+                   help="Use plain dense retrieval instead of dense+BM25 hybrid.")
+    p.add_argument("--no-rerank", action="store_true",
+                   help="Skip the cross-encoder reranking stage.")
 
 
 def main() -> None:

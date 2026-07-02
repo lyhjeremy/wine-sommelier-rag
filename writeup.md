@@ -39,11 +39,12 @@ bottles with real scores and prices.
    turns each passage into a 384-dim vector, on the Mac GPU (MPS). No API key,
    nothing leaves the machine — ~30k reviews index in a couple of minutes.
 3. **Vector store.** Chroma with cosine similarity, persisted to disk.
-4. **Retrieval + rerank.** A query is embedded and matched; structured filters
-   (`price ≤ 25`, `country = France`, `points ≥ 90`) are pushed down into the
-   vector search as metadata constraints. The candidate pool is then reranked by
-   `0.8 × similarity + 0.2 × normalized rating`, so among equally-relevant wines
-   the better-reviewed bottle surfaces first.
+4. **Hybrid retrieval + rerank.** A query hits two indexes at once — the dense
+   vector search *and* a BM25 keyword index — whose rankings are fused with
+   Reciprocal Rank Fusion. A cross-encoder (`ms-marco-MiniLM-L-6-v2`) then
+   re-reads each shortlisted review against the query and reorders the top-k.
+   Structured filters (`price ≤ 25`, `country = France`, `points ≥ 90`) prune the
+   candidates, so a "$25 max" request never wastes a slot on an $80 bottle.
 5. **Grounded generation.** The top reviews are handed to Claude with a strict
    system prompt: recommend *only* from the retrieved wines, cite each with `[n]`,
    and if nothing fits, say so. Generation runs on the Claude CLI (my Claude
@@ -51,12 +52,34 @@ bottles with real scores and prices.
 
 ## Does it work?
 
-Asked for *"a bold, full-bodied red for a steak dinner, not too expensive"* with
-a `$40` cap, it retrieved six real bottles and reasoned about them like a somm —
-setting aside the perfumed Nebbiolos as "too elegant and light-framed for what
-you're after" and recommending the dense, grippy **Mouchão Alentejano (95 pts,
-$36)** as the steak wine, each pick cited back to its review. Every bottle,
-score and price in the answer is real and traceable.
+Asked for *"a bold red under $25 for a steak dinner"* with a `$25` cap, hybrid
+retrieval + reranking surfaced four real bottles and Claude reasoned about them
+like a somm — leading with the **Misiones de Rengo Carmenère (91 pts, $20)**, "a
+juggernaut red that cries out for steak," and explicitly setting aside the gentler
+Soos Creek as "a touch gentler than the bold profile you're after." Each pick is
+cited back to its review; every bottle, score and price is real and traceable.
+
+## Does the *hybrid* pipeline actually help?
+
+Claims about retrieval deserve numbers, so `src/eval.py` benchmarks three
+retrievers on twelve rubric-labelled queries (relevance defined by explicit
+grape / price / style rules — a transparent proxy for human judgement, applied
+identically to every system so the comparison is fair):
+
+| system | P@10 | MRR | nDCG@10 |
+|---|---|---|---|
+| dense (vector only) | 0.68 | 0.88 | 0.69 |
+| dense + BM25 (RRF) | 0.67 | 0.76 | 0.68 |
+| **+ cross-encoder rerank** | **0.82** | **0.92** | **0.83** |
+
+The result surprised me in a useful way. **Fusing BM25 into the dense ranker
+didn't help on its own** — it pulled in wines that share words with the query but
+miss its meaning, and actually *lowered* MRR. The win comes entirely from the
+**cross-encoder reranker**, which reads the query and each candidate *together*
+rather than comparing two independent vectors: +21% precision and nDCG over the
+dense baseline. The lesson worth keeping: more retrieval signal isn't automatically
+better retrieval; you need a stage that can *judge* relevance, and you need to
+measure it.
 
 ## Design decisions worth noting
 
@@ -71,11 +94,12 @@ score and price in the answer is real and traceable.
 
 - The dataset is a single-publication snapshot; it inherits Wine Enthusiast's
   house style and coverage gaps.
+- Relevance in the eval is rule-defined, not human-judged — a sound proxy for a
+  *relative* comparison, but a small hand-labelled set would make the absolute
+  numbers more trustworthy.
 - Constraint parsing is currently via explicit CLI flags; a natural-language
   constraint extractor (e.g. "under twenty bucks" → `max_price=20`) is the
   obvious next step — and a natural bridge to the agentic
-  [Wine Pairing Agent](https://github.com/lyhjeremy) companion project.
-- Reranking is a simple linear blend; a cross-encoder reranker would sharpen the
-  top-k further at some latency cost.
+  [Wine Pairing Agent](https://github.com/lyhjeremy/wine-pairing-agent) companion project.
 
 *Code: [github.com/lyhjeremy/wine-sommelier-rag](https://github.com/lyhjeremy/wine-sommelier-rag)*

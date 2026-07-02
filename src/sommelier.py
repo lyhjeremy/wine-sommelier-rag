@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from .hybrid import HybridRetriever
 from .llm import LLM
 from .retriever import Retriever, WineHit
 
@@ -48,8 +49,11 @@ def _format_context(hits: list[WineHit]) -> str:
 
 
 class Sommelier:
-    def __init__(self):
-        self.retriever = Retriever()
+    def __init__(self, hybrid: bool = True, rerank: bool = True):
+        # Hybrid (dense + BM25 + cross-encoder) is the default; fall back to the
+        # plain dense retriever with ``hybrid=False`` for a lighter dependency
+        # footprint or an apples-to-apples baseline.
+        self.retriever = HybridRetriever(use_rerank=rerank) if hybrid else Retriever()
         self.llm = LLM()
 
     def recommend(self, query: str, k: int = 6, **filters) -> Recommendation:

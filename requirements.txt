@@ -1,6 +1,12 @@
 # Core RAG stack — all local, no API key required.
 pandas>=2.0
-sentence-transformers>=3.0
+sentence-transformers>=3.0     # query/document embeddings + cross-encoder reranker
 chromadb>=0.5
+rank-bm25>=0.2                  # sparse BM25 half of the hybrid retriever
+
+# Evaluation harness + architecture diagram
+# (python -m src.eval, python assets/make_architecture.py).
+matplotlib>=3.7
+
 # Optional: only needed if you run the API backend instead of the Claude CLI.
 anthropic>=0.40
