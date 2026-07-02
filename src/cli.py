@@ -7,8 +7,14 @@
 from __future__ import annotations
 
 import argparse
+import sys
 
 from .sommelier import Sommelier
+
+# Windows consoles/pipes default to cp1252, which can't encode the emoji / em-dash
+# in our output; force UTF-8 so the CLI prints cleanly on every platform.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 
 def _print_reco(reco) -> None:
