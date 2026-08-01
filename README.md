@@ -10,6 +10,7 @@ professional reviews**, from a searchable index of ~130,000 Wine Enthusiast
 tastings. A retrieval-augmented sommelier that never invents a bottle.
 
 > 🌐 **Overview:** https://lyhjeremy.github.io/wine-sommelier-rag/
+> 📖 **Product overview:** https://lyhjeremy.github.io/wine-sommelier-rag/overview/
 
 ## Why
 Wine search is either keyword filters (useless for *"something like a Rhône but

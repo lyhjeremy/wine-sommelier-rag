@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Wine Sommelier RAG — and the honest finding that hybrid retrieval didn't help</title>
+<meta name="description" content="Ask for a wine in plain English, get real bottles cited to professional reviews from 130,000 tastings. Benchmarked: the cross-encoder reranker lifts nDCG 21%, while naive BM25 fusion actively hurts." />
+<meta name="theme-color" content="#FBF8F1" />
+<meta property="og:title" content="Wine Sommelier RAG" />
+<meta property="og:description" content="Three retrievers measured on the same queries. The fashionable one lost." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lyhjeremy.github.io/wine-sommelier-rag/overview/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #FBF8F1;
+    --card: #FFFFFF;
+    --plate: #FFFFFF;
+    --ink: #1a1a2e;
+    --ink2: #3d3d55;
+    --muted: #6B7280;
+    --rule: #E5DCC7;
+    --accent: #7a1f2b;
+    --accent2: #6D28D9;
+    --link: #0E7490;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: 'Source Sans 3', -apple-system, system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+    --shadow: 0 1px 2px rgba(26,26,46,.05), 0 10px 34px rgba(26,26,46,.07);
+    --spine:  92px;
+    --col:    min(100% - 2.6rem, 62rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14141f;
+      --card: #1c1c2a;
+      --plate: #f7f4ec;
+      --ink: #F2EFE6;
+      --ink2: #C9C4B6;
+      --muted: #918B7D;
+      --rule: #33313f;
+      --accent: #E0899A;
+      --accent2: #A78BFA;
+      --link: #22D3EE;
+      --shadow: 0 1px 2px rgba(0,0,0,.32), 0 10px 34px rgba(0,0,0,.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--serif); font-size: clamp(17px, 0.55rem + 0.6vw, 19.5px);
+    line-height: 1.68; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--link); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  strong { font-weight: 700; color: var(--ink); }
+  code { font-family: var(--mono); font-size: .86em;
+         background: color-mix(in srgb, var(--ink) 7%, transparent);
+         padding: .12em .38em; border-radius: 4px; }
+  .wrap { width: var(--col); margin: 0 auto; }
+
+  .eyebrow { font-family: var(--mono); font-weight: 600; font-size: 11.5px;
+             letter-spacing: .17em; text-transform: uppercase; color: var(--muted);
+             margin: 0 0 14px; }
+
+  .masthead { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; padding: 30px 0 0; }
+  .logo { font-family: var(--sans); font-weight: 800; font-size: 21px;
+          letter-spacing: -.02em; display: flex; align-items: center; gap: 9px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); flex: none; }
+  .tagline { font-size: 15px; color: var(--ink2); font-family: var(--sans); }
+
+  .hero { padding: 44px 0 54px; }
+  .kicker { font-family: var(--sans); font-size: clamp(18px, 2.1vw, 23px); font-weight: 600;
+            color: var(--muted); margin: 0 0 8px; letter-spacing: -.01em; }
+  .hero h1 { font-family: var(--sans); font-size: clamp(37px, 6vw, 72px); font-weight: 800;
+             letter-spacing: -.035em; line-height: 1.04; margin: 0; max-width: 17ch; }
+  .hero-sub { margin: 24px 0 0; font-size: 1.06em; color: var(--ink2); max-width: 60ch; }
+
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; align-items: center; }
+  .btn { display: inline-block; padding: 13px 26px; border-radius: 8px;
+         font-family: var(--sans); font-weight: 700; font-size: 16px;
+         text-decoration: none; border: 1px solid var(--ink); transition: transform .15s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .textlink { font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--ink2);
+              text-decoration: underline; text-underline-offset: 4px;
+              text-decoration-thickness: 1px; }
+  .textlink:hover { color: var(--ink); }
+
+  .claims { display: grid; grid-template-columns: 1fr; gap: 0 52px; margin: 50px 0 0; }
+  @media (min-width: 760px) { .claims { grid-template-columns: 1fr 1fr; } }
+  .claim { padding: 18px 0 20px; border-top: 1px solid var(--rule); }
+  .claim:first-child, .claim:nth-child(2) { border-top: 2px solid var(--ink); }
+  @media (max-width: 759px) { .claim:nth-child(2) { border-top: 1px solid var(--rule); } }
+  .claim .n { font-family: var(--sans); font-weight: 800; font-size: 40px; line-height: 1.05;
+              color: var(--accent); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .claim h3 { margin: 0 0 6px; }
+  .claim p { margin: 9px 0 0; font-size: 15.5px; color: var(--ink2); line-height: 1.5;
+             font-family: var(--sans); }
+
+  .route { position: relative; padding-bottom: 30px; }
+  .route::before { content: ""; position: absolute; left: calc(var(--spine) / 2); top: 8px;
+                   bottom: 80px; width: 2px; background: var(--rule); }
+  .stop { position: relative; padding: 0 0 76px var(--spine); }
+  .stop::before { content: ""; position: absolute; left: calc(var(--spine) / 2 - 7px); top: 7px;
+                  width: 16px; height: 16px; border-radius: 50%;
+                  background: var(--paper); border: 2px solid var(--ink); box-sizing: border-box; }
+  .stop--key::before { background: var(--accent); border-color: var(--accent); }
+  .stop--warn::before { background: var(--accent2); border-color: var(--accent2); }
+  .stop--end::before { background: var(--ink); }
+
+  h2 { font-family: var(--sans); font-size: clamp(27px, 3.7vw, 38px); font-weight: 800;
+       letter-spacing: -.027em; line-height: 1.13; margin: 12px 0 16px; max-width: 19ch; }
+  h3 { font-family: var(--sans); font-size: 17px; font-weight: 700; margin: 0 0 7px;
+       letter-spacing: -.012em; }
+  .stop p { margin: 0 0 17px; max-width: 60ch; color: var(--ink2); }
+
+  .bignum { font-family: var(--sans); font-weight: 800; font-size: clamp(74px, 10vw, 128px);
+            line-height: .86; letter-spacing: -.05em; margin: 6px 0 4px; color: var(--accent);
+            font-variant-numeric: tabular-nums; }
+  .bignum-note { font-family: var(--sans); font-size: 16px; color: var(--muted); margin: 0 0 20px; }
+
+  /* A white-background chart would glow in dark mode; the plate makes it read
+     as a deliberately printed page instead. */
+  figure { margin: 28px 0 0; }
+  .plate { background: var(--plate); border: 1px solid var(--rule); border-radius: 10px;
+           padding: 14px; box-shadow: var(--shadow); overflow: hidden; }
+  .plate img { border-radius: 4px; }
+  .plate--flush { padding: 0; }
+  .shot { border-radius: 10px; border: 1px solid var(--rule); box-shadow: var(--shadow);
+          overflow: hidden; background: var(--card); }
+  /* min() so the cap never exceeds the column on a phone */
+  .shot--narrow { max-width: min(430px, 100%); }
+  figcaption { margin-top: 11px; font-family: var(--sans); font-size: 14.5px;
+               color: var(--muted); line-height: 1.5; }
+  .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+            gap: 22px; margin-top: 28px; }
+  .panels figure { margin: 0; }
+
+  .pull { margin: 30px 0 0; padding: 20px 25px; border-left: 3px solid var(--accent);
+          background: color-mix(in srgb, var(--accent) 7%, transparent);
+          border-radius: 0 8px 8px 0; }
+  .pull p { margin: 0 0 9px; color: var(--ink); max-width: none; }
+  .pull p:last-of-type { margin: 0; }
+  .pull .who { font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+               text-transform: uppercase; color: var(--muted); display: block; margin-top: 9px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(238px, 1fr));
+          gap: 1px; margin-top: 28px; background: var(--rule);
+          border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+  .cell { background: var(--paper); padding: 22px 20px; }
+  .cell p { font-size: 15px; margin: 0; color: var(--ink2); max-width: none;
+            line-height: 1.55; font-family: var(--sans); }
+
+  /* results tables: scroll inside their own box, never the page */
+  .tablewrap { margin-top: 26px; overflow-x: auto; border: 1px solid var(--rule);
+               border-radius: 10px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; min-width: 480px;
+          font-family: var(--sans); font-size: 15.5px; }
+  th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--rule); }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+       text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  td { color: var(--ink2); font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: 0; }
+  .win td { color: var(--ink); font-weight: 700;
+            background: color-mix(in srgb, var(--accent) 8%, transparent); }
+
+  /* real terminal output, quoted verbatim */
+  .term { margin-top: 26px; background: #14141f; color: #e6e3da; border-radius: 10px;
+          padding: 18px 20px; overflow-x: auto; box-shadow: var(--shadow);
+          border: 1px solid #2a2a3a; }
+  .term pre { margin: 0; font-family: var(--mono); font-size: 13px; line-height: 1.62;
+              white-space: pre; }
+  .term .c { color: #9aa08f; }
+  .term .g { color: #7fd18f; }
+  .term .y { color: #E3BC5E; }
+
+  .specs { margin-top: 26px; border-top: 1px solid var(--rule); }
+  .spec { display: grid; grid-template-columns: 1fr; gap: 2px;
+          padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  @media (min-width: 700px) { .spec { grid-template-columns: 178px 1fr; gap: 24px; } }
+  .spec dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em;
+             text-transform: uppercase; color: var(--muted); padding-top: 4px; }
+  .spec dd { margin: 0; font-size: 16px; color: var(--ink2); font-family: var(--sans); }
+
+  .close { padding: 6px 0 80px var(--spine); position: relative; }
+  .close h2 { max-width: 20ch; }
+  footer { border-top: 1px solid var(--rule); padding: 28px 0 60px;
+           font-family: var(--sans); font-size: 14.5px; color: var(--muted); }
+  footer a { color: var(--ink2); }
+  footer p { margin: 0 0 8px; }
+
+  @media (max-width: 640px) {
+    :root { --spine: 38px; }
+    .hero { padding: 36px 0 46px; }
+    .stop { padding-bottom: 58px; }
+    .plate { padding: 9px; }
+    .term { padding: 14px 14px; }
+    .term pre { font-size: 11.5px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="logo"><span class="dot" aria-hidden="true"></span>Wine Sommelier RAG</div>
+    <div class="tagline">130,000 real reviews, no invented bottles</div>
+  </header>
+
+  <section class="hero">
+    <p class="kicker">Wine search is either useless filters or a chatbot inventing vintages.</p>
+    <h1>"A bold red under $25 for steak night," answered with real bottles.</h1>
+
+    <p class="hero-sub">
+      Ask in plain English and get two or three genuine recommendations, each
+      cited to a professional review from an index of <strong>~130,000 Wine
+      Enthusiast tastings</strong>. The sommelier can only recommend from what was
+      retrieved, and if nothing matches it says so. Retrieval is local and free.
+      And because "better retrieval" is a testable claim, it was tested — with a
+      result that went against the fashionable answer.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="../writeup.md">Read the writeup</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/wine-sommelier-rag">or the code</a>
+    </div>
+
+    <figure style="margin-top:38px">
+      <img width="2480" height="600" class="shot" src="../assets/banner.png"
+        alt="Wine Sommelier RAG banner artwork." />
+    </figure>
+
+    <div class="claims">
+      <div class="claim">
+        <div class="n">+21%</div>
+        <p>nDCG@10 from adding a cross-encoder reranker. The single change that
+           mattered.</p>
+      </div>
+      <div class="claim">
+        <div class="n">−0.12</div>
+        <p>MRR from adding BM25 fusion. The hybrid step that everyone recommends
+           made this system worse.</p>
+      </div>
+      <div class="claim">
+        <div class="n">130k</div>
+        <p>real reviews behind every recommendation, each with a <code>[n]</code>
+           citation you can check.</p>
+      </div>
+      <div class="claim">
+        <div class="n">$0</div>
+        <p>for retrieval. Local embeddings, local index, nothing leaves the
+           machine until generation.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+<div class="route">
+
+  <section class="stop stop--key">
+    <p class="eyebrow">↓ the measurement</p>
+    <h2>Three retrievers, one query set</h2>
+    <p>
+      <code>src/eval.py</code> scores three retrieval configurations against twelve
+      rubric-labelled queries, where relevance is defined by explicit grape, price
+      and style rules. That rubric is a transparent proxy for human judgement
+      rather than a perfect one, and it is stated as such.
+    </p>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>System</th><th>P@10</th><th>MRR</th><th>nDCG@10</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dense (vector only)</td><td>0.68</td><td>0.88</td><td>0.69</td></tr>
+          <tr><td>Dense + BM25 (RRF fusion)</td><td>0.67</td><td>0.76</td><td>0.68</td></tr>
+          <tr class="win"><td>+ cross-encoder rerank</td><td>0.82</td><td>0.92</td><td>0.83</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure>
+      <div class="plate">
+        <img width="1200" height="690" src="../eval/retrieval_quality.png" loading="lazy"
+          alt="Grouped bar chart comparing precision at 10, MRR and nDCG at 10 across the three retrieval configurations, with the reranked system highest on all three." />
+      </div>
+      <figcaption>The three configurations across all three metrics.</figcaption>
+    </figure>
+  </section>
+
+  <section class="stop stop--warn">
+    <p class="eyebrow">↓ the finding worth keeping</p>
+    <h2>Bolting on BM25 made it worse</h2>
+    <p>
+      Hybrid retrieval — dense vectors fused with a keyword index — is close to
+      received wisdom. On this corpus it did not work. Precision fell slightly and
+      <strong>MRR dropped from 0.88 to 0.76</strong>, which is a meaningful
+      regression in how high the first good result lands.
+    </p>
+    <p>
+      The cause is visible in the results: BM25 drags in reviews that share
+      vocabulary with the query while being about the wrong wine. Reciprocal Rank
+      Fusion then rewards those lexical matches for appearing in one list, and they
+      push genuinely relevant bottles down.
+    </p>
+    <p>
+      The <strong>cross-encoder reranker</strong> is what actually helps, because
+      it reads the query and the review together rather than comparing two
+      independently-produced vectors. It lifts precision and nDCG about 21% over
+      the dense baseline.
+    </p>
+    <div class="pull">
+      <p>Adding the component everyone recommends made this system worse. The
+         result is in the repository because a benchmark you only publish when it
+         agrees with you is not a benchmark.</p>
+      <span class="who">On why the BM25 row stayed in the table</span>
+    </div>
+  </section>
+
+  <section class="stop">
+    <p class="eyebrow">↓ the grounding</p>
+    <h2>It cannot recommend a bottle it did not retrieve</h2>
+    <p>
+      Generation is instructed to recommend only from the retrieved reviews and to
+      cite each pick with a <code>[n]</code> that points at a real review. When
+      nothing in the index matches the request, the correct output is to
+      <strong>say nothing matched</strong> rather than to widen the search quietly
+      and present the result as if it fit.
+    </p>
+    <figure>
+      <div class="plate">
+        <img width="2022" height="823" src="../assets/architecture.png" loading="lazy"
+          alt="Wine Sommelier RAG pipeline diagram: a plain-English query into dense retrieval and BM25, fused by reciprocal rank fusion, reranked by a cross-encoder, then grounded generation with citations." />
+      </div>
+      <figcaption>The pipeline as benchmarked, fusion step included.</figcaption>
+    </figure>
+  </section>
+
+  <section class="stop stop--warn">
+    <p class="eyebrow">↓ what this cannot tell you</p>
+    <h2>Twelve queries is twelve queries</h2>
+    <p>
+      The evaluation set is small, and the relevance labels come from a rule-based
+      rubric rather than from people. Both facts limit how far the numbers travel.
+      A 21% nDCG lift on twelve rubric-scored queries is a real signal and not a
+      published benchmark result.
+    </p>
+    <p>
+      The rubric is also the sort of thing that can quietly encode its own
+      preferences — a grape-and-price rule will favour retrievers that match on
+      grape and price. It is written down in the repository so that bias is
+      inspectable rather than implicit.
+    </p>
+  </section>
+
+  <section class="stop stop--end">
+    <p class="eyebrow">Finish · what it is built on</p>
+    <h2>Where the numbers come from</h2>
+    <dl class="specs">
+      <div class="spec"><dt>Corpus</dt><dd>~130,000 Wine Enthusiast reviews</dd></div>
+      <div class="spec"><dt>Dense retrieval</dt><dd><code>sentence-transformers</code> + Chroma, entirely local</dd></div>
+      <div class="spec"><dt>Sparse retrieval</dt><dd>BM25, fused with Reciprocal Rank Fusion</dd></div>
+      <div class="spec"><dt>Reranking</dt><dd>A cross-encoder reading query and review together</dd></div>
+      <div class="spec"><dt>Generation</dt><dd>Claude CLI by default, so no per-token cost; <code>ANTHROPIC_API_KEY</code> switches to the API</dd></div>
+      <div class="spec"><dt>Evaluation</dt><dd><code>src/eval.py</code>, 12 rubric-labelled queries, P@10 / MRR / nDCG@10</dd></div>
+      <div class="spec"><dt>Related</dt><dd>The same corpus is analysed in <a href="https://lyhjeremy.github.io/wine-score-inflation/">Wine Score Inflation</a>, and this retriever becomes a tool inside the <a href="https://lyhjeremy.github.io/wine-pairing-agent/">Wine Pairing Agent</a></dd></div>
+    </dl>
+  </section>
+
+</div>
+</div>
+
+<div class="wrap">
+  <section class="close">
+    <h2>Rerank, don't just fuse</h2>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="../writeup.md">Read the writeup</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/wine-sommelier-rag">or the code</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Wine Sommelier RAG ·
+      <a href="../">Showcase</a> ·
+      <a href="../writeup.md">Writeup</a> ·
+      <a href="https://github.com/lyhjeremy/wine-sommelier-rag">Source</a> ·
+      MIT © 2026 Jeremy Lee
+    </p>
+  </footer>
+</div>
+</body>
+</html>
