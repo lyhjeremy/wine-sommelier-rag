@@ -3,55 +3,57 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Wine Sommelier RAG, and the honest finding that hybrid retrieval didn't help</title>
-<meta name="description" content="Ask for a wine in plain English, get real bottles cited to professional reviews from 130,000 tastings. Benchmarked: the cross-encoder reranker lifts nDCG 21%, while naive BM25 fusion actively hurts." />
-<meta name="theme-color" content="#EDEDE7" />
+<title>Wine Sommelier RAG: a cross-encoder reranker lifted nDCG@10 from 0.69 to 0.83</title>
+<meta name="description" content="Ask for a wine in plain English and get real bottles cited to Wine Enthusiast reviews. On 12 rubric-labelled queries, a cross-encoder reranker lifted nDCG@10 from 0.69 to 0.83, while BM25 fusion alone lowered MRR from 0.88 to 0.76." />
+<meta name="theme-color" content="#F1ECE3" />
 <meta property="og:title" content="Wine Sommelier RAG" />
-<meta property="og:description" content="Three retrievers measured on the same queries. The fashionable one lost." />
+<meta property="og:description" content="Three retrievers on the same 12 queries: the reranker helped, BM25 fusion alone did not." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lyhjeremy.github.io/wine-sommelier-rag/overview/" />
+<link href="" rel="stylesheet" />
 <style>
-@font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-400.woff2")format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-600.woff2")format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-400.woff2")format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-600.woff2")format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"IBM Plex Mono";src:url("../fonts/IBMPlexMono-400.woff2")format("woff2");font-weight:400;font-display:swap}
-
   :root {
-    --paper: #EDEDE7;
-    --card: #F5F5F0;
-    --plate: #F5F5F0;
-    --ink: #1C1E1B;
-    --ink2: #3d3d55;
-    --muted: #52564E;
-    --rule: #C6C7BF;
-    --accent: #2C5852;
-    --accent2: #2C5852;
-    --link: #8C3A1E;
-    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-    --sans: 'Source Sans 3', -apple-system, system-ui, sans-serif;
-    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
-    --shadow: 0 1px 2px rgba(26,26,46,.05), 0 10px 34px rgba(26,26,46,.07);
+    --paper: #F1ECE3;
+    --card: #F7F3EC;
+    --plate: #F7F3EC;
+    --ink: #24191B;
+    --ink2: #5C4C4E;
+    --muted: #5C4C4E;
+    --rule: #D3C8BC;
+    --accent: #7A2335;
+    --accent2: #6A5A1E;
+    --link: #7A2335;
+    --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    --sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+    --display: "Cormorant Garamond", Garamond, "Iowan Old Style", serif;
+    --edge: #7E7070;
     --spine:  92px;
     --col:    min(100% - 2.6rem, 62rem);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #14141f;
-      --card: #1c1c2a;
-      --plate: #f7f4ec;
-      --ink: #F2EFE6;
-      --ink2: #C9C4B6;
-      --muted: #918B7D;
-      --rule: #33313f;
-      --accent: #E0899A;
-      --accent2: #A78BFA;
-      --link: #22D3EE;
-      --shadow: 0 1px 2px rgba(0,0,0,.32), 0 10px 34px rgba(0,0,0,.4);
+      --paper: #1C1517;
+      --card: #261D20;
+      --plate: #261D20;
+      --ink: #EDE3DD;
+      --ink2: #B6A6A3;
+      --muted: #B6A6A3;
+      --rule: #413337;
+      --accent: #E08A99;
+      --accent2: #C9B46A;
+      --link: #E08A99;
+      --edge: #7A6A6C;
     }
   }
 
-  * { box-sizing: border-box; }
+  @font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-400.woff2")format("woff2");font-weight:400;font-display:swap}
+  @font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-600.woff2")format("woff2");font-weight:600;font-display:swap}
+  @font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-400.woff2")format("woff2");font-weight:400;font-display:swap}
+  @font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-600.woff2")format("woff2");font-weight:600;font-display:swap}
+  @font-face{font-family:"IBM Plex Mono";src:url("../fonts/IBMPlexMono-400.woff2")format("woff2");font-weight:400;font-display:swap}
+
+  * { box-sizing: border-box; border-radius: 0; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
@@ -210,59 +212,98 @@
     html { scroll-behavior: auto; }
     .btn { }
   }
+  @font-face{font-family:"Cormorant Garamond";src:url("../fonts/CormorantGaramond-600.woff2")format("woff2");font-weight:600;font-style:normal;font-display:swap}
+  @font-face{font-family:"Cormorant Garamond";src:url("../fonts/CormorantGaramond-500i.woff2")format("woff2");font-weight:500;font-style:italic;font-display:swap}
 
+  .btn:hover { transform: none; background: var(--accent); border-color: var(--accent); color: var(--paper); }
+  .pull { border: 1px solid var(--edge); border-left: 1px solid var(--edge); background: transparent; }
+  .term { background: var(--card); color: var(--ink); border: 1px solid var(--rule); }
+  .term .c { color: var(--muted); } .term .g { color: var(--accent2); } .term .y { color: var(--accent); }
+  .logo, .hero h1, h2, .claim .n, .bignum { font-family: var(--display); }
+
+  /* Cellar: a printed wine list. Centered serif masthead, italic notes, dotted leaders. */
+  :root { --col: min(100% - 2.6rem, 50rem); }
+  .masthead { justify-content: center; text-align: center; border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
+  .logo { font-weight: 600; font-size: 25px; letter-spacing: .01em; }
+  .tagline { font-family: var(--display); font-style: italic; font-size: 18px; }
+  .hero { text-align: center; }
+  .hero h1, .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero h1 { font-weight: 600; font-size: clamp(44px, 7vw, 84px); letter-spacing: -.01em; line-height: 1; max-width: 16ch; }
+  .kicker { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(21px, 2.4vw, 26px); }
+  .cta-row { justify-content: center; }
+  .claims { text-align: left; }
+  .claim, .claim:first-child, .claim:nth-child(2) { border-top: 0; border-bottom: 1px dotted var(--edge); }
+  .claim .n { font-weight: 600; font-size: 46px; letter-spacing: 0; }
+  h2 { font-weight: 600; font-size: clamp(32px, 4.4vw, 46px); letter-spacing: -.005em; line-height: 1.05; }
+  .eyebrow { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 19px;
+             letter-spacing: 0; text-transform: none; color: var(--accent); }
+  :root { --spine: 0px; }
+  .route::before, .stop::before { display: none; }
+  .stop { padding-left: 0; }
+  .stop + .stop { border-top: 1px solid var(--rule); padding-top: 56px; }
+  .bignum { font-weight: 600; letter-spacing: -.01em; }
+
+
+  .bignum { line-height: 1.02; margin-bottom: 14px; }
+  /* Signature: one real run, set as a sommelier's order slip. */
+  .slip { margin: 30px auto 0; max-width: 36rem; border: 1px solid var(--edge); background: var(--card); padding: 22px 26px 20px; }
+  .slip .head { text-align: center; border-bottom: 1px dotted var(--edge); padding-bottom: 12px; margin-bottom: 14px; }
+  .slip .label { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 18px; color: var(--ink2); margin: 0; }
+  .slip .req { font-family: var(--display); font-weight: 600; font-size: 26px; line-height: 1.2; margin: 4px 0 6px; color: var(--ink); }
+  .slip .flag { font-family: var(--mono); font-size: 13px; color: var(--ink2); margin: 0; }
+  .slip .pick { display: flex; align-items: baseline; gap: 8px; margin: 10px 0 4px; }
+  .slip .pick .name { font-family: var(--serif); font-weight: 600; font-size: 18px; color: var(--ink); flex: none; max-width: 62%; }
+  .slip .pick .lead { flex: 1 1 auto; border-bottom: 2px dotted var(--edge); transform: translateY(-5px); min-width: 20px; }
+  .slip .pick .val { font-family: var(--display); font-weight: 600; font-size: 21px; color: var(--accent); flex: none; }
+  .slip .why { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 19px; color: var(--ink2); margin: 0 0 10px; }
+  .slip .aside { font-family: var(--sans); font-size: 14.5px; color: var(--ink2); margin: 12px 0 0; border-top: 1px dotted var(--edge); padding-top: 10px; }
+  @media (max-width: 480px) { .slip { padding: 18px 14px; } .slip .req { font-size: 22px; } .slip .pick .name { font-size: 16px; max-width: none; } .slip .pick { flex-wrap: wrap; } .slip .pick .lead { display: none; } }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="masthead">
     <div class="logo"><span class="dot" aria-hidden="true"></span>Wine Sommelier RAG</div>
-    <div class="tagline">130,000 real reviews, no invented bottles</div>
+    <div class="tagline">Recommendations cited to real reviews</div>
   </header>
 
   <section class="hero">
-    <p class="kicker">Wine search is either useless filters or a chatbot inventing vintages.</p>
-    <h1>"A bold red under $25 for steak night," answered with real bottles.</h1>
+    <p class="kicker">Retrieval-augmented generation over Wine Enthusiast reviews</p>
+    <h1>Ask for a wine in plain English. Every bottle it names is real.</h1>
 
     <p class="hero-sub">
-      Ask in plain English and get two or three genuine recommendations, each
-      cited to a professional review from an index of <strong>~130,000 Wine
-      Enthusiast tastings</strong>. The sommelier can only recommend from what was
-      retrieved, and if nothing matches it says so. Retrieval is local and free.
-      And because "better retrieval" is a testable claim, it was tested, with a
-      result that went against the fashionable answer.
+      A request such as "a bold red under $25 for a steak dinner" goes through
+      dense and BM25 retrieval, a cross-encoder reranker, and then Claude, which
+      may recommend only the reviews it was handed and cites each with
+      <code>[n]</code>. On a 12-query benchmark the reranker lifted
+      <strong>nDCG@10 from 0.69 to 0.83</strong>. Adding BM25 fusion without
+      the reranker lowered MRR from 0.88 to 0.76.
     </p>
 
     <div class="cta-row">
       <a class="btn btn-primary" href="https://github.com/lyhjeremy/wine-sommelier-rag/blob/main/writeup.md">Read the writeup</a>
-      <a class="textlink" href="https://github.com/lyhjeremy/wine-sommelier-rag">or the code</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/wine-sommelier-rag">Code on GitHub</a>
     </div>
-
-    <figure style="margin-top:38px">
-      <img class="shot" src="../assets/banner.png"
-        alt="Wine Sommelier RAG banner artwork." />
-    </figure>
 
     <div class="claims">
       <div class="claim">
-        <div class="n">+21%</div>
-        <p>nDCG@10 from adding a cross-encoder reranker. The single change that
-           mattered.</p>
+        <div class="n">0.69 to 0.83</div>
+        <p>nDCG@10 from dense retrieval alone to hybrid plus cross-encoder
+           rerank, a 21% lift.</p>
       </div>
       <div class="claim">
-        <div class="n">−0.12</div>
-        <p>MRR from adding BM25 fusion. The hybrid step that everyone recommends
-           made this system worse.</p>
+        <div class="n">0.88 to 0.76</div>
+        <p>MRR when BM25 is fused in with Reciprocal Rank Fusion and nothing
+           reranks the result.</p>
       </div>
       <div class="claim">
-        <div class="n">130k</div>
-        <p>real reviews behind every recommendation, each with a <code>[n]</code>
-           citation you can check.</p>
+        <div class="n">0.68 to 0.82</div>
+        <p>precision at 10, dense baseline to the full pipeline.</p>
       </div>
       <div class="claim">
         <div class="n">$0</div>
-        <p>for retrieval. Local embeddings, local index, nothing leaves the
-           machine until generation.</p>
+        <p>for retrieval. Embeddings, the Chroma index, BM25 and the reranker
+           all run locally.</p>
       </div>
     </div>
   </section>
@@ -271,112 +312,137 @@
 <div class="wrap">
 <div class="route">
 
-  <section class="stop stop--key">
-    <p class="eyebrow">↓ the measurement</p>
-    <h2>Three retrievers, one query set</h2>
+  <section class="stop">
+    <p class="eyebrow">One real run</p>
+    <h2>A bold red under $25</h2>
     <p>
-      <code>src/eval.py</code> scores three retrieval configurations against twelve
-      rubric-labelled queries, where relevance is defined by explicit grape, price
-      and style rules. That rubric is a transparent proxy for human judgement
-      rather than a perfect one, and it is stated as such.
+      With a $25 price cap passed as a filter, the hybrid retriever and
+      reranker returned four bottles from the index, and Claude led with a
+      Chilean Carmenère. It also explained why it passed over one of the four.
+      Every bottle, score and price in the answer comes from a retrieved
+      review.
+    </p>
+
+    <div class="slip" role="group" aria-label="A recorded request and the recommendation it produced">
+      <div class="head">
+        <p class="label">The request</p>
+        <p class="req">"a bold red under $25 for a steak dinner"</p>
+        <p class="flag">--max-price 25</p>
+      </div>
+      <p class="label">The pick</p>
+      <div class="pick"><span class="name">Misiones de Rengo Carmenère</span><span class="lead" aria-hidden="true"></span><span class="val">91 pts · $20 · [3]</span></div>
+      <p class="why">"a juggernaut red that cries out for steak"</p>
+      <p class="aside">Set aside: the Soos Creek, as "a touch gentler than the bold profile you're after." From the run described in <code>writeup.md</code>.</p>
+    </div>
+  </section>
+
+  <section class="stop stop--key">
+    <p class="eyebrow">The measurement</p>
+    <h2>Three retrievers, twelve queries</h2>
+    <p>
+      <code>src/eval.py</code> runs three retrieval setups over twelve
+      requests, from "a crisp, mineral white to go with fresh oysters" to "an
+      affordable Argentine Malbec under $20". Each request has a written rubric
+      (wine family or grape, country, price cap, descriptor words), and a
+      review counts as relevant if it meets the rubric.
     </p>
     <div class="tablewrap">
       <table>
         <thead>
-          <tr><th>System</th><th>P@10</th><th>MRR</th><th>nDCG@10</th></tr>
+          <tr><th>System</th><th>P@10</th><th>Recall@10</th><th>MRR</th><th>nDCG@10</th></tr>
         </thead>
         <tbody>
-          <tr><td>Dense (vector only)</td><td>0.68</td><td>0.88</td><td>0.69</td></tr>
-          <tr><td>Dense + BM25 (RRF fusion)</td><td>0.67</td><td>0.76</td><td>0.68</td></tr>
-          <tr class="win"><td>+ cross-encoder rerank</td><td>0.82</td><td>0.92</td><td>0.83</td></tr>
+          <tr><td>Dense (vector only)</td><td>0.68</td><td>0.030</td><td>0.88</td><td>0.69</td></tr>
+          <tr><td>Dense + BM25 (RRF)</td><td>0.67</td><td>0.026</td><td>0.76</td><td>0.68</td></tr>
+          <tr class="win"><td>+ cross-encoder rerank</td><td>0.82</td><td>0.035</td><td>0.92</td><td>0.83</td></tr>
         </tbody>
       </table>
     </div>
+    <p style="margin-top:16px">
+      Recall@10 is low for every system because most rubrics match hundreds of
+      reviews, and ten results can only hold ten of them. The ranking metrics
+      are the ones that compare the systems.
+    </p>
     <figure>
       <div class="plate">
-        <img src="../eval/retrieval_quality.png" loading="lazy"
-          alt="Grouped bar chart comparing precision at 10, MRR and nDCG at 10 across the three retrieval configurations, with the reranked system highest on all three." />
+        <img width="1200" height="690" src="../eval/retrieval_quality.png" loading="lazy"
+          alt="Grouped bar chart of P@10, Recall@10, MRR and nDCG@10 for dense, hybrid, and hybrid plus rerank; the reranked system is highest on every metric, and hybrid without rerank has the lowest MRR at 0.76." />
       </div>
-      <figcaption>The three configurations across all three metrics.</figcaption>
+      <figcaption>All four metrics for the three setups, from <code>eval/results.csv</code>.</figcaption>
     </figure>
-  </section>
-
-  <section class="stop stop--warn">
-    <p class="eyebrow">↓ the finding worth keeping</p>
-    <h2>Bolting on BM25 made it worse</h2>
-    <p>
-      Hybrid retrieval, dense vectors fused with a keyword index, is close to
-      received wisdom. On this corpus it did not work. Precision fell slightly and
-      <strong>MRR dropped from 0.88 to 0.76</strong>, which is a meaningful
-      regression in how high the first good result lands.
-    </p>
-    <p>
-      The cause is visible in the results: BM25 drags in reviews that share
-      vocabulary with the query while being about the wrong wine. Reciprocal Rank
-      Fusion then rewards those lexical matches for appearing in one list, and they
-      push genuinely relevant bottles down.
-    </p>
-    <p>
-      The <strong>cross-encoder reranker</strong> is what actually helps, because
-      it reads the query and the review together rather than comparing two
-      independently-produced vectors. It lifts precision and nDCG about 21% over
-      the dense baseline.
-    </p>
-    <div class="pull">
-      <p>Adding the component everyone recommends made this system worse. The
-         result is in the repository because a benchmark you only publish when it
-         agrees with you is not a benchmark.</p>
-      <span class="who">On why the BM25 row stayed in the table</span>
-    </div>
   </section>
 
   <section class="stop">
-    <p class="eyebrow">↓ the grounding</p>
+    <p class="eyebrow">What the table says</p>
+    <h2>BM25 fusion alone made ranking worse</h2>
+    <p>
+      Fusing a BM25 keyword index into the dense ranking left precision about
+      where it was and dropped <strong>MRR from 0.88 to 0.76</strong>: the first
+      relevant wine landed lower. BM25 pulls in reviews that share words with
+      the request but describe the wrong kind of wine, and Reciprocal Rank
+      Fusion rewards them for appearing in one of the two lists.
+    </p>
+    <p>
+      The <strong>cross-encoder</strong> (<code>ms-marco-MiniLM-L-6-v2</code>)
+      reads the request and each review together and re-scores the top 80 fused
+      candidates. With it, precision rose to 0.82 and nDCG@10 to 0.83, both
+      about 21% above the dense baseline. The BM25 row stays in the table
+      because it is a result too.
+    </p>
+  </section>
+
+  <section class="stop">
+    <p class="eyebrow">The grounding</p>
     <h2>It cannot recommend a bottle it did not retrieve</h2>
     <p>
-      Generation is instructed to recommend only from the retrieved reviews and to
-      cite each pick with a <code>[n]</code> that points at a real review. When
-      nothing in the index matches the request, the correct output is to
-      <strong>say nothing matched</strong> rather than to widen the search quietly
-      and present the result as if it fit.
+      The system prompt tells Claude to recommend only from the retrieved
+      reviews, to cite each pick by its <code>[n]</code> index, and to say so
+      if none of them fit. Price, country, grape and minimum score are passed
+      into the vector query as metadata filters, so a $25 cap never spends a
+      retrieval slot on an $80 bottle. The answer prints with the reviews it
+      cites underneath.
     </p>
     <figure>
       <div class="plate">
-        <img src="../assets/architecture.png" loading="lazy"
-          alt="Wine Sommelier RAG pipeline diagram: a plain-English query into dense retrieval and BM25, fused by reciprocal rank fusion, reranked by a cross-encoder, then grounded generation with citations." />
+        <img width="2022" height="823" src="../assets/architecture.png" loading="lazy"
+          alt="Pipeline diagram: a plain-English request is embedded with sentence-transformers, retrieved with dense search plus BM25 fused by RRF and reranked by a cross-encoder against a 30,000-review index, then Claude writes a grounded answer citing Misiones de Rengo, 91 points, $20." />
       </div>
-      <figcaption>The pipeline as benchmarked, fusion step included.</figcaption>
+      <figcaption>The pipeline as benchmarked.</figcaption>
     </figure>
   </section>
 
   <section class="stop stop--warn">
-    <p class="eyebrow">↓ what this cannot tell you</p>
-    <h2>Twelve queries is twelve queries</h2>
+    <p class="eyebrow">Limitations</p>
+    <h2>Twelve queries, scored by rules</h2>
     <p>
-      The evaluation set is small, and the relevance labels come from a rule-based
-      rubric rather than from people. Both facts limit how far the numbers travel.
-      A 21% nDCG lift on twelve rubric-scored queries is a real signal and not a
-      published benchmark result.
+      The benchmark is small, and relevance comes from keyword-and-metadata
+      rules rather than human judges. A rule that rewards grape and price will
+      favor retrievers that match on grape and price. The rules are in
+      <code>src/eval.py</code> where anyone can read them, and the comparison is
+      fair between systems, but the absolute numbers would need a hand-labelled
+      set to mean more.
     </p>
     <p>
-      The rubric is also the sort of thing that can quietly encode its own
-      preferences. A grape-and-price rule will favour retrievers that match on
-      grape and price. It is written down in the repository so that bias is
-      inspectable rather than implicit.
+      The default index holds the 30,000 highest-scored reviews
+      (<code>--limit 30000</code>), not all 129,971; <code>--all</code> indexes
+      everything. The reviews come from one magazine and carry its coverage
+      gaps. Constraints such as price are set with CLI flags; the system does
+      not yet read "under twenty bucks" out of the sentence.
     </p>
   </section>
 
   <section class="stop stop--end">
-    <p class="eyebrow">Finish · what it is built on</p>
-    <h2>Where the numbers come from</h2>
+    <p class="eyebrow">How it was built</p>
+    <h2>Stack</h2>
     <dl class="specs">
-      <div class="spec"><dt>Corpus</dt><dd>~130,000 Wine Enthusiast reviews</dd></div>
-      <div class="spec"><dt>Dense retrieval</dt><dd><code>sentence-transformers</code> + Chroma, entirely local</dd></div>
-      <div class="spec"><dt>Sparse retrieval</dt><dd>BM25, fused with Reciprocal Rank Fusion</dd></div>
-      <div class="spec"><dt>Reranking</dt><dd>A cross-encoder reading query and review together</dd></div>
-      <div class="spec"><dt>Generation</dt><dd>Claude CLI by default, so no per-token cost; <code>ANTHROPIC_API_KEY</code> switches to the API</dd></div>
-      <div class="spec"><dt>Evaluation</dt><dd><code>src/eval.py</code>, 12 rubric-labelled queries, P@10 / MRR / nDCG@10</dd></div>
-      <div class="spec"><dt>Related</dt><dd>The same corpus is analysed in <a href="https://lyhjeremy.github.io/wine-score-inflation/">Wine Score Inflation</a>, and this retriever becomes a tool inside the <a href="https://lyhjeremy.github.io/wine-pairing-agent/">Wine Pairing Agent</a></dd></div>
+      <div class="spec"><dt>Corpus</dt><dd>The <code>winemag-data-130k-v2</code> Wine Enthusiast dataset, de-duplicated; 30,000 reviews indexed by default</dd></div>
+      <div class="spec"><dt>Embeddings</dt><dd><code>all-MiniLM-L6-v2</code> (384 dimensions) via sentence-transformers, on Apple MPS, CUDA or CPU</dd></div>
+      <div class="spec"><dt>Vector store</dt><dd>Chroma, cosine similarity, persisted to disk</dd></div>
+      <div class="spec"><dt>Sparse retrieval</dt><dd>BM25 (<code>rank-bm25</code>), fused with Reciprocal Rank Fusion</dd></div>
+      <div class="spec"><dt>Reranking</dt><dd>Cross-encoder <code>ms-marco-MiniLM-L-6-v2</code> over the fused shortlist (60 candidates by default, 80 in the benchmark)</dd></div>
+      <div class="spec"><dt>Generation</dt><dd>Claude through the Claude CLI by default; <code>ANTHROPIC_API_KEY</code> switches to the API</dd></div>
+      <div class="spec"><dt>Evaluation</dt><dd><code>python -m src.eval</code>: P@10, Recall@10, MRR, nDCG@10 on 12 rubric-labelled queries</dd></div>
+      <div class="spec"><dt>Related</dt><dd>The same reviews are analysed in <a href="https://lyhjeremy.github.io/wine-score-inflation/">Wine Score Inflation</a>, and this retriever is a tool inside the <a href="https://lyhjeremy.github.io/wine-pairing-agent/">Wine Pairing Agent</a></dd></div>
     </dl>
   </section>
 
@@ -385,17 +451,17 @@
 
 <div class="wrap">
   <section class="close">
-    <h2>Rerank, don't just fuse</h2>
+    <h2>Rerank before you fuse more signals</h2>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://github.com/lyhjeremy/wine-sommelier-rag/blob/main/writeup.md">Read the writeup</a>
-      <a class="textlink" href="https://github.com/lyhjeremy/wine-sommelier-rag">or the code</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/wine-sommelier-rag">Code on GitHub</a>
     </div>
   </section>
 
   <footer>
     <p>
       Wine Sommelier RAG ·
-      <a href="../">Showcase</a> ·
+      <a href="../">Project page</a> ·
       <a href="https://github.com/lyhjeremy/wine-sommelier-rag/blob/main/writeup.md">Writeup</a> ·
       <a href="https://github.com/lyhjeremy/wine-sommelier-rag">Source</a> ·
       MIT © 2026 Jeremy Lee

@@ -1,4 +1,4 @@
-"""Regenerate assets/architecture.png — the RAG pipeline diagram.
+"""Regenerate assets/architecture.png: the RAG pipeline diagram (cellar palette, square corners).
 
 Run:  python assets/make_architecture.py
 """
@@ -11,21 +11,21 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
-BG = "#FBF4EA"
-BEIGE, BEIGE_EDGE = "#E7DED0", "#CBBFAC"
-WINE = "#7C1E2B"
-PURPLE = "#48283C"
-GOLD = "#C8963A"
-INK = "#3A2630"
-GREY = "#8A7F72"
-CREAM_TXT = "#FBF4EA"
+BG = "#F1ECE3"
+BEIGE, BEIGE_EDGE = "#F7F3EC", "#7E7070"
+WINE = "#7A2335"
+PURPLE = "#24191B"
+GOLD = "#6A5A1E"
+INK = "#24191B"
+GREY = "#5C4C4E"
+CREAM_TXT = "#F1ECE3"
 
 STAGES = [
     ("Your request", '"a bold red under $25"', BEIGE, INK, BEIGE_EDGE),
     ("Embed", "sentence-transformers\nlocal · free", WINE, CREAM_TXT, WINE),
     ("Hybrid retrieval", "dense + BM25 → RRF\ncross-encoder rerank", WINE, CREAM_TXT, WINE),
     ("Generate", "Claude · grounded\nno invented bottles", PURPLE, CREAM_TXT, PURPLE),
-    ("Cited answer", "Misiones de Rengo\n91 pts · $20 · [3]", GOLD, INK, GOLD),
+    ("Cited answer", "Misiones de Rengo\n91 pts · $20 · [3]", GOLD, CREAM_TXT, GOLD),
 ]
 
 
@@ -37,9 +37,9 @@ def main() -> None:
     ax.set_ylim(0, 47)
     ax.axis("off")
 
-    ax.text(62, 43, "Retrieval-Augmented Generation", ha="center", va="center",
-            fontsize=25, fontweight="bold", color="#5A1E28", family="serif")
-    ax.text(62, 37.5, "the model answers only from real reviews it retrieved — every pick is cited",
+    ax.text(62, 43, "Retrieval-augmented generation", ha="center", va="center",
+            fontsize=25, fontweight="bold", color=INK, family="serif")
+    ax.text(62, 37.5, "the model answers only from reviews it retrieved, and cites every pick",
             ha="center", va="center", fontsize=12.5, color=GREY)
 
     w, h, gap = 20.5, 11.5, 3.5
@@ -49,7 +49,7 @@ def main() -> None:
     for i, (title, sub, fc, tc, ec) in enumerate(STAGES):
         x = x0 + i * (w + gap)
         box = FancyBboxPatch((x, cy - h / 2), w, h,
-                             boxstyle="round,pad=0.6,rounding_size=2.2",
+                             boxstyle="square,pad=0.6",
                              linewidth=1.5, edgecolor=ec, facecolor=fc)
         ax.add_patch(box)
         ax.text(x + w / 2, cy + 2.0, title, ha="center", va="center",
@@ -66,17 +66,17 @@ def main() -> None:
 
     # corpus cylinder feeding the retrieval stage (stage index 2)
     rx = sum(centers[2]) / 2
-    cyl_top, cyl_h, cyl_w = 9.5, 5.5, 9.5
+    cyl_top, cyl_h, cyl_w = 10.5, 7.5, 15
     from matplotlib.patches import Ellipse, Rectangle
     ax.add_patch(Rectangle((rx - cyl_w / 2, cyl_top - cyl_h), cyl_w, cyl_h,
-                           facecolor="#EDE4D6", edgecolor=BEIGE_EDGE, linewidth=1.3))
-    ax.add_patch(Ellipse((rx, cyl_top), cyl_w, 2.4, facecolor="#EDE4D6",
+                           facecolor=BEIGE, edgecolor=BEIGE_EDGE, linewidth=1.3))
+    ax.add_patch(Ellipse((rx, cyl_top), cyl_w, 2.4, facecolor=BEIGE,
                          edgecolor=BEIGE_EDGE, linewidth=1.3))
-    ax.add_patch(Ellipse((rx, cyl_top - cyl_h), cyl_w, 2.4, facecolor="#EDE4D6",
+    ax.add_patch(Ellipse((rx, cyl_top - cyl_h), cyl_w, 2.4, facecolor=BEIGE,
                          edgecolor=BEIGE_EDGE, linewidth=1.3))
-    ax.text(rx, cyl_top - cyl_h / 2 + 0.3, "130,000", ha="center", va="center",
+    ax.text(rx, cyl_top - cyl_h / 2 + 0.3, "30,000", ha="center", va="center",
             fontsize=11, fontweight="bold", color=INK)
-    ax.text(rx, cyl_top - cyl_h / 2 - 2.0, "wine reviews", ha="center", va="center",
+    ax.text(rx, cyl_top - cyl_h / 2 - 2.0, "reviews indexed", ha="center", va="center",
             fontsize=9, color=GREY)
     a = FancyArrowPatch((rx, cyl_top + 1.3), (rx, cy - h / 2 - 0.4),
                         arrowstyle="-|>", mutation_scale=15, linewidth=2.0,
