@@ -1,12 +1,12 @@
 # Building a wine sommelier with RAG
 
-How I turned the Wine Enthusiast review dataset into a recommender that names only real bottles, and what a small benchmark said about hybrid retrieval.
+Asked for "a bold red under $25 for a steak dinner", this recommender came back with the Misiones de Rengo Carmenère (91 points, $20), "a juggernaut red that cries out for steak," and every word of that came from a Wine Enthusiast review it had retrieved. This is how it works, and what a small benchmark said about hybrid retrieval.
 
-## The problem
+## Why retrieval
 
-Ask a chatbot for "a bold red under $25 for steak" and it will name a producer, vintage, score and price, and some of those may be made up. Ask a wine site and you get keyword filters that cannot read "bold" or "for steak."
+Put the same question to a general chatbot and it will name a producer, vintage, score and price, some of which may be made up. A wine site, on the other hand, gives you keyword filters that cannot read "bold" or "for steak."
 
-Retrieval-augmented generation (RAG) splits the work. A retriever finds real, relevant reviews, and the model answers only from those. The model writes the recommendation; the data supplies the facts.
+Retrieval-augmented generation (RAG) splits the work between the two. A retriever finds relevant reviews from an actual dataset, and the model answers only from those, so the model writes the recommendation while the data supplies the facts.
 
 ## The data
 
@@ -16,15 +16,15 @@ The [Wine Enthusiast 130k-review dataset](https://www.kaggle.com/datasets/zynici
 
 ![Pipeline diagram](assets/architecture.png)
 
-1. **Documents.** Each review becomes a passage, `title, variety from region, country.` followed by the tasting note, with score, price and origin kept as metadata.
-2. **Embeddings.** `all-MiniLM-L6-v2` through sentence-transformers turns each passage into a 384-dimensional vector on the Mac GPU (MPS). No API key is needed and nothing leaves the machine.
-3. **Vector store.** Chroma with cosine similarity, persisted to disk.
-4. **Hybrid retrieval and rerank.** A query goes to the dense index and to a BM25 keyword index, and Reciprocal Rank Fusion merges the two rankings. A cross-encoder (`ms-marco-MiniLM-L-6-v2`) then re-reads each shortlisted review against the query and re-orders them. Price, country and minimum-score filters are applied inside the vector query, so a $25 cap never spends a slot on an $80 bottle.
-5. **Grounded generation.** The top reviews go to Claude with a system prompt: recommend only from these wines, cite each with `[n]`, and say so if nothing fits. Generation runs through the Claude CLI on my subscription, or the Anthropic API if a key is set.
+1. Each review becomes a passage, `title, variety from region, country.` followed by the tasting note, with score, price and origin kept as metadata.
+2. `all-MiniLM-L6-v2` through sentence-transformers turns each passage into a 384-dimensional vector on the Mac GPU (MPS). It needs no API key, and nothing leaves the machine.
+3. Chroma stores the vectors with cosine similarity and persists them to disk.
+4. A query goes to the dense index and to a BM25 keyword index, and Reciprocal Rank Fusion merges the two rankings. A cross-encoder (`ms-marco-MiniLM-L-6-v2`) then re-reads each shortlisted review against the query and re-orders them. Price, country and minimum-score filters are applied inside the vector query, so a $25 cap never spends a slot on an $80 bottle.
+5. The top reviews go to Claude with a system prompt: recommend only from these wines, cite each with `[n]`, and say so if nothing fits. Generation runs through the Claude CLI on my subscription, or the Anthropic API if a key is set.
 
-## A sample run
+## The steak run, in full
 
-Asked for "a bold red under $25 for a steak dinner" with `--max-price 25`, the hybrid retriever and reranker returned four bottles. Claude led with the **Misiones de Rengo Carmenère (91 points, $20)**, "a juggernaut red that cries out for steak," and set aside the Soos Creek as "a touch gentler than the bold profile you're after." Each pick is cited back to its review.
+The opening request ran with `--max-price 25`. The hybrid retriever and reranker returned four bottles; Claude led with the Carmenère and set aside the Soos Creek as "a touch gentler than the bold profile you're after," citing each pick back to its review.
 
 ## Does the hybrid pipeline help?
 
@@ -36,20 +36,16 @@ Asked for "a bold red under $25 for a steak dinner" with `--max-price 25`, the h
 | Dense + BM25 (RRF) | 0.67 | 0.76 | 0.68 |
 | + cross-encoder rerank | **0.82** | **0.92** | **0.83** |
 
-Fusing BM25 into the dense ranking did not help by itself. It brought in wines that share words with the query but miss its meaning, and MRR fell from 0.88 to 0.76. The gain came from the cross-encoder, which reads the query and each candidate together instead of comparing two separately computed vectors: about 21% higher precision and nDCG over the dense baseline. Adding a retrieval signal did not improve retrieval until a stage could judge relevance, and only the measurement showed that.
+On its own, fusing BM25 into the dense ranking made things slightly worse. It brought in wines that share words with the query but miss its meaning, and MRR fell from 0.88 to 0.76. The gain came from the cross-encoder, which reads the query and each candidate together (a bi-encoder compares two vectors computed separately) and lifted precision and nDCG about 21% over the dense baseline. So the extra retrieval signal only paid off once a later stage could judge relevance, which I would not have guessed without running the benchmark.
 
 Recall@10 is about 0.03 for all three, because most rubrics match hundreds of reviews and ten results can hold only ten.
 
 ## Design decisions
 
-- Retrieval stays local and free. Embedding the corpus needs no external service.
-- Metadata filters go into the vector query instead of being applied afterwards.
-- The `[n]` indices map to the exact reviews printed under each answer, so a reader can check every recommendation.
+Retrieval stays local and free, since embedding the corpus needs no external service. Metadata filters go inside the vector query, where they shape the candidate list from the start. And the `[n]` indices map to the exact reviews printed under each answer, so a reader can check every recommendation.
 
-## Limitations and next steps
+## Limitations
 
-- The dataset is one publication's snapshot and inherits its house style and coverage gaps.
-- Relevance in the benchmark is rule-defined. It supports a relative comparison; a small hand-labelled set would make the absolute numbers more trustworthy.
-- Constraints come from CLI flags. A natural-language constraint extractor ("under twenty bucks" to `max_price=20`) is the next step, and it leads into the [Wine Pairing Agent](https://github.com/lyhjeremy/wine-pairing-agent).
+The dataset is one publication's snapshot, so it inherits that magazine's house style and coverage gaps. Relevance in the benchmark is defined by rules, which supports a relative comparison between retrievers; a small hand-labeled set would make the absolute numbers more trustworthy. Constraints come from CLI flags. A natural-language constraint extractor ("under twenty bucks" to `max_price=20`) is the next step, and it leads into the [Wine Pairing Agent](https://github.com/lyhjeremy/wine-pairing-agent).
 
 Code: [github.com/lyhjeremy/wine-sommelier-rag](https://github.com/lyhjeremy/wine-sommelier-rag)

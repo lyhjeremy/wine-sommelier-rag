@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Wine Sommelier RAG: wine recommendations cited to real reviews</title>
-<meta name="description" content="Ask for a wine in plain English and get two or three real bottles, each cited to a Wine Enthusiast review. Hybrid retrieval with a cross-encoder reranker, then Claude. The reranker lifted nDCG@10 from 0.69 to 0.83 on a 12-query benchmark." />
+<title>Wine Sommelier RAG: wine recommendations cited to reviews</title>
+<meta name="description" content="Ask for a wine in plain English and get two or three bottles from the dataset, each cited to a Wine Enthusiast review. Hybrid retrieval with a cross-encoder reranker, then Claude. The reranker lifted nDCG@10 from 0.69 to 0.83 on a 12-query benchmark." />
 <link rel="stylesheet" href="assets/family.css" />
 <style>
   * { box-sizing: border-box; border-radius: 0; }
@@ -84,7 +84,7 @@
     </div>
   </div>
 
-  <h1>Wine recommendations where every bottle is a real review</h1>
+  <h1>Wine recommendations where every bottle comes from a review</h1>
   <p class="lede">Ask in plain English. A local hybrid retriever finds matching Wine Enthusiast reviews, a cross-encoder reranks them, and Claude recommends two or three, citing each one. If nothing fits, it says so.</p>
 
   <h2>What the reranker bought</h2>

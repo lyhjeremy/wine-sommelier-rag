@@ -1,6 +1,6 @@
 # Wine Sommelier RAG
 
-A retrieval-augmented wine recommender: ask in plain English and get two or three real bottles, each cited to a Wine Enthusiast review.
+A retrieval-augmented wine recommender: ask in plain English and get two or three bottles from the dataset, each cited to a Wine Enthusiast review.
 
 [Live site](https://lyhjeremy.github.io/wine-sommelier-rag/) · [Write-up](https://lyhjeremy.github.io/wine-sommelier-rag/overview/) · [Technical notes](writeup.md)
 
@@ -8,7 +8,7 @@ Design and copy follow [these standards](https://github.com/lyhjeremy/lyhjeremy/
 
 ## Results
 
-`src/eval.py` compares three retrievers on 12 rubric-labelled queries:
+`src/eval.py` compares three retrievers on 12 rubric-labeled queries:
 
 | Retriever | P@10 | MRR | nDCG@10 |
 |---|---|---|---|
@@ -24,12 +24,12 @@ Design and copy follow [these standards](https://github.com/lyhjeremy/lyhjeremy/
 
 ## Method
 
-1. **Documents.** `src/ingest.py` de-duplicates the reviews on title and description, keeps the 30,000 highest-scored by default (`--all` indexes all of them), and turns each into a short passage with score, price, country and grape kept as metadata.
-2. **Dense retrieval.** `all-MiniLM-L6-v2` (sentence-transformers, 384 dimensions) embeds each passage on MPS, CUDA or CPU. Chroma stores the vectors with cosine similarity. Price, country, grape and minimum-score filters go into the vector query.
-3. **Sparse retrieval and fusion.** A BM25 index (`rank-bm25`) ranks the same corpus, and Reciprocal Rank Fusion merges the two rankings.
-4. **Reranking.** The cross-encoder `ms-marco-MiniLM-L-6-v2` reads the query and each candidate together and re-orders the fused shortlist (60 candidates by default, 80 in the benchmark).
-5. **Grounded generation.** Claude receives the top reviews with a system prompt that allows recommendations only from them, each cited by `[n]`, and tells it to say so when nothing fits.
-6. **Evaluation.** Each of the 12 queries has a rubric (wine family or grape, country, price cap, descriptor keywords). A review is relevant if it meets the rubric. The harness reports P@10, Recall@10, MRR and nDCG@10 and writes `eval/results.csv` and `eval/retrieval_quality.png`.
+1. `src/ingest.py` de-duplicates the reviews on title and description, keeps the 30,000 highest-scored by default (`--all` indexes all of them), and turns each into a short passage with score, price, country and grape kept as metadata.
+2. `all-MiniLM-L6-v2` (sentence-transformers, 384 dimensions) embeds each passage on MPS, CUDA or CPU. Chroma stores the vectors with cosine similarity. Price, country, grape and minimum-score filters go into the vector query.
+3. A BM25 index (`rank-bm25`) ranks the same corpus, and Reciprocal Rank Fusion merges the two rankings.
+4. The cross-encoder `ms-marco-MiniLM-L-6-v2` reads the query and each candidate together and re-orders the fused shortlist (60 candidates by default, 80 in the benchmark).
+5. Claude receives the top reviews with a system prompt that allows recommendations only from them, each cited by `[n]`, and tells it to say so when nothing fits.
+6. Each of the 12 queries has a rubric (wine family or grape, country, price cap, descriptor keywords). A review is relevant if it meets the rubric. The harness reports P@10, Recall@10, MRR and nDCG@10 and writes `eval/results.csv` and `eval/retrieval_quality.png`.
 
 Stack: Python, pandas, sentence-transformers, Chroma, rank-bm25, Claude (CLI by default, Anthropic API optional), matplotlib.
 
@@ -72,7 +72,7 @@ Generation uses the Claude CLI and your Claude subscription by default. Set `ANT
 
 ## Limitations
 
-- Twelve queries with rule-based relevance is a fair comparison between retrievers, not an absolute quality score. A small hand-labelled set would make the absolute numbers more trustworthy.
+- Twelve queries with rule-based relevance give a fair comparison between retrievers. As an absolute quality score they are weak; a small hand-labeled set would make those numbers more trustworthy.
 - Recall@10 is about 0.03 for every system because most rubrics match hundreds of reviews.
 - All reviews come from one magazine and share its coverage gaps.
 - Constraints such as price are set with CLI flags; the system does not parse "under twenty bucks" from the sentence.

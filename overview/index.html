@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Wine Sommelier RAG: a cross-encoder reranker lifted nDCG@10 from 0.69 to 0.83</title>
-<meta name="description" content="Ask for a wine in plain English and get real bottles cited to Wine Enthusiast reviews. On 12 rubric-labelled queries, a cross-encoder reranker lifted nDCG@10 from 0.69 to 0.83, while BM25 fusion alone lowered MRR from 0.88 to 0.76." />
+<meta name="description" content="Ask for a wine in plain English and get bottles cited to Wine Enthusiast reviews. On 12 rubric-labeled queries, a cross-encoder reranker lifted nDCG@10 from 0.69 to 0.83, while BM25 fusion alone lowered MRR from 0.88 to 0.76." />
 <meta name="theme-color" content="#F1ECE3" />
 <meta property="og:title" content="Wine Sommelier RAG" />
 <meta property="og:description" content="Three retrievers on the same 12 queries: the reranker helped, BM25 fusion alone did not." />
@@ -264,12 +264,12 @@
 <div class="wrap">
   <header class="masthead">
     <div class="logo"><span class="dot" aria-hidden="true"></span>Wine Sommelier RAG</div>
-    <div class="tagline">Recommendations cited to real reviews</div>
+    <div class="tagline">Every recommendation cited to a review</div>
   </header>
 
   <section class="hero">
     <p class="kicker">Retrieval-augmented generation over Wine Enthusiast reviews</p>
-    <h1>Ask for a wine in plain English. Every bottle it names is real.</h1>
+    <h1>Ask for a wine in plain English and get bottles from 30,000 indexed reviews</h1>
 
     <p class="hero-sub">
       A request such as "a bold red under $25 for a steak dinner" goes through
@@ -313,7 +313,7 @@
 <div class="route">
 
   <section class="stop">
-    <p class="eyebrow">One real run</p>
+    <p class="eyebrow">One recorded run</p>
     <h2>A bold red under $25</h2>
     <p>
       With a $25 price cap passed as a filter, the hybrid retriever and
@@ -416,10 +416,10 @@
     <h2>Twelve queries, scored by rules</h2>
     <p>
       The benchmark is small, and relevance comes from keyword-and-metadata
-      rules rather than human judges. A rule that rewards grape and price will
+      rules, with no human judges. A rule that rewards grape and price will
       favor retrievers that match on grape and price. The rules are in
       <code>src/eval.py</code> where anyone can read them, and the comparison is
-      fair between systems, but the absolute numbers would need a hand-labelled
+      fair between systems, but the absolute numbers would need a hand-labeled
       set to mean more.
     </p>
     <p>
@@ -441,8 +441,8 @@
       <div class="spec"><dt>Sparse retrieval</dt><dd>BM25 (<code>rank-bm25</code>), fused with Reciprocal Rank Fusion</dd></div>
       <div class="spec"><dt>Reranking</dt><dd>Cross-encoder <code>ms-marco-MiniLM-L-6-v2</code> over the fused shortlist (60 candidates by default, 80 in the benchmark)</dd></div>
       <div class="spec"><dt>Generation</dt><dd>Claude through the Claude CLI by default; <code>ANTHROPIC_API_KEY</code> switches to the API</dd></div>
-      <div class="spec"><dt>Evaluation</dt><dd><code>python -m src.eval</code>: P@10, Recall@10, MRR, nDCG@10 on 12 rubric-labelled queries</dd></div>
-      <div class="spec"><dt>Related</dt><dd>The same reviews are analysed in <a href="https://lyhjeremy.github.io/wine-score-inflation/">Wine Score Inflation</a>, and this retriever is a tool inside the <a href="https://lyhjeremy.github.io/wine-pairing-agent/">Wine Pairing Agent</a></dd></div>
+      <div class="spec"><dt>Evaluation</dt><dd><code>python -m src.eval</code>: P@10, Recall@10, MRR, nDCG@10 on 12 rubric-labeled queries</dd></div>
+      <div class="spec"><dt>Related</dt><dd>The same reviews are analyzed in <a href="https://lyhjeremy.github.io/wine-score-inflation/">Wine Score Inflation</a>, and this retriever is a tool inside the <a href="https://lyhjeremy.github.io/wine-pairing-agent/">Wine Pairing Agent</a></dd></div>
     </dl>
   </section>
 
