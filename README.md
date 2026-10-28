@@ -31,7 +31,7 @@ Design and copy follow [these standards](https://github.com/lyhjeremy/lyhjeremy/
 5. Claude receives the top reviews with a system prompt that allows recommendations only from them, each cited by `[n]`, and tells it to say so when nothing fits.
 6. Each of the 12 queries has a rubric (wine family or grape, country, price cap, descriptor keywords). A review is relevant if it meets the rubric. The harness reports P@10, Recall@10, MRR and nDCG@10 and writes `eval/results.csv` and `eval/retrieval_quality.png`.
 
-Stack: Python, pandas, sentence-transformers, Chroma, rank-bm25, Claude (CLI by default, Anthropic API optional), matplotlib.
+Stack: Python, pandas, sentence-transformers, Chroma, rank-bm25, Claude (CLI by default, Anthropic API optional), matplotlib. The write-up steps through `eval/results.csv` one metric at a time and has a small calculator for the RRF formula in `src/hybrid.py`, which shows why a review ranked 61st in both lists outscores one ranked first in only one.
 
 ## How to run
 
