@@ -32,15 +32,17 @@ The opening request ran with `--max-price 25`. The hybrid retriever and reranker
 
 | System | P@10 | MRR | nDCG@10 |
 |---|---|---|---|
-| Dense (vector only) | 0.68 | 0.88 | 0.69 |
-| Dense + BM25 (RRF) | 0.67 | 0.76 | 0.68 |
+| Dense (vector only) | 0.68 | 0.82 | 0.67 |
+| Dense + BM25 (RRF) | 0.67 | 0.77 | 0.68 |
 | + cross-encoder rerank | **0.82** | **0.92** | **0.83** |
 
-On its own, fusing BM25 into the dense ranking made things slightly worse. It brought in wines that share words with the query but miss its meaning, and MRR fell from 0.88 to 0.76. The gain came from the cross-encoder, which reads the query and each candidate together (a bi-encoder compares two vectors computed separately) and lifted precision and nDCG about 21% over the dense baseline. So the extra retrieval signal only paid off once a later stage could judge relevance, which I would not have guessed without running the benchmark.
+On its own, fusing BM25 into the dense ranking made things slightly worse. It brought in wines that share words with the query but miss its meaning, and MRR fell from 0.82 to 0.77. The gain came from the cross-encoder, which reads the query and each candidate together (a bi-encoder compares two vectors computed separately) and lifted precision 21% and nDCG 24% over the dense baseline. So the extra retrieval signal only paid off once a later stage could judge relevance, which I would not have guessed without running the benchmark.
 
 **Update, 4 November 2026.** The BM25 result did not hold on a second set. Thirty new queries, committed to `eval/queries_v2.json` before any system ran on them, name more grapes and places ("a Mosel Riesling with a touch of sweetness"). On them, fusion raised MRR from 0.73 to 0.82 and nDCG@10 from 0.59 to 0.68, and the reranker took nDCG@10 to 0.76. The reranker is the part that helped on both sets; whether fusion helps depends on how requests are worded. Per-query results, error analysis and timings are in `eval/` and on the [write-up page](https://lyhjeremy.github.io/wine-sommelier-rag/overview/).
 
 Recall@10 is about 0.03 for all three, because most rubrics match hundreds of reviews and ten results can hold only ten.
+
+**Update, 5 November 2026.** The table first showed dense MRR 0.88 and nDCG@10 0.69. Those came from one build of Chroma's HNSW index, which is approximate and differs on every build: over 20 rebuilds from the same embeddings, dense MRR on these 12 queries ranged 0.82 to 0.88 and hybrid nDCG@10 0.67 to 0.69 (`eval/rebuild_spread.csv`). The benchmark now uses exact dense search, which gives the same numbers on any rebuild, and the table shows those. The reranked row barely moves either way.
 
 ## Design decisions
 

@@ -4,9 +4,9 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Wine Sommelier RAG: wine recommendations cited to reviews</title>
-<meta name="description" content="Ask for a wine in plain English and get two or three bottles from the dataset, each cited to a Wine Enthusiast review. Hybrid retrieval with a cross-encoder reranker, then Claude. The reranker lifted nDCG@10 from 0.69 to 0.83 on a 12-query benchmark." />
+<meta name="description" content="Ask for a wine in plain English and get two or three bottles from the dataset, each cited to a Wine Enthusiast review. Hybrid retrieval with a cross-encoder reranker, then Claude. The reranker lifted nDCG@10 from 0.67 to 0.83 on a 12-query benchmark." />
 <meta property="og:title" content="Wine Sommelier RAG: wine recommendations cited to reviews" />
-<meta property="og:description" content="Ask for a wine in plain English and get two or three bottles from the dataset, each cited to a Wine Enthusiast review. Hybrid retrieval with a cross-encoder reranker, then Claude. The reranker lifted nDCG@10 from 0.69 to 0.83 on a 12-query benchmark." />
+<meta property="og:description" content="Ask for a wine in plain English and get two or three bottles from the dataset, each cited to a Wine Enthusiast review. Hybrid retrieval with a cross-encoder reranker, then Claude. The reranker lifted nDCG@10 from 0.67 to 0.83 on a 12-query benchmark." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://lyhjeremy.github.io/wine-sommelier-rag/" />
 <meta property="og:image" content="https://lyhjeremy.github.io/wine-sommelier-rag/og.png" />
@@ -102,13 +102,13 @@
     <table>
       <thead><tr><th>Retriever</th><th>nDCG@10, 12 queries</th><th>nDCG@10, 30 held out</th></tr></thead>
       <tbody>
-        <tr><td>Dense vectors only</td><td>0.69</td><td>0.59</td></tr>
+        <tr><td>Dense vectors only</td><td>0.67</td><td>0.59</td></tr>
         <tr><td>Dense + BM25, fused with RRF</td><td>0.68</td><td>0.68</td></tr>
         <tr><td>Dense + BM25 + cross-encoder rerank</td><td>0.83</td><td>0.76</td></tr>
       </tbody>
     </table>
   </div>
-  <p>The cross-encoder, which reads the request and each review together, helped on both sets. BM25 fusion did nothing on the style-led first twelve and helped on the 30, which name more grapes and places. Retrieval takes 196 ms median on an Apple M4; a Claude CLI answer takes 8.3 s and about $0.13 API-equivalent. The <a href="overview/#errors">write-up</a> has per-query results and the error analysis: the most common miss is a price stated in the sentence, which the retriever ignores.</p>
+  <p>The cross-encoder, which reads the request and each review together, helped on both sets. BM25 fusion did little on the style-led first twelve and helped on the 30, which name more grapes and places. Retrieval takes 196 ms median on an Apple M4; a Claude CLI answer takes 8.3 s and about $0.13 API-equivalent. The <a href="overview/#errors">write-up</a> has per-query results and the error analysis: the two most common misses are the wrong grape or color and a price stated in the sentence, which the retriever ignores.</p>
 
   <h2>How a request is answered</h2>
   <ol class="steps">

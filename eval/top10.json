@@ -30,16 +30,6 @@
     "fails": null
    },
    {
-    "id": "wine-12830",
-    "title": "The Smuggler's Son 2014 The Smuggler's Son Red (California)",
-    "variety": "Red Blend",
-    "country": "US",
-    "province": "California",
-    "price": 35.0,
-    "points": 92,
-    "fails": null
-   },
-   {
     "id": "wine-1417",
     "title": "Tenuta Sette Ponti 2005 Oreno Red (Toscana)",
     "variety": "Red Blend",
@@ -117,6 +107,16 @@
     "province": "Washington",
     "price": 40.0,
     "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-9605",
+    "title": "Lambert 2013 The Commitment Shiraz (Barossa Valley)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 33.0,
+    "points": 93,
     "fails": null
    }
   ]
@@ -1134,6 +1134,16 @@
     "fails": null
    },
    {
+    "id": "wine-18385",
+    "title": "Sada 2008 Vendemmia Tardiva Vermentino (Toscana)",
+    "variety": "Vermentino",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 68.0,
+    "points": 92,
+    "fails": null
+   },
+   {
     "id": "wine-24533",
     "title": "Bonaccorsi 2010 Melville Vineyard Chardonnay (Sta. Rita Hills)",
     "variety": "Chardonnay",
@@ -1184,23 +1194,13 @@
     "fails": null
    },
    {
-    "id": "wine-29889",
-    "title": "Quady 2014 Elysium Black Muscat (California)",
-    "variety": "Black Muscat",
-    "country": "US",
-    "province": "California",
-    "price": 22.0,
-    "points": 91,
-    "fails": null
-   },
-   {
-    "id": "wine-15402",
-    "title": "Miraflores 2008 Botricelli Semillon-Sauvignon Blanc (California)",
-    "variety": "Semillon-Sauvignon Blanc",
-    "country": "US",
-    "province": "California",
-    "price": 40.0,
-    "points": 92,
+    "id": "wine-68",
+    "title": "Clos de Tart 2005  Clos de Tart",
+    "variety": "Pinot Noir",
+    "country": "France",
+    "province": "Burgundy",
+    "price": 319.0,
+    "points": 98,
     "fails": null
    }
   ]
@@ -4859,16 +4859,6 @@
     "fails": null
    },
    {
-    "id": "wine-24241",
-    "title": "Porta 2006 Cima Cabernet Sauvignon (Aconcagua Valley)",
-    "variety": "Cabernet Sauvignon",
-    "country": "Chile",
-    "province": "Aconcagua Valley",
-    "price": 50.0,
-    "points": 91,
-    "fails": "over budget"
-   },
-   {
     "id": "wine-21167",
     "title": "Miguel Torres 2009 Manso de Velasco Viñas Viejas Cabernet Sauvignon (Curicó Valley)",
     "variety": "Cabernet Sauvignon",
@@ -4916,6 +4906,16 @@
     "province": "Cachapoal Valley",
     "price": null,
     "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-27234",
+    "title": "Valdivieso 2013 Caballo Loco Grand Cru Apalta Red (Santa Cruz)",
+    "variety": "Red Blend",
+    "country": "Chile",
+    "province": "Santa Cruz",
+    "price": 35.0,
+    "points": 91,
     "fails": "wrong grape"
    }
   ]

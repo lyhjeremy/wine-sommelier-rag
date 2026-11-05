@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Wine Sommelier RAG: a reranker lifts nDCG@10 by 0.15 on 12 queries and 0.16 on 30 held-out ones</title>
-<meta name="description" content="Ask for a wine in plain English and get bottles cited to Wine Enthusiast reviews. A cross-encoder reranker lifted nDCG@10 from 0.69 to 0.83 on the original 12 queries and from 0.59 to 0.76 on 30 queries frozen before any run. Retrieval takes 196 ms median on an Apple M4; a Claude CLI answer takes 8.3 s and about $0.13 API-equivalent." />
+<title>Wine Sommelier RAG: a reranker lifts nDCG@10 by 0.16 on 12 queries and on 30 held-out ones</title>
+<meta name="description" content="Ask for a wine in plain English and get bottles cited to Wine Enthusiast reviews. A cross-encoder reranker lifted nDCG@10 from 0.67 to 0.83 on the original 12 queries and from 0.59 to 0.76 on 30 queries frozen before any run. Retrieval takes 196 ms median on an Apple M4; a Claude CLI answer takes 8.3 s and about $0.13 API-equivalent." />
 <meta name="theme-color" content="#F1ECE3" />
 <meta property="og:title" content="Wine Sommelier RAG" />
 <meta property="og:description" content="Two frozen query sets, per-query results, error analysis, and measured cost and latency." />
@@ -366,7 +366,7 @@
       Ask for "a bold red under $25 for a steak dinner" and the request goes through dense and
       BM25 retrieval and a cross-encoder reranker, then to Claude, which may recommend only the
       reviews it was handed and cites each with <code>[n]</code>. Against dense retrieval alone,
-      the reranked pipeline lifted <strong>nDCG@10 from 0.69 to 0.83</strong> on the original
+      the reranked pipeline lifted <strong>nDCG@10 from 0.67 to 0.83</strong> on the original
       12 queries and <strong>from 0.59 to 0.76</strong> on 30 new queries frozen before any
       system ran on them.
     </p>
@@ -377,15 +377,15 @@
     </div>
 
     <div class="list" role="group" aria-labelledby="glance-h">
-      <div class="lh"><b id="glance-h">At a glance</b><span>measured 4 November 2026, files in <code>eval/</code></span></div>
+      <div class="lh"><b id="glance-h">At a glance</b><span>measured 4 and 5 November 2026, files in <code>eval/</code></span></div>
       <dl>
         <div><dt>Task</dt><dd>Turn a plain-English wine request into 2 or 3 bottles from the reviews, each cited.</dd></div>
         <div><dt>Eval sets</dt><dd>12 queries from July (<code>src/eval.py</code>) and 30 held-out queries committed before their first run (<code>eval/queries_v2.json</code>). Relevance is a written rubric per query, with no human labels.</dd></div>
-        <div><dt>Baseline</dt><dd>Dense vector search alone: nDCG@10 0.69 (12 queries), 0.59 (30).</dd></div>
+        <div><dt>Baseline</dt><dd>Dense vector search alone: nDCG@10 0.67 (12 queries), 0.59 (30).</dd></div>
         <div><dt>Result</dt><dd>Hybrid plus rerank: <b>0.83</b> and <b>0.76</b>. On the 30, the gain is +0.16 with a 95% bootstrap interval of 0.06 to 0.27; reranking won 19 queries, lost 6, tied 5.</dd></div>
         <div><dt>Cost per query</dt><dd>Retrieval $0, all local. Generation <b>$0.13</b> median, the API-equivalent cost the Claude CLI reports (n = 20).</dd></div>
         <div><dt>Latency</dt><dd>Retrieval <b>196 ms</b> median, 257 ms p95 (n = 126, Apple M4). Generation <b>8.3 s</b> median, 11.2 s p95 (n = 20).</dd></div>
-        <div><dt>Main failure</dt><dd>A price in the sentence is ignored: 20 of the 76 misses on the 30-query set were over the guest's budget.</dd></div>
+        <div><dt>Main failure</dt><dd>Of the 76 misses on the 30-query set, 20 are the wrong grape or color and 19 ignore a price stated in the sentence, which only a CLI flag can set.</dd></div>
       </dl>
     </div>
   </section>
@@ -433,7 +433,7 @@
       <div class="chart" id="sr-steps"></div>
       <p class="mread" id="sr-read" aria-live="polite"></p>
       <noscript><div class="plate"><img width="1200" height="690" src="../eval/retrieval_quality.png"
-        alt="Grouped bar chart of P@10, Recall@10, MRR and nDCG@10 on the 12-query set for dense, hybrid, and hybrid plus rerank; the reranked system is highest on every metric, and hybrid without rerank has the lowest MRR at 0.76." /></div></noscript>
+        alt="Grouped bar chart of P@10, Recall@10, MRR and nDCG@10 on the 12-query set for dense, hybrid, and hybrid plus rerank; the reranked system is highest on every metric, and hybrid without rerank has the lowest MRR at 0.77." /></div></noscript>
       <figcaption>The three setups as steps of one pipeline, from <code>eval/results.csv</code> (12 queries)
         and <code>eval/summary.csv</code> (30 queries). The other metrics are drawn faint behind the one you pick.</figcaption>
     </figure>
@@ -444,8 +444,8 @@
         </thead>
         <tbody>
           <tr><td colspan="5"><em>12 queries, July set</em></td></tr>
-          <tr><td>Dense (vector only)</td><td class="num">0.68</td><td class="num">0.030</td><td class="num">0.88</td><td class="num">0.69</td></tr>
-          <tr><td>Dense + BM25 (RRF)</td><td class="num">0.67</td><td class="num">0.026</td><td class="num">0.76</td><td class="num">0.68</td></tr>
+          <tr><td>Dense (vector only)</td><td class="num">0.68</td><td class="num">0.030</td><td class="num">0.82</td><td class="num">0.67</td></tr>
+          <tr><td>Dense + BM25 (RRF)</td><td class="num">0.67</td><td class="num">0.026</td><td class="num">0.77</td><td class="num">0.68</td></tr>
           <tr class="win"><td>+ cross-encoder rerank</td><td class="num">0.82</td><td class="num">0.035</td><td class="num">0.92</td><td class="num">0.83</td></tr>
           <tr><td colspan="5"><em>30 held-out queries, frozen 4 November</em></td></tr>
           <tr><td>Dense (vector only)</td><td class="num">0.58</td><td class="num">0.044</td><td class="num">0.73</td><td class="num">0.59</td></tr>
@@ -455,17 +455,27 @@
       </table>
     </div>
     <p style="margin-top:16px">
-      With 12 queries the reranker's nDCG@10 gain over dense is +0.15, 95% bootstrap interval
-      0.05 to 0.26; with 30 it is +0.16, interval 0.06 to 0.27. Neither interval reaches zero.
+      With 12 queries the reranker's nDCG@10 gain over dense is +0.16, 95% bootstrap interval
+      0.07 to 0.27; with 30 it is +0.16, interval 0.06 to 0.27. Neither interval reaches zero.
       Recall@10 is low for every system because most rubrics match hundreds of reviews and ten
-      results hold only ten. The 12-query rows were rerun on 4 November on a rebuilt index and
-      match the July file to within 0.0001.
+      results hold only ten.
+    </p>
+    <p>
+      These rows use exact dense search: every review's embedding is scored against the query,
+      so any rebuild of the index gives the same numbers. The app searches Chroma's HNSW index
+      instead, which is approximate and comes out different on every build, so for a few
+      queries it returns different neighbors. Rebuilt 20 times from the same embeddings
+      (<code>eval/rebuild_spread.csv</code>), the HNSW runs put dense MRR on the 12 queries
+      anywhere from 0.82 to 0.88 and hybrid nDCG@10 from 0.67 to 0.69; on the 30, hybrid nDCG@10
+      ranged from 0.678 to 0.685. The reranked rows moved by at most 0.0003. This page used to
+      show one such build (dense MRR 0.88, nDCG@10 0.69), and the fresh rebuild on 4 November
+      that gave hybrid P@10 0.675 and nDCG@10 0.689 was another.
     </p>
   </section>
 
   <section class="stop">
     <p class="eyebrow">Query by query</p>
-    <h2>The reranker lost 7 of 42 queries to plain dense search</h2>
+    <h2>The reranker lost 6 of 42 queries to plain dense search</h2>
     <p>
       An average can hide a system that wins big on a few queries and loses on the rest. Each
       row is one query: the hollow square is dense search, the filled square the reranked pipeline,
@@ -483,7 +493,7 @@
     <h2>Fusion hurt on the first 12 queries and helped on the next 30</h2>
     <p>
       On the July set, fusing a BM25 keyword index into the dense ranking left precision flat
-      and dropped <strong>MRR from 0.88 to 0.76</strong>: the first relevant wine landed lower.
+      and dropped <strong>MRR from 0.82 to 0.77</strong>: the first relevant wine landed lower.
       On the 30 new queries the same fusion raised MRR from 0.73 to 0.82 and nDCG@10 from 0.59
       to 0.68. The new queries name grapes and places such as Grüner Veltliner, Mosel and
       Mendoza, exact words BM25 matches; the July queries mostly describe a style, where shared
@@ -530,14 +540,14 @@
     </p>
     <div class="misses" role="list">
       <p class="mh" aria-hidden="true"><span>Kind of miss</span><span>30 held-out · 12 July</span></p>
-      <div class="miss" role="listitem"><p class="mt"><span class="nm">Price in the sentence ignored</span><span class="lead" aria-hidden="true"></span><span class="ct">20 <small>(5 queries)</small> · 11 <small>(2)</small></span></p><p class="mx">"a smooth, easy-drinking red under $15": all ten results cost more, led by a $29 Santa Barbara Syrah. P@10 is 0 for every system.</p></div>
-      <div class="miss" role="listitem"><p class="mt"><span class="nm">Wrong grape or color</span><span class="lead" aria-hidden="true"></span><span class="ct">19 <small>(7)</small> · 11 <small>(5)</small></span></p><p class="mx">"a white Burgundy with hazelnut and minerality": first place went to a Russian River Valley Sauvignon Blanc.</p></div>
+      <div class="miss" role="listitem"><p class="mt"><span class="nm">Wrong grape or color</span><span class="lead" aria-hidden="true"></span><span class="ct">20 <small>(7 queries)</small> · 11 <small>(5)</small></span></p><p class="mx">"a white Burgundy with hazelnut and minerality": first place went to a Russian River Valley Sauvignon Blanc.</p></div>
+      <div class="miss" role="listitem"><p class="mt"><span class="nm">Price in the sentence ignored</span><span class="lead" aria-hidden="true"></span><span class="ct">19 <small>(5)</small> · 11 <small>(2)</small></span></p><p class="mx">"a smooth, easy-drinking red under $15": all ten results cost more, led by a $29 Santa Barbara Syrah. P@10 is 0 for every system.</p></div>
       <div class="miss" role="listitem"><p class="mt"><span class="nm">Wrong region or country</span><span class="lead" aria-hidden="true"></span><span class="ct">17 <small>(7)</small> · 0</span></p><p class="mx">"an Oregon Pinot Noir under $40": seven of the ten were Californian, the first from Monterey.</p></div>
       <div class="miss" role="listitem"><p class="mt"><span class="nm">Right wine, rubric says no</span><span class="lead" aria-hidden="true"></span><span class="ct">16 <small>(3)</small> · 0</span></p><p class="mx">For "an Amarone" and "a Chianti Classico", most hits are exactly that, but the dataset files them as "Red Blend", so the grape clause fails. These count against all three systems.</p></div>
       <div class="miss" role="listitem"><p class="mt"><span class="nm">Style words missing</span><span class="lead" aria-hidden="true"></span><span class="ct">4 <small>(3)</small> · 0</span></p><p class="mx">A $32 Willamette Valley Pinot that fits the request except that its review never says earthy.</p></div>
     </div>
     <p>
-      The largest group is a design gap: price, country and grape filters exist, but only as
+      The price group is a design gap: price, country and grape filters exist, but only as
       CLI flags. Nothing reads "under $15" out of the sentence, and the benchmark runs with no
       flags, so the retriever ranks a $29 Syrah as the best smooth red. The fourth kind is the
       rubric's own error: 16 of 76 misses are wines a sommelier would accept, so all the
@@ -672,8 +682,8 @@
   // eval/results.csv (12 queries) and eval/summary.csv (30 queries)
   var SYS = [["Dense", "vector only"], ["+ BM25", "fused with RRF"], ["+ rerank", "cross-encoder"]];
   var SETS = {
-    "12 queries": { "P@10": [0.6750, 0.6667, 0.8167], "Recall@10": [0.0302, 0.0257, 0.0350], "MRR": [0.8750, 0.7569, 0.9167], "nDCG@10": [0.6867, 0.6829, 0.8341] },
-    "30 held-out": { "P@10": [0.5833, 0.6600, 0.7467], "Recall@10": [0.0441, 0.0541, 0.0678], "MRR": [0.7256, 0.8201, 0.8667], "nDCG@10": [0.5942, 0.6825, 0.7560] }
+    "12 queries": { "P@10": [0.6750, 0.6667, 0.8167], "Recall@10": [0.0302, 0.0257, 0.0350], "MRR": [0.8194, 0.7708, 0.9167], "nDCG@10": [0.6710, 0.6802, 0.8338] },
+    "30 held-out": { "P@10": [0.5833, 0.6600, 0.7467], "Recall@10": [0.0441, 0.0541, 0.0678], "MRR": [0.7256, 0.8201, 0.8667], "nDCG@10": [0.5938, 0.6834, 0.7560] }
   };
   var NOTE = {
     "P@10": "Share of the top ten that meet the rubric.",
@@ -730,7 +740,7 @@
   }
 
   // per-query nDCG@10, eval/per_query.csv
-  var PQ = [{"s":"v1","q":"a bold, full-bodied red for a grilled steak dinner","d":0.373,"h":0.462,"r":0.934},{"s":"v1","q":"a crisp, mineral white to go with fresh oysters","d":0.739,"h":0.498,"r":0.687},{"s":"v1","q":"an elegant, silky Pinot Noir with red-berry fruit","d":0.719,"h":0.864,"r":1.0},{"s":"v1","q":"an affordable Argentine Malbec under $20","d":0.699,"h":0.637,"r":0.756},{"s":"v1","q":"a dry Riesling from Germany with racy acidity","d":1.0,"h":1.0,"r":1.0},{"s":"v1","q":"a rich, oaky California Chardonnay with buttery notes","d":1.0,"h":0.936,"r":1.0},{"s":"v1","q":"a spicy, peppery Syrah from the Rhône","d":0.603,"h":0.591,"r":0.783},{"s":"v1","q":"a smooth, easy-drinking red under $15 for a weeknight","d":0.0,"h":0.0,"r":0.0},{"s":"v1","q":"a sparkling wine for a celebration","d":1.0,"h":1.0,"r":1.0},{"s":"v1","q":"a sweet dessert wine to serve with a fruit tart","d":0.524,"h":0.778,"r":1.0},{"s":"v1","q":"a age-worthy Bordeaux-style red blend for the cellar","d":0.927,"h":1.0,"r":1.0},{"s":"v1","q":"a light, aromatic white with floral notes for a warm afternoon","d":0.656,"h":0.429,"r":0.849},{"s":"v2","q":"a Barolo with firm tannins and notes of tar and roses","d":1.0,"h":1.0,"r":1.0},{"s":"v2","q":"a New Zealand Sauvignon Blanc with grapefruit and passion fruit","d":0.42,"h":0.864,"r":1.0},{"s":"v2","q":"an Oregon Pinot Noir under $40 with earthy forest-floor notes","d":0.0,"h":0.0,"r":0.0},{"s":"v2","q":"a Napa Cabernet Sauvignon with cassis and cedar for a special occasion","d":0.931,"h":1.0,"r":1.0},{"s":"v2","q":"a Champagne with brioche and toasty notes","d":0.936,"h":0.922,"r":1.0},{"s":"v2","q":"a dry rosé from Provence for a summer lunch","d":0.54,"h":0.934,"r":0.931},{"s":"v2","q":"a vintage Port with rich dark fruit and chocolate","d":1.0,"h":0.922,"r":0.922},{"s":"v2","q":"a Grüner Veltliner from Austria with white pepper","d":0.927,"h":1.0,"r":1.0},{"s":"v2","q":"a Spanish Rioja with vanilla and dried cherry","d":0.644,"h":0.754,"r":0.861},{"s":"v2","q":"a Chianti Classico to pair with tomato-based pasta","d":0.145,"h":0.159,"r":0.249},{"s":"v2","q":"a Zinfandel with jammy blackberry fruit under $35","d":0.675,"h":0.729,"r":0.442},{"s":"v2","q":"a Washington State Merlot that offers good value under $30","d":0.423,"h":0.581,"r":0.533},{"s":"v2","q":"a Mosel Riesling with a touch of sweetness","d":1.0,"h":1.0,"r":0.795},{"s":"v2","q":"a white Burgundy with hazelnut and minerality","d":0.0,"h":0.069,"r":0.095},{"s":"v2","q":"an Alsace Gewürztraminer with lychee and rose petal","d":0.936,"h":1.0,"r":0.861},{"s":"v2","q":"a Malbec from Mendoza with violet aromas","d":0.133,"h":0.498,"r":1.0},{"s":"v2","q":"an Australian Shiraz that is big and ripe","d":0.748,"h":0.842,"r":1.0},{"s":"v2","q":"a Loire Sauvignon Blanc like Sancerre with flinty minerality","d":1.0,"h":1.0,"r":1.0},{"s":"v2","q":"a Chenin Blanc with honey and quince notes","d":1.0,"h":1.0,"r":1.0},{"s":"v2","q":"an Amarone with dried fruit and raisin richness","d":0.22,"h":0.066,"r":0.269},{"s":"v2","q":"a light, fruity Beaujolais to serve slightly chilled","d":0.0,"h":0.425,"r":0.63},{"s":"v2","q":"a Brunello di Montalcino worth cellaring for ten years","d":0.757,"h":0.934,"r":1.0},{"s":"v2","q":"a California sparkling wine under $40","d":0.297,"h":0.481,"r":0.785},{"s":"v2","q":"a Willamette Valley Chardonnay with bright acidity","d":0.427,"h":0.593,"r":1.0},{"s":"v2","q":"a Cabernet Franc with herbal and graphite notes","d":0.797,"h":1.0,"r":0.927},{"s":"v2","q":"a Sauternes-style sweet white to pair with foie gras","d":0.209,"h":0.249,"r":1.0},{"s":"v2","q":"an Oregon Pinot Gris with pear and melon","d":1.0,"h":1.0,"r":1.0},{"s":"v2","q":"an Italian white to go with grilled fish","d":0.624,"h":0.376,"r":0.287},{"s":"v2","q":"a Chilean Cabernet that drinks well now under $30","d":0.11,"h":0.078,"r":0.095},{"s":"v2","q":"a Petite Sirah with inky color and black fruit","d":0.927,"h":1.0,"r":1.0}];
+  var PQ = [{"s":"v1","q":"a bold, full-bodied red for a grilled steak dinner","d":0.371,"h":0.506,"r":0.931},{"s":"v1","q":"a crisp, mineral white to go with fresh oysters","d":0.49,"h":0.376,"r":0.687},{"s":"v1","q":"an elegant, silky Pinot Noir with red-berry fruit","d":0.719,"h":0.848,"r":1.0},{"s":"v1","q":"an affordable Argentine Malbec under $20","d":0.699,"h":0.637,"r":0.756},{"s":"v1","q":"a dry Riesling from Germany with racy acidity","d":1.0,"h":1.0,"r":1.0},{"s":"v1","q":"a rich, oaky California Chardonnay with buttery notes","d":1.0,"h":0.936,"r":1.0},{"s":"v1","q":"a spicy, peppery Syrah from the Rhône","d":0.603,"h":0.591,"r":0.783},{"s":"v1","q":"a smooth, easy-drinking red under $15 for a weeknight","d":0.0,"h":0.0,"r":0.0},{"s":"v1","q":"a sparkling wine for a celebration","d":1.0,"h":1.0,"r":1.0},{"s":"v1","q":"a sweet dessert wine to serve with a fruit tart","d":0.588,"h":0.86,"r":1.0},{"s":"v1","q":"a age-worthy Bordeaux-style red blend for the cellar","d":0.927,"h":1.0,"r":1.0},{"s":"v1","q":"a light, aromatic white with floral notes for a warm afternoon","d":0.656,"h":0.407,"r":0.849},{"s":"v2","q":"a Barolo with firm tannins and notes of tar and roses","d":1.0,"h":1.0,"r":1.0},{"s":"v2","q":"a New Zealand Sauvignon Blanc with grapefruit and passion fruit","d":0.42,"h":0.864,"r":1.0},{"s":"v2","q":"an Oregon Pinot Noir under $40 with earthy forest-floor notes","d":0.0,"h":0.0,"r":0.0},{"s":"v2","q":"a Napa Cabernet Sauvignon with cassis and cedar for a special occasion","d":0.931,"h":1.0,"r":1.0},{"s":"v2","q":"a Champagne with brioche and toasty notes","d":0.936,"h":0.931,"r":1.0},{"s":"v2","q":"a dry rosé from Provence for a summer lunch","d":0.54,"h":0.934,"r":0.931},{"s":"v2","q":"a vintage Port with rich dark fruit and chocolate","d":1.0,"h":0.922,"r":0.922},{"s":"v2","q":"a Grüner Veltliner from Austria with white pepper","d":0.927,"h":1.0,"r":1.0},{"s":"v2","q":"a Spanish Rioja with vanilla and dried cherry","d":0.644,"h":0.754,"r":0.861},{"s":"v2","q":"a Chianti Classico to pair with tomato-based pasta","d":0.145,"h":0.159,"r":0.249},{"s":"v2","q":"a Zinfandel with jammy blackberry fruit under $35","d":0.675,"h":0.729,"r":0.442},{"s":"v2","q":"a Washington State Merlot that offers good value under $30","d":0.423,"h":0.581,"r":0.533},{"s":"v2","q":"a Mosel Riesling with a touch of sweetness","d":1.0,"h":1.0,"r":0.795},{"s":"v2","q":"a white Burgundy with hazelnut and minerality","d":0.0,"h":0.069,"r":0.095},{"s":"v2","q":"an Alsace Gewürztraminer with lychee and rose petal","d":0.936,"h":1.0,"r":0.861},{"s":"v2","q":"a Malbec from Mendoza with violet aromas","d":0.133,"h":0.498,"r":1.0},{"s":"v2","q":"an Australian Shiraz that is big and ripe","d":0.748,"h":0.842,"r":1.0},{"s":"v2","q":"a Loire Sauvignon Blanc like Sancerre with flinty minerality","d":1.0,"h":1.0,"r":1.0},{"s":"v2","q":"a Chenin Blanc with honey and quince notes","d":1.0,"h":1.0,"r":1.0},{"s":"v2","q":"an Amarone with dried fruit and raisin richness","d":0.22,"h":0.066,"r":0.269},{"s":"v2","q":"a light, fruity Beaujolais to serve slightly chilled","d":0.0,"h":0.425,"r":0.63},{"s":"v2","q":"a Brunello di Montalcino worth cellaring for ten years","d":0.757,"h":0.936,"r":1.0},{"s":"v2","q":"a California sparkling wine under $40","d":0.287,"h":0.475,"r":0.785},{"s":"v2","q":"a Willamette Valley Chardonnay with bright acidity","d":0.427,"h":0.593,"r":1.0},{"s":"v2","q":"a Cabernet Franc with herbal and graphite notes","d":0.797,"h":1.0,"r":0.927},{"s":"v2","q":"a Sauternes-style sweet white to pair with foie gras","d":0.206,"h":0.249,"r":1.0},{"s":"v2","q":"an Oregon Pinot Gris with pear and melon","d":1.0,"h":1.0,"r":1.0},{"s":"v2","q":"an Italian white to go with grilled fish","d":0.624,"h":0.398,"r":0.287},{"s":"v2","q":"a Chilean Cabernet that drinks well now under $30","d":0.11,"h":0.078,"r":0.095},{"s":"v2","q":"a Petite Sirah with inky color and black fruit","d":0.927,"h":1.0,"r":1.0}];
   var pqSet = "30 held-out", pqBox = document.getElementById("pq"), pqRead = document.getElementById("pq-read");
   segs(document.getElementById("pq-set"), ["12 queries", "30 held-out"], pqSet, function (k) { pqSet = k; pqDraw(); });
   function pqDraw() {

@@ -14,7 +14,7 @@
   "examples": {
    "wrong grape or color": {
     "query": "a bold, full-bodied red for a grilled steak dinner",
-    "rank": 9,
+    "rank": 8,
     "title": "Mastroberardino 2009 Radici  (Taurasi)",
     "variety": "Aglianico",
     "province": "Southern Italy",
@@ -37,8 +37,8 @@
   "hits": 300,
   "misses": 76,
   "by_type": {
-   "price in the sentence ignored": 20,
-   "wrong grape or color": 19,
+   "wrong grape or color": 20,
+   "price in the sentence ignored": 19,
    "wrong region or country": 17,
    "rubric miss: right wine, variety field disagrees": 16,
    "style words missing": 4

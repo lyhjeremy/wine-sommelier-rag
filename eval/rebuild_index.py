@@ -5,8 +5,9 @@
 data/bm25.pkl holds the exact ids, documents and metadata of the indexed
 30,000 reviews. If the Chroma store is lost (on 2026-11-04 the local copy had
 its HNSW files but no chroma.sqlite3), this re-embeds those same documents so
-the evals run on the same corpus. Re-running src/eval.py on the rebuilt index
-matched eval/results.csv to within 0.0001 on every metric.
+the evals run on the same corpus. The benchmarks use exact dense search, so they
+give the same numbers on any rebuild; the app's HNSW search does not (see
+eval/rebuild_spread.py).
 """
 import pickle
 import sys

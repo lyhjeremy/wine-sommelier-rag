@@ -12,9 +12,16 @@ the *relative* comparison is fair.
 Systems compared (all over the same index, no metadata pre-filtering — we are
 testing whether a free-text query alone surfaces the right wines):
 
-    dense        vector search only (Chroma / MiniLM)
+    dense        vector search only (MiniLM embeddings stored in Chroma)
     hybrid       dense + BM25, fused with Reciprocal Rank Fusion
     hybrid+rr    hybrid, then a cross-encoder reranks the shortlist
+
+Dense search here is exact: cosine similarity against every stored embedding,
+ties broken by id. The app queries Chroma's HNSW index instead, which is
+approximate, and its graph comes out different on every build, so the neighbors
+it returns (and these metrics) moved between index rebuilds. Exact search gives
+the same ranking on any rebuild of the same embeddings. eval/rebuild_spread.py
+measures how far the HNSW numbers move.
 
 Run:
     python -m src.eval            # prints a table, writes eval/results.csv + a figure
@@ -133,10 +140,25 @@ class Systems:
     def __init__(self):
         import chromadb
 
+        import numpy as np
+
         self.coll = chromadb.PersistentClient(path=str(CHROMA_DIR)).get_collection(COLLECTION)
         self.corpus = load_corpus()
+        got = self.coll.get(include=["embeddings"])
+        self._ids = np.array(got["ids"])
+        m = np.asarray(got["embeddings"], dtype=np.float32)
+        self._emb = m / np.linalg.norm(m, axis=1, keepdims=True)
 
     def dense(self, query, top):
+        """Exact cosine search over every stored embedding; ties broken by id."""
+        import numpy as np
+
+        sim = self._emb @ np.asarray(embed_query(query), dtype=np.float32)
+        order = np.lexsort((self._ids, -sim))[:top]
+        return self._ids[order].tolist()
+
+    def dense_hnsw(self, query, top):
+        """What the app does: Chroma's approximate HNSW search."""
         return self.coll.query(query_embeddings=[embed_query(query)], n_results=top)["ids"][0]
 
     def hybrid(self, query, top, pool=80):

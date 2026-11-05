@@ -1,11 +1,11 @@
 set,system,n_queries,P@10,Recall@10,MRR,nDCG@10
-v1,dense,12,0.675,0.0302,0.875,0.6867
-v1,hybrid,12,0.6667,0.0256,0.7569,0.6829
-v1,hybrid+rerank,12,0.8167,0.035,0.9167,0.834
-v1,"rerank minus dense, P@10, 95% bootstrap",12,"0.1417 [0.0417, 0.2583]",,,
-v1,"rerank minus dense, nDCG@10, 95% bootstrap",12,,,,"0.1474 [0.0483, 0.2644]"
-v2,dense,30,0.5833,0.0441,0.7256,0.5942
-v2,hybrid,30,0.66,0.0541,0.8201,0.6825
+v1,dense,12,0.675,0.0302,0.8194,0.671
+v1,hybrid,12,0.6667,0.0256,0.7708,0.6802
+v1,hybrid+rerank,12,0.8167,0.035,0.9167,0.8338
+v1,"rerank minus dense, P@10, 95% bootstrap",12,"0.1417 [0.0583, 0.2417]",,,
+v1,"rerank minus dense, nDCG@10, 95% bootstrap",12,,,,"0.1628 [0.0724, 0.2701]"
+v2,dense,30,0.5833,0.0441,0.7256,0.5938
+v2,hybrid,30,0.66,0.0541,0.8201,0.6834
 v2,hybrid+rerank,30,0.7467,0.0678,0.8667,0.756
 v2,"rerank minus dense, P@10, 95% bootstrap",30,"0.1633 [0.0767, 0.2533]",,,
-v2,"rerank minus dense, nDCG@10, 95% bootstrap",30,,,,"0.1618 [0.0631, 0.2672]"
+v2,"rerank minus dense, nDCG@10, 95% bootstrap",30,,,,"0.1622 [0.0631, 0.2681]"
