@@ -45,12 +45,13 @@ Stack: Python, pandas, sentence-transformers, Chroma, rank-bm25, Claude (CLI by 
 ## How to run
 
 ```bash
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 python fetch_data.py                 # download the ~130k-review dataset to data/
 python -m src.ingest --limit 30000   # build the local index (or --all)
 
-python -m src.cli ask "a bold red under $25 for a steak dinner" --max-price 25
+python -m src.cli ask 'a bold red under $25 for a steak dinner' --max-price 25
 python -m src.cli chat               # interactive session
 python -m src.eval                   # rerun the retrieval benchmark
 ```
