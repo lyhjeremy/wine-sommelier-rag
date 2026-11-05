@@ -38,6 +38,8 @@ The opening request ran with `--max-price 25`. The hybrid retriever and reranker
 
 On its own, fusing BM25 into the dense ranking made things slightly worse. It brought in wines that share words with the query but miss its meaning, and MRR fell from 0.88 to 0.76. The gain came from the cross-encoder, which reads the query and each candidate together (a bi-encoder compares two vectors computed separately) and lifted precision and nDCG about 21% over the dense baseline. So the extra retrieval signal only paid off once a later stage could judge relevance, which I would not have guessed without running the benchmark.
 
+**Update, 4 November 2026.** The BM25 result did not hold on a second set. Thirty new queries, committed to `eval/queries_v2.json` before any system ran on them, name more grapes and places ("a Mosel Riesling with a touch of sweetness"). On them, fusion raised MRR from 0.73 to 0.82 and nDCG@10 from 0.59 to 0.68, and the reranker took nDCG@10 to 0.76. The reranker is the part that helped on both sets; whether fusion helps depends on how requests are worded. Per-query results, error analysis and timings are in `eval/` and on the [write-up page](https://lyhjeremy.github.io/wine-sommelier-rag/overview/).
+
 Recall@10 is about 0.03 for all three, because most rubrics match hundreds of reviews and ten results can hold only ten.
 
 ## Design decisions

@@ -97,18 +97,18 @@
   <p class="lede">Ask in plain English. A local hybrid retriever finds matching Wine Enthusiast reviews, a cross-encoder reranks them, and Claude recommends two or three, citing each one. If nothing fits, it says so.</p>
 
   <h2>What the reranker bought</h2>
-  <p><code>src/eval.py</code> scores three retrieval setups on twelve requests, each with a written relevance rubric (grape or wine family, country, price cap, descriptor words).</p>
+  <p>Three retrieval setups, scored on the original twelve requests and on 30 more that were committed to the repo before any system ran on them. Each request has a written relevance rubric (grape or wine family, country or region, price cap, descriptor words).</p>
   <div class="tablewrap">
     <table>
-      <thead><tr><th>Retriever</th><th>P@10</th><th>MRR</th><th>nDCG@10</th></tr></thead>
+      <thead><tr><th>Retriever</th><th>nDCG@10, 12 queries</th><th>nDCG@10, 30 held out</th></tr></thead>
       <tbody>
-        <tr><td>Dense vectors only</td><td>0.68</td><td>0.88</td><td>0.69</td></tr>
-        <tr><td>Dense + BM25, fused with RRF</td><td>0.67</td><td>0.76</td><td>0.68</td></tr>
-        <tr><td>Dense + BM25 + cross-encoder rerank</td><td>0.82</td><td>0.92</td><td>0.83</td></tr>
+        <tr><td>Dense vectors only</td><td>0.69</td><td>0.59</td></tr>
+        <tr><td>Dense + BM25, fused with RRF</td><td>0.68</td><td>0.68</td></tr>
+        <tr><td>Dense + BM25 + cross-encoder rerank</td><td>0.83</td><td>0.76</td></tr>
       </tbody>
     </table>
   </div>
-  <p>Fusing BM25 in without a reranker lowered MRR, because keyword matches pulled in reviews of the wrong kind of wine. The cross-encoder, which reads the request and each review together, raised precision and nDCG@10 about 21% over the dense baseline.</p>
+  <p>The cross-encoder, which reads the request and each review together, helped on both sets. BM25 fusion did nothing on the style-led first twelve and helped on the 30, which name more grapes and places. Retrieval takes 196 ms median on an Apple M4; a Claude CLI answer takes 8.3 s and about $0.13 API-equivalent. The <a href="overview/#errors">write-up</a> has per-query results and the error analysis: the most common miss is a price stated in the sentence, which the retriever ignores.</p>
 
   <h2>How a request is answered</h2>
   <ol class="steps">
@@ -124,7 +124,7 @@
   <p class="src">Filters compose with any request. Retrieval runs locally at no cost; generation uses the Claude CLI, or the Anthropic API when <code>ANTHROPIC_API_KEY</code> is set.</p>
 
   <h2>Limits</h2>
-  <p>The benchmark is twelve queries with rule-based relevance, so it compares the three retrievers fairly but does not give absolute quality. The default index holds the 30,000 highest-scored reviews of the 129,971 in the dataset, all from one magazine.</p>
+  <p>The benchmark is 42 queries with rule-based relevance, so it compares the three retrievers fairly but does not give absolute quality. The default index holds the 30,000 highest-scored reviews of the 129,971 in the dataset, all from one magazine.</p>
 
   <footer>MIT License · © 2026 Jeremy Lee · <a href="overview/">Full writeup</a> · <a href="https://github.com/lyhjeremy/wine-sommelier-rag/blob/main/writeup.md">Technical writeup</a> · <a href="https://github.com/lyhjeremy/wine-sommelier-rag">Source on GitHub</a></footer>
 </div>
