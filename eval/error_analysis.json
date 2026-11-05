@@ -1,0 +1,143 @@
+{
+ "v1": {
+  "queries": 12,
+  "hits": 120,
+  "misses": 22,
+  "by_type": {
+   "wrong grape or color": 11,
+   "price in the sentence ignored": 11
+  },
+  "queries_affected": {
+   "wrong grape or color": 5,
+   "price in the sentence ignored": 2
+  },
+  "examples": {
+   "wrong grape or color": {
+    "query": "a bold, full-bodied red for a grilled steak dinner",
+    "rank": 9,
+    "title": "Mastroberardino 2009 Radici  (Taurasi)",
+    "variety": "Aglianico",
+    "province": "Southern Italy",
+    "country": "Italy",
+    "price": 60.0
+   },
+   "price in the sentence ignored": {
+    "query": "an affordable Argentine Malbec under $20",
+    "rank": 4,
+    "title": "Tapiz 2008 Black Tears Malbec (Mendoza)",
+    "variety": "Malbec",
+    "province": "Mendoza Province",
+    "country": "Argentina",
+    "price": 59.0
+   }
+  }
+ },
+ "v2": {
+  "queries": 30,
+  "hits": 300,
+  "misses": 76,
+  "by_type": {
+   "price in the sentence ignored": 20,
+   "wrong grape or color": 19,
+   "wrong region or country": 17,
+   "rubric miss: right wine, variety field disagrees": 16,
+   "style words missing": 4
+  },
+  "queries_affected": {
+   "wrong region or country": 7,
+   "style words missing": 3,
+   "price in the sentence ignored": 5,
+   "rubric miss: right wine, variety field disagrees": 3,
+   "wrong grape or color": 7
+  },
+  "examples": {
+   "wrong region or country": {
+    "query": "an Oregon Pinot Noir under $40 with earthy forest-floor notes",
+    "rank": 1,
+    "title": "Stephen & Walker 2006 Pinot Noir (Monterey)",
+    "variety": "Pinot Noir",
+    "province": "California",
+    "country": "US",
+    "price": 39.0
+   },
+   "style words missing": {
+    "query": "an Oregon Pinot Noir under $40 with earthy forest-floor notes",
+    "rank": 2,
+    "title": "Adelsheim 2010 Pinot Noir (Willamette Valley)",
+    "variety": "Pinot Noir",
+    "province": "Oregon",
+    "country": "US",
+    "price": 32.0
+   },
+   "price in the sentence ignored": {
+    "query": "an Oregon Pinot Noir under $40 with earthy forest-floor notes",
+    "rank": 3,
+    "title": "Ken Wright 2012 Abbott Claim Vineyard Pinot Noir",
+    "variety": "Pinot Noir",
+    "province": "Oregon",
+    "country": "US",
+    "price": 65.0
+   },
+   "rubric miss: right wine, variety field disagrees": {
+    "query": "a Spanish Rioja with vanilla and dried cherry",
+    "rank": 2,
+    "title": "La Rioja Alta 2005 Gran Reserva 904  (Rioja)",
+    "variety": "Red Blend",
+    "province": "Northern Spain",
+    "country": "Spain",
+    "price": 50.0
+   },
+   "wrong grape or color": {
+    "query": "a Washington State Merlot that offers good value under $30",
+    "rank": 2,
+    "title": "Beresan 2009 The Buzz Yellow Jacket Vineyard Red (Walla Walla Valley (WA))",
+    "variety": "Red Blend",
+    "province": "Washington",
+    "country": "US",
+    "price": 19.0
+   }
+  }
+ },
+ "generation": {
+  "answers": 20,
+  "citation_out_of_range": 0,
+  "invented_price": [],
+  "budget_or_arithmetic": [
+   {
+    "query": "a smooth, easy-drinking red under $15 for a weeknight",
+    "amount": 15.0
+   },
+   {
+    "query": "a smooth, easy-drinking red under $15 for a weeknight",
+    "amount": 4.0
+   },
+   {
+    "query": "a New Zealand Sauvignon Blanc with grapefruit and passion fruit",
+    "amount": 10.0
+   },
+   {
+    "query": "an Oregon Pinot Noir under $40 with earthy forest-floor notes",
+    "amount": 40.0
+   },
+   {
+    "query": "an Oregon Pinot Noir under $40 with earthy forest-floor notes",
+    "amount": 40.0
+   },
+   {
+    "query": "an Oregon Pinot Noir under $40 with earthy forest-floor notes",
+    "amount": 10.0
+   }
+  ],
+  "says_nothing_fits_fully": [
+   {
+    "query": "a smooth, easy-drinking red under $15 for a weeknight",
+    "first_line": "None of these six wines is under $15. The cheapest is $19, so anything below means going about $4 or more over your budget. If you can stretch that far, these are the closest fits:"
+   },
+   {
+    "query": "an Oregon Pinot Noir under $40 with earthy forest-floor notes",
+    "first_line": "None of these wines meets all three of your conditions. The Oregon bottles that have forest-floor notes cost more than $40, and the one Oregon bottle under $40 doesn't taste earthy. These three come closest."
+   }
+  ],
+  "points_not_in_sources": 0
+ }
+}

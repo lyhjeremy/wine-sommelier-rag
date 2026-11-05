@@ -1,0 +1,127 @@
+pass,qid,query,embed,dense_search,bm25,rrf,rerank,total
+1,1,"a bold, full-bodied red for a grilled steak dinner",6.43,2.76,41.74,0.03,144.7,195.67
+1,2,"a crisp, mineral white to go with fresh oysters",5.88,2.87,45.16,0.03,139.67,193.62
+1,3,"an elegant, silky Pinot Noir with red-berry fruit",5.2,2.76,42.97,0.02,142.79,193.74
+1,4,an affordable Argentine Malbec under $20,4.95,2.73,24.38,0.02,150.69,182.77
+1,5,a dry Riesling from Germany with racy acidity,5.8,3.06,37.4,0.03,135.54,181.82
+1,6,"a rich, oaky California Chardonnay with buttery notes",5.91,2.92,37.96,0.02,138.96,185.77
+1,7,"a spicy, peppery Syrah from the Rhône",7.32,2.8,37.77,0.02,155.19,203.1
+1,8,"a smooth, easy-drinking red under $15 for a weeknight",6.64,2.77,39.53,0.02,169.43,218.4
+1,9,a sparkling wine for a celebration,6.84,2.66,28.18,0.02,166.21,203.91
+1,10,a sweet dessert wine to serve with a fruit tart,6.41,2.94,42.65,0.02,168.49,220.52
+1,11,a age-worthy Bordeaux-style red blend for the cellar,7.66,2.84,43.67,0.03,140.96,195.16
+1,12,"a light, aromatic white with floral notes for a warm afternoon",4.85,2.97,47.86,0.02,146.63,202.33
+1,13,a Barolo with firm tannins and notes of tar and roses,5.05,2.76,60.21,0.03,163.89,231.94
+1,14,a New Zealand Sauvignon Blanc with grapefruit and passion fruit,36.68,51.99,63.2,0.03,144.1,296.0
+1,15,an Oregon Pinot Noir under $40 with earthy forest-floor notes,5.59,2.95,42.41,0.02,165.97,216.95
+1,16,a Napa Cabernet Sauvignon with cassis and cedar for a special occasion,7.45,2.79,48.36,0.03,187.21,245.84
+1,17,a Champagne with brioche and toasty notes,6.75,2.62,38.04,0.02,120.05,167.47
+1,18,a dry rosé from Provence for a summer lunch,6.83,2.73,42.65,0.02,119.27,171.5
+1,19,a vintage Port with rich dark fruit and chocolate,5.33,2.66,40.66,0.03,111.96,160.64
+1,20,a Grüner Veltliner from Austria with white pepper,7.66,2.61,41.26,0.03,127.14,178.71
+1,21,a Spanish Rioja with vanilla and dried cherry,4.93,2.89,36.45,0.03,127.82,172.11
+1,22,a Chianti Classico to pair with tomato-based pasta,7.61,2.6,38.18,0.03,135.72,184.13
+1,23,a Zinfandel with jammy blackberry fruit under $35,4.85,2.73,37.23,0.03,142.35,187.19
+1,24,a Washington State Merlot that offers good value under $30,5.06,2.56,40.4,0.03,147.91,195.96
+1,25,a Mosel Riesling with a touch of sweetness,9.93,2.5,36.46,0.02,128.25,177.16
+1,26,a white Burgundy with hazelnut and minerality,6.37,2.8,34.53,0.02,145.26,188.98
+1,27,an Alsace Gewürztraminer with lychee and rose petal,7.48,2.51,38.22,0.03,177.29,225.53
+1,28,a Malbec from Mendoza with violet aromas,6.85,2.49,34.23,0.03,124.11,167.7
+1,29,an Australian Shiraz that is big and ripe,4.84,2.61,39.1,0.02,136.6,183.17
+1,30,a Loire Sauvignon Blanc like Sancerre with flinty minerality,5.1,2.64,38.9,0.02,124.26,170.92
+1,31,a Chenin Blanc with honey and quince notes,5.31,2.74,35.06,0.02,146.39,189.52
+1,32,an Amarone with dried fruit and raisin richness,6.66,3.25,38.59,0.03,146.31,194.83
+1,33,"a light, fruity Beaujolais to serve slightly chilled",8.3,2.81,34.34,0.03,164.2,209.67
+1,34,a Brunello di Montalcino worth cellaring for ten years,6.92,2.63,36.19,0.03,161.26,207.02
+1,35,a California sparkling wine under $40,7.28,2.74,27.56,0.02,182.75,220.35
+1,36,a Willamette Valley Chardonnay with bright acidity,8.28,2.8,33.47,0.02,125.42,170.0
+1,37,a Cabernet Franc with herbal and graphite notes,5.22,2.7,37.47,0.03,144.6,190.02
+1,38,a Sauternes-style sweet white to pair with foie gras,7.57,2.9,41.39,0.03,172.75,224.64
+1,39,an Oregon Pinot Gris with pear and melon,8.95,2.67,37.96,0.03,124.5,174.11
+1,40,an Italian white to go with grilled fish,6.99,3.14,36.49,0.02,129.81,176.44
+1,41,a Chilean Cabernet that drinks well now under $30,7.99,2.96,39.96,0.02,157.99,208.92
+1,42,a Petite Sirah with inky color and black fruit,5.46,2.71,39.94,0.03,139.39,187.53
+2,1,"a bold, full-bodied red for a grilled steak dinner",7.22,3.2,40.72,0.02,141.15,192.32
+2,2,"a crisp, mineral white to go with fresh oysters",5.77,2.91,41.93,0.02,137.48,188.11
+2,3,"an elegant, silky Pinot Noir with red-berry fruit",5.87,2.79,39.53,0.02,162.35,210.57
+2,4,an affordable Argentine Malbec under $20,4.99,2.58,24.01,0.03,148.8,180.4
+2,5,a dry Riesling from Germany with racy acidity,5.3,2.78,40.96,0.02,132.83,181.89
+2,6,"a rich, oaky California Chardonnay with buttery notes",4.82,2.82,36.79,0.03,140.97,185.43
+2,7,"a spicy, peppery Syrah from the Rhône",7.76,3.04,35.33,0.03,150.0,196.15
+2,8,"a smooth, easy-drinking red under $15 for a weeknight",6.03,2.78,49.33,0.03,198.97,257.13
+2,9,a sparkling wine for a celebration,30.86,26.57,56.19,0.03,173.29,286.94
+2,10,a sweet dessert wine to serve with a fruit tart,7.06,2.87,44.06,0.02,178.91,232.91
+2,11,a age-worthy Bordeaux-style red blend for the cellar,7.65,3.32,45.56,0.03,139.22,195.78
+2,12,"a light, aromatic white with floral notes for a warm afternoon",5.16,2.78,44.92,0.03,148.04,200.93
+2,13,a Barolo with firm tannins and notes of tar and roses,5.76,2.78,48.65,0.03,140.64,197.87
+2,14,a New Zealand Sauvignon Blanc with grapefruit and passion fruit,7.55,2.76,44.4,0.03,152.02,206.75
+2,15,an Oregon Pinot Noir under $40 with earthy forest-floor notes,5.63,2.9,43.85,0.03,161.66,214.07
+2,16,a Napa Cabernet Sauvignon with cassis and cedar for a special occasion,6.9,3.09,49.38,0.03,165.64,225.04
+2,17,a Champagne with brioche and toasty notes,6.76,2.64,33.47,0.03,123.2,166.11
+2,18,a dry rosé from Provence for a summer lunch,7.25,2.68,38.41,0.03,117.6,165.96
+2,19,a vintage Port with rich dark fruit and chocolate,4.74,2.62,44.83,0.03,102.36,154.58
+2,20,a Grüner Veltliner from Austria with white pepper,6.63,2.66,38.9,0.03,134.41,182.63
+2,21,a Spanish Rioja with vanilla and dried cherry,4.84,2.56,35.43,0.03,127.68,170.53
+2,22,a Chianti Classico to pair with tomato-based pasta,7.51,2.94,38.75,0.03,146.94,196.16
+2,23,a Zinfandel with jammy blackberry fruit under $35,4.87,2.6,35.43,0.03,135.57,178.49
+2,24,a Washington State Merlot that offers good value under $30,5.76,2.68,42.21,0.02,136.72,187.39
+2,25,a Mosel Riesling with a touch of sweetness,7.28,2.56,35.54,0.03,127.58,172.99
+2,26,a white Burgundy with hazelnut and minerality,6.86,3.14,33.46,0.02,142.12,185.6
+2,27,an Alsace Gewürztraminer with lychee and rose petal,5.88,2.5,39.69,0.03,155.55,203.64
+2,28,a Malbec from Mendoza with violet aromas,6.99,2.66,35.43,0.02,124.48,169.58
+2,29,an Australian Shiraz that is big and ripe,5.84,2.73,41.42,0.03,150.83,200.86
+2,30,a Loire Sauvignon Blanc like Sancerre with flinty minerality,5.63,2.81,48.68,0.04,114.87,172.02
+2,31,a Chenin Blanc with honey and quince notes,5.05,2.69,36.2,0.02,155.33,199.3
+2,32,an Amarone with dried fruit and raisin richness,7.34,3.29,36.67,0.02,161.78,209.11
+2,33,"a light, fruity Beaujolais to serve slightly chilled",7.06,2.98,33.91,0.02,162.61,206.58
+2,34,a Brunello di Montalcino worth cellaring for ten years,6.39,2.55,38.13,0.03,155.18,202.27
+2,35,a California sparkling wine under $40,7.1,2.9,27.65,0.03,175.75,213.43
+2,36,a Willamette Valley Chardonnay with bright acidity,4.86,2.91,32.15,0.03,123.92,163.86
+2,37,a Cabernet Franc with herbal and graphite notes,4.83,2.55,35.67,0.02,145.06,188.13
+2,38,a Sauternes-style sweet white to pair with foie gras,7.72,3.09,44.15,0.02,172.13,227.12
+2,39,an Oregon Pinot Gris with pear and melon,7.7,2.56,38.06,0.02,125.75,174.1
+2,40,an Italian white to go with grilled fish,6.77,2.77,52.31,0.03,152.89,214.77
+2,41,a Chilean Cabernet that drinks well now under $30,36.37,24.42,123.03,0.03,168.09,351.95
+2,42,a Petite Sirah with inky color and black fruit,5.83,2.69,41.28,0.03,150.69,200.52
+3,1,"a bold, full-bodied red for a grilled steak dinner",8.43,2.9,41.84,0.02,152.09,205.28
+3,2,"a crisp, mineral white to go with fresh oysters",5.62,2.83,41.21,0.03,138.11,187.8
+3,3,"an elegant, silky Pinot Noir with red-berry fruit",5.45,2.95,41.73,0.02,165.52,215.67
+3,4,an affordable Argentine Malbec under $20,4.93,2.63,24.51,0.02,151.86,183.96
+3,5,a dry Riesling from Germany with racy acidity,4.9,2.6,42.06,0.02,134.86,184.44
+3,6,"a rich, oaky California Chardonnay with buttery notes",5.31,2.74,37.98,0.02,139.51,185.56
+3,7,"a spicy, peppery Syrah from the Rhône",6.96,3.05,39.11,0.03,152.52,201.67
+3,8,"a smooth, easy-drinking red under $15 for a weeknight",6.65,2.89,39.66,0.02,169.84,219.05
+3,9,a sparkling wine for a celebration,7.55,2.73,33.45,0.02,213.91,257.66
+3,10,a sweet dessert wine to serve with a fruit tart,8.71,3.04,49.23,0.03,178.55,239.57
+3,11,a age-worthy Bordeaux-style red blend for the cellar,6.85,3.2,48.06,0.02,138.18,196.32
+3,12,"a light, aromatic white with floral notes for a warm afternoon",5.58,2.88,45.83,0.02,162.06,216.37
+3,13,a Barolo with firm tannins and notes of tar and roses,5.29,2.91,58.59,0.04,138.99,205.82
+3,14,a New Zealand Sauvignon Blanc with grapefruit and passion fruit,7.78,2.71,45.24,0.03,133.1,188.86
+3,15,an Oregon Pinot Noir under $40 with earthy forest-floor notes,5.56,2.96,43.79,0.03,156.66,209.0
+3,16,a Napa Cabernet Sauvignon with cassis and cedar for a special occasion,7.82,4.81,54.29,0.03,167.66,234.6
+3,17,a Champagne with brioche and toasty notes,7.36,2.8,38.35,0.03,120.54,169.08
+3,18,a dry rosé from Provence for a summer lunch,6.69,2.53,37.7,0.03,118.77,165.72
+3,19,a vintage Port with rich dark fruit and chocolate,4.74,2.5,44.0,0.03,102.96,154.23
+3,20,a Grüner Veltliner from Austria with white pepper,6.14,2.58,38.15,0.03,133.76,180.67
+3,21,a Spanish Rioja with vanilla and dried cherry,5.65,2.6,51.97,0.03,126.2,186.45
+3,22,a Chianti Classico to pair with tomato-based pasta,7.24,2.64,40.7,0.03,134.51,185.11
+3,23,a Zinfandel with jammy blackberry fruit under $35,5.58,2.83,35.39,0.03,145.2,189.04
+3,24,a Washington State Merlot that offers good value under $30,4.62,2.55,42.78,0.03,138.93,188.91
+3,25,a Mosel Riesling with a touch of sweetness,7.29,2.64,38.37,0.03,140.48,188.8
+3,26,a white Burgundy with hazelnut and minerality,7.07,3.22,34.46,0.02,143.49,188.25
+3,27,an Alsace Gewürztraminer with lychee and rose petal,7.6,2.65,46.2,0.02,264.49,320.97
+3,28,a Malbec from Mendoza with violet aromas,7.4,2.72,42.13,0.04,149.98,202.26
+3,29,an Australian Shiraz that is big and ripe,5.23,4.14,43.08,0.03,136.04,188.51
+3,30,a Loire Sauvignon Blanc like Sancerre with flinty minerality,6.11,16.12,44.81,0.03,126.12,193.19
+3,31,a Chenin Blanc with honey and quince notes,6.11,21.58,38.34,0.03,153.73,219.79
+3,32,an Amarone with dried fruit and raisin richness,6.98,17.53,37.6,0.02,166.48,228.62
+3,33,"a light, fruity Beaujolais to serve slightly chilled",7.4,43.57,33.99,0.03,177.76,262.75
+3,34,a Brunello di Montalcino worth cellaring for ten years,6.66,40.7,36.65,0.03,161.43,245.46
+3,35,a California sparkling wine under $40,7.46,33.05,30.13,0.03,182.03,252.7
+3,36,a Willamette Valley Chardonnay with bright acidity,8.35,38.03,34.56,0.03,144.41,225.4
+3,37,a Cabernet Franc with herbal and graphite notes,5.04,38.57,36.18,0.04,146.27,226.09
+3,38,a Sauternes-style sweet white to pair with foie gras,7.42,32.06,41.96,0.03,171.2,252.67
+3,39,an Oregon Pinot Gris with pear and melon,7.58,36.2,39.98,0.02,132.43,216.22
+3,40,an Italian white to go with grilled fish,8.78,33.53,44.79,0.03,137.22,224.34
+3,41,a Chilean Cabernet that drinks well now under $30,6.73,26.72,40.32,0.02,171.24,245.03
+3,42,a Petite Sirah with inky color and black fruit,5.18,49.72,45.54,0.03,147.59,248.05

@@ -1,0 +1,36 @@
+{
+ "machine": "Apple M4",
+ "python": "3.13.5",
+ "embed_device": "mps:0",
+ "rerank_device": "mps:0",
+ "n_samples": 126,
+ "n_queries": 42,
+ "passes": 3,
+ "pool": 60,
+ "k": 6,
+ "date": "2026-11-04",
+ "embed": {
+  "median_ms": 6.7,
+  "p95_ms": 8.7
+ },
+ "dense_search": {
+  "median_ms": 2.8,
+  "p95_ms": 36.2
+ },
+ "bm25": {
+  "median_ms": 39.5,
+  "p95_ms": 52.3
+ },
+ "rrf": {
+  "median_ms": 0.0,
+  "p95_ms": 0.0
+ },
+ "rerank": {
+  "median_ms": 145.1,
+  "p95_ms": 178.9
+ },
+ "total": {
+  "median_ms": 195.8,
+  "p95_ms": 257.1
+ }
+}

@@ -1,0 +1,127 @@
+set,qid,query,system,n_relevant,P@10,Recall@10,MRR,nDCG@10
+v1,1,"a bold, full-bodied red for a grilled steak dinner",dense,9383,0.4,0.0004,0.5,0.3733
+v1,1,"a bold, full-bodied red for a grilled steak dinner",hybrid,9383,0.6,0.0006,0.25,0.4616
+v1,1,"a bold, full-bodied red for a grilled steak dinner",hybrid+rerank,9383,0.9,0.001,1.0,0.9337
+v1,2,"a crisp, mineral white to go with fresh oysters",dense,4886,0.7,0.0014,1.0,0.7386
+v1,2,"a crisp, mineral white to go with fresh oysters",hybrid,4886,0.6,0.0012,0.3333,0.4983
+v1,2,"a crisp, mineral white to go with fresh oysters",hybrid+rerank,4886,0.6,0.0012,1.0,0.6872
+v1,3,"an elegant, silky Pinot Noir with red-berry fruit",dense,3153,0.7,0.0022,1.0,0.7191
+v1,3,"an elegant, silky Pinot Noir with red-berry fruit",hybrid,3153,0.8,0.0025,1.0,0.8643
+v1,3,"an elegant, silky Pinot Noir with red-berry fruit",hybrid+rerank,3153,1.0,0.0032,1.0,1.0
+v1,4,an affordable Argentine Malbec under $20,dense,19,0.6,0.3158,1.0,0.6988
+v1,4,an affordable Argentine Malbec under $20,hybrid,19,0.5,0.2632,1.0,0.6372
+v1,4,an affordable Argentine Malbec under $20,hybrid+rerank,19,0.7,0.3684,1.0,0.7564
+v1,5,a dry Riesling from Germany with racy acidity,dense,587,1.0,0.017,1.0,1.0
+v1,5,a dry Riesling from Germany with racy acidity,hybrid,587,1.0,0.017,1.0,1.0
+v1,5,a dry Riesling from Germany with racy acidity,hybrid+rerank,587,1.0,0.017,1.0,1.0
+v1,6,"a rich, oaky California Chardonnay with buttery notes",dense,1309,1.0,0.0076,1.0,1.0
+v1,6,"a rich, oaky California Chardonnay with buttery notes",hybrid,1309,0.9,0.0069,1.0,0.9364
+v1,6,"a rich, oaky California Chardonnay with buttery notes",hybrid+rerank,1309,1.0,0.0076,1.0,1.0
+v1,7,"a spicy, peppery Syrah from the Rhône",dense,1016,0.6,0.0059,1.0,0.6033
+v1,7,"a spicy, peppery Syrah from the Rhône",hybrid,1016,0.5,0.0049,1.0,0.5907
+v1,7,"a spicy, peppery Syrah from the Rhône",hybrid+rerank,1016,0.8,0.0079,1.0,0.7827
+v1,8,"a smooth, easy-drinking red under $15 for a weeknight",dense,41,0.0,0.0,0.0,0.0
+v1,8,"a smooth, easy-drinking red under $15 for a weeknight",hybrid,41,0.0,0.0,0.0,0.0
+v1,8,"a smooth, easy-drinking red under $15 for a weeknight",hybrid+rerank,41,0.0,0.0,0.0,0.0
+v1,9,a sparkling wine for a celebration,dense,1334,1.0,0.0075,1.0,1.0
+v1,9,a sparkling wine for a celebration,hybrid,1334,1.0,0.0075,1.0,1.0
+v1,9,a sparkling wine for a celebration,hybrid+rerank,1334,1.0,0.0075,1.0,1.0
+v1,10,a sweet dessert wine to serve with a fruit tart,dense,4883,0.5,0.001,1.0,0.5239
+v1,10,a sweet dessert wine to serve with a fruit tart,hybrid,4883,0.7,0.0014,1.0,0.7779
+v1,10,a sweet dessert wine to serve with a fruit tart,hybrid+rerank,4883,1.0,0.002,1.0,1.0
+v1,11,a age-worthy Bordeaux-style red blend for the cellar,dense,11099,0.9,0.0008,1.0,0.9266
+v1,11,a age-worthy Bordeaux-style red blend for the cellar,hybrid,11099,1.0,0.0009,1.0,1.0
+v1,11,a age-worthy Bordeaux-style red blend for the cellar,hybrid+rerank,11099,1.0,0.0009,1.0,1.0
+v1,12,"a light, aromatic white with floral notes for a warm afternoon",dense,2351,0.7,0.003,1.0,0.6563
+v1,12,"a light, aromatic white with floral notes for a warm afternoon",hybrid,2351,0.4,0.0017,0.5,0.4288
+v1,12,"a light, aromatic white with floral notes for a warm afternoon",hybrid+rerank,2351,0.8,0.0034,1.0,0.8486
+v2,1,a Barolo with firm tannins and notes of tar and roses,dense,909,1.0,0.011,1.0,1.0
+v2,1,a Barolo with firm tannins and notes of tar and roses,hybrid,909,1.0,0.011,1.0,1.0
+v2,1,a Barolo with firm tannins and notes of tar and roses,hybrid+rerank,909,1.0,0.011,1.0,1.0
+v2,2,a New Zealand Sauvignon Blanc with grapefruit and passion fruit,dense,43,0.5,0.1163,0.5,0.4205
+v2,2,a New Zealand Sauvignon Blanc with grapefruit and passion fruit,hybrid,43,0.8,0.186,1.0,0.8643
+v2,2,a New Zealand Sauvignon Blanc with grapefruit and passion fruit,hybrid+rerank,43,1.0,0.2326,1.0,1.0
+v2,3,an Oregon Pinot Noir under $40 with earthy forest-floor notes,dense,22,0.0,0.0,0.0,0.0
+v2,3,an Oregon Pinot Noir under $40 with earthy forest-floor notes,hybrid,22,0.0,0.0,0.0,0.0
+v2,3,an Oregon Pinot Noir under $40 with earthy forest-floor notes,hybrid+rerank,22,0.0,0.0,0.0,0.0
+v2,4,a Napa Cabernet Sauvignon with cassis and cedar for a special occasion,dense,956,0.9,0.0094,1.0,0.9306
+v2,4,a Napa Cabernet Sauvignon with cassis and cedar for a special occasion,hybrid,956,1.0,0.0105,1.0,1.0
+v2,4,a Napa Cabernet Sauvignon with cassis and cedar for a special occasion,hybrid+rerank,956,1.0,0.0105,1.0,1.0
+v2,5,a Champagne with brioche and toasty notes,dense,279,0.9,0.0323,1.0,0.9364
+v2,5,a Champagne with brioche and toasty notes,hybrid,279,0.9,0.0323,1.0,0.9216
+v2,5,a Champagne with brioche and toasty notes,hybrid+rerank,279,1.0,0.0358,1.0,1.0
+v2,6,a dry rosé from Provence for a summer lunch,dense,93,0.6,0.0645,0.5,0.5405
+v2,6,a dry rosé from Provence for a summer lunch,hybrid,93,0.9,0.0968,1.0,0.9337
+v2,6,a dry rosé from Provence for a summer lunch,hybrid+rerank,93,0.9,0.0968,1.0,0.9306
+v2,7,a vintage Port with rich dark fruit and chocolate,dense,789,1.0,0.0127,1.0,1.0
+v2,7,a vintage Port with rich dark fruit and chocolate,hybrid,789,0.9,0.0114,1.0,0.9216
+v2,7,a vintage Port with rich dark fruit and chocolate,hybrid+rerank,789,0.9,0.0114,1.0,0.9216
+v2,8,a Grüner Veltliner from Austria with white pepper,dense,279,0.9,0.0323,1.0,0.9266
+v2,8,a Grüner Veltliner from Austria with white pepper,hybrid,279,1.0,0.0358,1.0,1.0
+v2,8,a Grüner Veltliner from Austria with white pepper,hybrid+rerank,279,1.0,0.0358,1.0,1.0
+v2,9,a Spanish Rioja with vanilla and dried cherry,dense,295,0.6,0.0203,1.0,0.6438
+v2,9,a Spanish Rioja with vanilla and dried cherry,hybrid,295,0.7,0.0237,1.0,0.7543
+v2,9,a Spanish Rioja with vanilla and dried cherry,hybrid+rerank,295,0.9,0.0305,1.0,0.8611
+v2,10,a Chianti Classico to pair with tomato-based pasta,dense,701,0.2,0.0029,0.1667,0.1447
+v2,10,a Chianti Classico to pair with tomato-based pasta,hybrid,701,0.2,0.0029,0.2,0.1585
+v2,10,a Chianti Classico to pair with tomato-based pasta,hybrid+rerank,701,0.2,0.0029,0.5,0.2489
+v2,11,a Zinfandel with jammy blackberry fruit under $35,dense,138,0.6,0.0435,1.0,0.6749
+v2,11,a Zinfandel with jammy blackberry fruit under $35,hybrid,138,0.7,0.0507,1.0,0.7289
+v2,11,a Zinfandel with jammy blackberry fruit under $35,hybrid+rerank,138,0.4,0.029,1.0,0.4422
+v2,12,a Washington State Merlot that offers good value under $30,dense,52,0.4,0.0769,1.0,0.4233
+v2,12,a Washington State Merlot that offers good value under $30,hybrid,52,0.5,0.0962,1.0,0.5811
+v2,12,a Washington State Merlot that offers good value under $30,hybrid+rerank,52,0.5,0.0962,1.0,0.5331
+v2,13,a Mosel Riesling with a touch of sweetness,dense,305,1.0,0.0328,1.0,1.0
+v2,13,a Mosel Riesling with a touch of sweetness,hybrid,305,1.0,0.0328,1.0,1.0
+v2,13,a Mosel Riesling with a touch of sweetness,hybrid+rerank,305,0.8,0.0262,1.0,0.7952
+v2,14,a white Burgundy with hazelnut and minerality,dense,339,0.0,0.0,0.0,0.0
+v2,14,a white Burgundy with hazelnut and minerality,hybrid,339,0.1,0.0029,0.125,0.0694
+v2,14,a white Burgundy with hazelnut and minerality,hybrid+rerank,339,0.1,0.0029,0.25,0.0948
+v2,15,an Alsace Gewürztraminer with lychee and rose petal,dense,89,0.9,0.1011,1.0,0.9364
+v2,15,an Alsace Gewürztraminer with lychee and rose petal,hybrid,89,1.0,0.1124,1.0,1.0
+v2,15,an Alsace Gewürztraminer with lychee and rose petal,hybrid+rerank,89,0.9,0.1011,1.0,0.8611
+v2,16,a Malbec from Mendoza with violet aromas,dense,26,0.2,0.0769,0.125,0.1331
+v2,16,a Malbec from Mendoza with violet aromas,hybrid,26,0.4,0.1538,1.0,0.4983
+v2,16,a Malbec from Mendoza with violet aromas,hybrid+rerank,26,1.0,0.3846,1.0,1.0
+v2,17,an Australian Shiraz that is big and ripe,dense,161,0.7,0.0435,1.0,0.7479
+v2,17,an Australian Shiraz that is big and ripe,hybrid,161,0.8,0.0497,1.0,0.8415
+v2,17,an Australian Shiraz that is big and ripe,hybrid+rerank,161,1.0,0.0621,1.0,1.0
+v2,18,a Loire Sauvignon Blanc like Sancerre with flinty minerality,dense,119,1.0,0.084,1.0,1.0
+v2,18,a Loire Sauvignon Blanc like Sancerre with flinty minerality,hybrid,119,1.0,0.084,1.0,1.0
+v2,18,a Loire Sauvignon Blanc like Sancerre with flinty minerality,hybrid+rerank,119,1.0,0.084,1.0,1.0
+v2,19,a Chenin Blanc with honey and quince notes,dense,110,1.0,0.0909,1.0,1.0
+v2,19,a Chenin Blanc with honey and quince notes,hybrid,110,1.0,0.0909,1.0,1.0
+v2,19,a Chenin Blanc with honey and quince notes,hybrid+rerank,110,1.0,0.0909,1.0,1.0
+v2,20,an Amarone with dried fruit and raisin richness,dense,71,0.1,0.0141,1.0,0.2201
+v2,20,an Amarone with dried fruit and raisin richness,hybrid,71,0.1,0.0141,0.1111,0.0663
+v2,20,an Amarone with dried fruit and raisin richness,hybrid+rerank,71,0.3,0.0423,0.5,0.2687
+v2,21,"a light, fruity Beaujolais to serve slightly chilled",dense,98,0.0,0.0,0.0,0.0
+v2,21,"a light, fruity Beaujolais to serve slightly chilled",hybrid,98,0.3,0.0306,1.0,0.4252
+v2,21,"a light, fruity Beaujolais to serve slightly chilled",hybrid+rerank,98,0.5,0.051,1.0,0.63
+v2,22,a Brunello di Montalcino worth cellaring for ten years,dense,628,0.7,0.0111,1.0,0.7574
+v2,22,a Brunello di Montalcino worth cellaring for ten years,hybrid,628,0.9,0.0143,1.0,0.9337
+v2,22,a Brunello di Montalcino worth cellaring for ten years,hybrid+rerank,628,1.0,0.0159,1.0,1.0
+v2,23,a California sparkling wine under $40,dense,93,0.3,0.0323,0.5,0.2974
+v2,23,a California sparkling wine under $40,hybrid,93,0.4,0.043,1.0,0.4815
+v2,23,a California sparkling wine under $40,hybrid+rerank,93,0.7,0.0753,1.0,0.7846
+v2,24,a Willamette Valley Chardonnay with bright acidity,dense,70,0.5,0.0714,0.5,0.4272
+v2,24,a Willamette Valley Chardonnay with bright acidity,hybrid,70,0.5,0.0714,1.0,0.5934
+v2,24,a Willamette Valley Chardonnay with bright acidity,hybrid+rerank,70,1.0,0.1429,1.0,1.0
+v2,25,a Cabernet Franc with herbal and graphite notes,dense,118,0.7,0.0593,1.0,0.7968
+v2,25,a Cabernet Franc with herbal and graphite notes,hybrid,118,1.0,0.0847,1.0,1.0
+v2,25,a Cabernet Franc with herbal and graphite notes,hybrid+rerank,118,0.9,0.0763,1.0,0.9266
+v2,26,a Sauternes-style sweet white to pair with foie gras,dense,726,0.3,0.0041,0.1429,0.209
+v2,26,a Sauternes-style sweet white to pair with foie gras,hybrid,726,0.2,0.0028,0.5,0.2489
+v2,26,a Sauternes-style sweet white to pair with foie gras,hybrid+rerank,726,1.0,0.0138,1.0,1.0
+v2,27,an Oregon Pinot Gris with pear and melon,dense,76,1.0,0.1316,1.0,1.0
+v2,27,an Oregon Pinot Gris with pear and melon,hybrid,76,1.0,0.1316,1.0,1.0
+v2,27,an Oregon Pinot Gris with pear and melon,hybrid+rerank,76,1.0,0.1316,1.0,1.0
+v2,28,an Italian white to go with grilled fish,dense,153,0.5,0.0327,1.0,0.6236
+v2,28,an Italian white to go with grilled fish,hybrid,153,0.4,0.0261,0.5,0.3757
+v2,28,an Italian white to go with grilled fish,hybrid+rerank,153,0.3,0.0196,0.5,0.2867
+v2,29,a Chilean Cabernet that drinks well now under $30,dense,18,0.1,0.0556,0.3333,0.11
+v2,29,a Chilean Cabernet that drinks well now under $30,hybrid,18,0.1,0.0556,0.1667,0.0784
+v2,29,a Chilean Cabernet that drinks well now under $30,hybrid+rerank,18,0.1,0.0556,0.25,0.0948
+v2,30,a Petite Sirah with inky color and black fruit,dense,155,0.9,0.0581,1.0,0.9266
+v2,30,a Petite Sirah with inky color and black fruit,hybrid,155,1.0,0.0645,1.0,1.0
+v2,30,a Petite Sirah with inky color and black fruit,hybrid+rerank,155,1.0,0.0645,1.0,1.0

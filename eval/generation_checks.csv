@@ -1,0 +1,21 @@
+query,n_cited,citations_in_range,prices_grounded,ungrounded_prices,points_grounded,ungrounded_points,duration_ms,total_cost_usd,input_tokens,cache_read_tokens,cache_write_tokens,output_tokens
+"a bold, full-bodied red for a grilled steak dinner",6,True,True,[],True,[],10263,0.1547622,2,11391,16567,997
+"a crisp, mineral white to go with fresh oysters",4,True,True,[],True,[],9881,0.1362178,2,13389,14524,867
+"an elegant, silky Pinot Noir with red-berry fruit",5,True,True,[],True,[],8341,0.13484580000000002,2,13389,14675,738
+an affordable Argentine Malbec under $20,5,True,True,[],True,[],8062,0.1352178,2,13389,14609,783
+a dry Riesling from Germany with racy acidity,5,True,True,[],True,[],7185,0.1320338,2,13389,14446,689
+"a rich, oaky California Chardonnay with buttery notes",4,True,True,[],True,[],8452,0.1211778,2,13389,12704,843
+"a spicy, peppery Syrah from the Rhône",3,True,True,[],True,[],6201,0.1319418,2,13389,14582,630
+"a smooth, easy-drinking red under $15 for a weeknight",6,True,False,"[4.0, 15.0]",True,[],26604,0.1325498,2,13389,14598,654
+a sparkling wine for a celebration,4,True,True,[],True,[],6419,0.11548180000000001,2,13389,12547,621
+a sweet dessert wine to serve with a fruit tart,5,True,True,[],True,[],7590,0.1322538,2,13389,14491,682
+a age-worthy Bordeaux-style red blend for the cellar,3,True,True,[],True,[],8395,0.1209858,2,13389,12815,789
+"a light, aromatic white with floral notes for a warm afternoon",6,True,True,[],True,[],8322,0.1333018,2,13389,14472,742
+a Barolo with firm tannins and notes of tar and roses,3,True,True,[],True,[],6119,0.1304458,2,13389,14515,582
+a New Zealand Sauvignon Blanc with grapefruit and passion fruit,6,True,False,[10.0],True,[],9058,0.1362378,2,13389,14569,850
+an Oregon Pinot Noir under $40 with earthy forest-floor notes,3,True,False,"[10.0, 40.0]",True,[],8372,0.1304898,2,13389,14458,607
+a Napa Cabernet Sauvignon with cassis and cedar for a special occasion,3,True,True,[],True,[],7194,0.1330618,2,13389,14617,672
+a Champagne with brioche and toasty notes,3,True,True,[],True,[],11182,0.1288058,2,13389,14340,570
+a dry rosé from Provence for a summer lunch,5,True,True,[],True,[],9776,0.1178018,2,13389,12437,781
+a vintage Port with rich dark fruit and chocolate,4,True,True,[],True,[],7353,0.13090580000000002,2,13389,14370,663
+a Grüner Veltliner from Austria with white pepper,4,True,True,[],True,[],7117,0.1308538,2,13389,14471,620

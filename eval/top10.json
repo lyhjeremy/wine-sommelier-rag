@@ -1,0 +1,5041 @@
+[
+ {
+  "set": "v1",
+  "qid": 1,
+  "query": "a bold, full-bodied red for a grilled steak dinner",
+  "rubric": {
+   "family": "red",
+   "kw": [
+    "bold",
+    "full-bodied",
+    "full bodied",
+    "powerful",
+    "rich",
+    "robust",
+    "structured",
+    "tannic",
+    "concentrated",
+    "intense"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-27181",
+    "title": "Black Kite 2013 Redwood's Edge Pinot Noir (Anderson Valley)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 60.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-12830",
+    "title": "The Smuggler's Son 2014 The Smuggler's Son Red (California)",
+    "variety": "Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 35.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-1417",
+    "title": "Tenuta Sette Ponti 2005 Oreno Red (Toscana)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 93.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-11671",
+    "title": "Elvio Cogno 2011 Cascina Nuova  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 58.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-11662",
+    "title": "Fleming Jenkins 2007 Madden Ranch Syrah (Livermore Valley)",
+    "variety": "Syrah",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-11177",
+    "title": "Rocky Hill 2007 Richard Dinner Vineyards Red (Sonoma Mountain)",
+    "variety": "Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 36.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-9095",
+    "title": "PianCornello 2007  Brunello di Montalcino",
+    "variety": "Sangiovese Grosso",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 60.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-7145",
+    "title": "Pecchenino 2011 San Giuseppe  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": null,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-17850",
+    "title": "Mastroberardino 2009 Radici  (Taurasi)",
+    "variety": "Aglianico",
+    "country": "Italy",
+    "province": "Southern Italy",
+    "price": 60.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-18318",
+    "title": "K Vintners 2014 The Deal Sundance Vineyard Syrah (Wahluke Slope)",
+    "variety": "Syrah",
+    "country": "US",
+    "province": "Washington",
+    "price": 40.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 2,
+  "query": "a crisp, mineral white to go with fresh oysters",
+  "rubric": {
+   "family": "white",
+   "kw": [
+    "crisp",
+    "mineral",
+    "minerality",
+    "citrus",
+    "saline",
+    "zesty",
+    "bright acidity",
+    "lemon",
+    "lime"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-26661",
+    "title": "Bodkin 2014 The Victor's Spoils Sauvignon Blanc (North Coast)",
+    "variety": "Sauvignon Blanc",
+    "country": "US",
+    "province": "California",
+    "price": 18.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-6351",
+    "title": "Grgich Hills 2014 Miljenko's Selection Essence Estate Grown Sauvignon Blanc (Napa Valley)",
+    "variety": "Sauvignon Blanc",
+    "country": "US",
+    "province": "California",
+    "price": 55.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-12378",
+    "title": "Kilikanoon 2014 Mort's Block Riesling (Clare Valley)",
+    "variety": "Riesling",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 20.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-22242",
+    "title": "Fontes da Cunha 2014 Quinta do Mondego White (Dão)",
+    "variety": "Portuguese White",
+    "country": "Portugal",
+    "province": "Dão",
+    "price": 20.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-18645",
+    "title": "Tsililis 2015 Theopetra Malagouzia-Assyrtiko White",
+    "variety": "White Blend",
+    "country": "",
+    "province": "",
+    "price": 28.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-23460",
+    "title": "Hatzimichalis 2015 Assyrtiko (Atalanti Valley)",
+    "variety": "Assyrtiko",
+    "country": "Greece",
+    "province": "Atalanti Valley",
+    "price": 12.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-25656",
+    "title": "Wagner-Stempel 2014 Gutswein Trocken Weissburgunder (Rheinhessen)",
+    "variety": "Weissburgunder",
+    "country": "Germany",
+    "province": "Rheinhessen",
+    "price": 22.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-7097",
+    "title": "Conspire 2009 Sauvignon Blanc (Rutherford)",
+    "variety": "Sauvignon Blanc",
+    "country": "US",
+    "province": "California",
+    "price": 28.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-26776",
+    "title": "Conceito Vinhos 2014 Conceito Branco White (Douro)",
+    "variety": "Portuguese White",
+    "country": "Portugal",
+    "province": "Douro",
+    "price": 55.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-1500",
+    "title": "Joseph Drouhin 2013 Clos de la Garenne Premier Cru  (Puligny-Montrachet)",
+    "variety": "Chardonnay",
+    "country": "France",
+    "province": "Burgundy",
+    "price": 116.0,
+    "points": 95,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 3,
+  "query": "an elegant, silky Pinot Noir with red-berry fruit",
+  "rubric": {
+   "kw": [
+    "silky",
+    "elegant",
+    "cherry",
+    "raspberry",
+    "red berry",
+    "red-berry",
+    "strawberry",
+    "supple"
+   ],
+   "variety_any": [
+    "pinot noir"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-18962",
+    "title": "Paul Cluver 2015 Cape Winemakers Guild Auction Selection Pinot Noir (Elgin)",
+    "variety": "Pinot Noir",
+    "country": "South Africa",
+    "province": "Elgin",
+    "price": null,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-8413",
+    "title": "Thomas Fogarty 2013 Kent Berry Vineyard Pinot Noir (Santa Cruz Mountains)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 50.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-12984",
+    "title": "Merry Edwards 2012 Meredith Estate Pinot Noir (Russian River Valley)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 57.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-5008",
+    "title": "Wieninger 2015 Select Pinot Noir (Vienna)",
+    "variety": "Pinot Noir",
+    "country": "Austria",
+    "province": "Vienna",
+    "price": 33.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-20971",
+    "title": "Baker Lane 2012 Reserve Pinot Noir (Sonoma Coast)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 45.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-24757",
+    "title": "Siduri 2010 Ewald Vineyard Pinot Noir (Russian River Valley)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 48.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-18958",
+    "title": "Newton Johnson 2016 Cape Winemakers Guild Windansea Pinot Noir",
+    "variety": "Pinot Noir",
+    "country": "",
+    "province": "",
+    "price": null,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-24287",
+    "title": "Carlton Cellars 2012 Roads End Pinot Noir (Oregon)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "Oregon",
+    "price": 45.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-28575",
+    "title": "Jalits 2015 Pinot Noir (Burgenland)",
+    "variety": "Pinot Noir",
+    "country": "Austria",
+    "province": "Burgenland",
+    "price": 34.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-29576",
+    "title": "Two Paddocks 2015 The First Paddock Proprietor's Reserve Pinot Noir (Central Otago)",
+    "variety": "Pinot Noir",
+    "country": "New Zealand",
+    "province": "Central Otago",
+    "price": 79.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 4,
+  "query": "an affordable Argentine Malbec under $20",
+  "rubric": {
+   "country": "Argentina",
+   "max_price": 20,
+   "variety_any": [
+    "malbec"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-12928",
+    "title": "Chaltén 2009 Gran Reserva Malbec (Neuquén)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Other",
+    "price": 19.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-29582",
+    "title": "Ricardo Santos 2006 La Madras Vineyard Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 18.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-22583",
+    "title": "Proemio 2006 Reserve Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 19.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-7690",
+    "title": "Tapiz 2008 Black Tears Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 59.0,
+    "points": 93,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-17351",
+    "title": "Trivento 2010 Golden Reserve Malbec (Luján de Cuyo)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 21.0,
+    "points": 92,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-22385",
+    "title": "Viña Cobos 2009 Felino Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 20.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-19171",
+    "title": "Piattelli 2007 Grand Reserve Malbec (Luján de Cuyo)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 20.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-27805",
+    "title": "Luigi Bosca 2005 Reserva Malbec (Luján de Cuyo)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 18.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-23749",
+    "title": "Zuccardi 2009 Q Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 20.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-19331",
+    "title": "Pascual Toso 2006 Magdalena Toso Limited 28 Barrels Malbec-Cabernet Sauvignon (Mendoza)",
+    "variety": "Malbec-Cabernet Sauvignon",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 117.0,
+    "points": 92,
+    "fails": "over budget"
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 5,
+  "query": "a dry Riesling from Germany with racy acidity",
+  "rubric": {
+   "country": "Germany",
+   "kw": [
+    "dry",
+    "racy",
+    "acidity",
+    "citrus",
+    "lime",
+    "petrol",
+    "mineral"
+   ],
+   "variety_any": [
+    "riesling"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-27718",
+    "title": "Johannishof 2013 Johannisberger Klaus Spätlese Riesling (Rheingau)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Rheingau",
+    "price": 44.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-25099",
+    "title": "Staatliche Weinbaudomäne Oppenheim 2015 Niersteiner vom Rotliegenden Riesling (Rheinhessen)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Rheinhessen",
+    "price": 28.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-15761",
+    "title": "C.H. Berres 2011 Ürziger Goldwingert Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 37.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-29033",
+    "title": "Pflüger 2015 Dürkheimer Trocken Riesling (Pfalz)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Pfalz",
+    "price": 25.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-4962",
+    "title": "S.A. Prüm 2012 Graacher Dompropst GG Dry Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 75.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-26326",
+    "title": "Balthasar Ress 2015 Von Unserm Trocken Riesling (Rheingau)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Rheingau",
+    "price": 22.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-11574",
+    "title": "Maximin Grünhäuser 2014 Abtsberg Kabinett Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 38.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-7091",
+    "title": "S.A. Prüm 2001 Graacher Himmelreich Vat 46 Eiswein Riesling (Mosel-Saar-Ruwer)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel-Saar-Ruwer",
+    "price": 143.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-15316",
+    "title": "Domdechant Werner 2015 Hochheimer Kabinett Riesling (Rheingau)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Rheingau",
+    "price": 25.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-29961",
+    "title": "Robert Weil 2011 Kiedrich Gräfenberg Erstes Gewächs Trocken Riesling (Rheingau)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Rheingau",
+    "price": 80.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 6,
+  "query": "a rich, oaky California Chardonnay with buttery notes",
+  "rubric": {
+   "country": "US",
+   "kw": [
+    "oak",
+    "oaky",
+    "butter",
+    "buttery",
+    "creamy",
+    "toast",
+    "vanilla",
+    "rich"
+   ],
+   "variety_any": [
+    "chardonnay"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-10569",
+    "title": "Carte Blanche 2009 Chardonnay (Sonoma Coast)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 75.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-16805",
+    "title": "Fess Parker 2012 Sierra Madre Vineyard Chardonnay (Santa Maria Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 35.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-13827",
+    "title": "Guarachi Family 2009 Chardonnay (Sonoma Coast)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 30.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-22255",
+    "title": "Von Holt 2011 Heintz Family Vineyard Chardonnay (Sonoma Coast)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 38.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-2031",
+    "title": "Paul Hobbs 2010 Edwards James Estate Wente Selection Chardonnay (Russian River Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 75.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-18975",
+    "title": "Pessagno 2010 Sleepy Hollow Vineyard Chardonnay (Santa Lucia Highlands)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 32.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-28844",
+    "title": "Kendall-Jackson 2007 Grand Reserve Chardonnay (Santa Barbara-Monterey)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 21.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-9163",
+    "title": "Bernardus 2008 Rosella's Vineyard Chardonnay (Santa Lucia Highlands)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-19327",
+    "title": "Fort Ross 2006 Fort Ross Vineyard Chardonnay (Sonoma Coast)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 32.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-7045",
+    "title": "Au Bon Climat 2007 Santa Barbara Historic Vineyards Collection Sierra Madre Vineyard Chardonnay (Santa Barbara County)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 30.0,
+    "points": 93,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 7,
+  "query": "a spicy, peppery Syrah from the Rhône",
+  "rubric": {
+   "kw": [
+    "spice",
+    "spicy",
+    "pepper",
+    "peppery",
+    "smoked",
+    "savory",
+    "black pepper",
+    "meaty"
+   ],
+   "variety_any": [
+    "syrah"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-529",
+    "title": "Terre Rouge 2013 Ascent Syrah (Sierra Foothills)",
+    "variety": "Syrah",
+    "country": "US",
+    "province": "California",
+    "price": 90.0,
+    "points": 96,
+    "fails": null
+   },
+   {
+    "id": "wine-11767",
+    "title": "Bonny Doon 2013 Le Cigare Volant Red (Central Coast)",
+    "variety": "Rhône-style Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 45.0,
+    "points": 93,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-17284",
+    "title": "Tulpen 2007 Syrah (Columbia Valley (WA))",
+    "variety": "Syrah",
+    "country": "US",
+    "province": "Washington",
+    "price": 20.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-8345",
+    "title": "Jean-Luc Colombo 2014 La Louvée  (Cornas)",
+    "variety": "Syrah",
+    "country": "France",
+    "province": "Rhône Valley",
+    "price": 104.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-7852",
+    "title": "Sequel 2007 Syrah (Columbia Valley (WA))",
+    "variety": "Syrah",
+    "country": "US",
+    "province": "Washington",
+    "price": 55.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-27799",
+    "title": "Terre Rouge 2014 L'Autre Red (Sierra Foothills)",
+    "variety": "Rhône-style Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 30.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-2479",
+    "title": "Jean-Luc Colombo 2011 Terres Brulées  (Cornas)",
+    "variety": "Syrah",
+    "country": "France",
+    "province": "Rhône Valley",
+    "price": 48.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-11260",
+    "title": "Jean-Luc Colombo 2008 La Louvée Syrah  (Cornas)",
+    "variety": "Syrah",
+    "country": "France",
+    "province": "Rhône Valley",
+    "price": 84.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-8038",
+    "title": "Glen Fiona 1997 Basket Press Reserve Syrah (Walla Walla Valley (WA))",
+    "variety": "Syrah",
+    "country": "US",
+    "province": "Washington",
+    "price": 55.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-1263",
+    "title": "Novy 2005 Syrah (Santa Lucia Highlands)",
+    "variety": "Syrah",
+    "country": "US",
+    "province": "California",
+    "price": 27.0,
+    "points": 95,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 8,
+  "query": "a smooth, easy-drinking red under $15 for a weeknight",
+  "rubric": {
+   "family": "red",
+   "max_price": 15,
+   "kw": [
+    "smooth",
+    "easy",
+    "soft",
+    "juicy",
+    "approachable",
+    "round",
+    "supple",
+    "everyday"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-22174",
+    "title": "Jaffurs 2014 Syrah (Santa Barbara County)",
+    "variety": "Syrah",
+    "country": "US",
+    "province": "California",
+    "price": 29.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-14568",
+    "title": "Basilisco 2012 Teodosio  (Aglianico del Vulture)",
+    "variety": "Aglianico",
+    "country": "Italy",
+    "province": "Southern Italy",
+    "price": 19.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-27251",
+    "title": "Lecci e Brocchi 2012 Il Chiorba Riserva  (Chianti Classico)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 36.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-27179",
+    "title": "Castellare di Castellina 2013 Il Poggiale Riserva  (Chianti Classico)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 40.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-27075",
+    "title": "Bodegas Escudero 2008 Vidau  (Rioja)",
+    "variety": "Red Blend",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 88.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-5537",
+    "title": "Quinta de la Rosa 2014 Vale do Inferno Reserva Red (Douro)",
+    "variety": "Portuguese Red",
+    "country": "Portugal",
+    "province": "Douro",
+    "price": 70.0,
+    "points": 94,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-14691",
+    "title": "Sculpterra 2012 Maquette Estate Red (Paso Robles)",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 92,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-1451",
+    "title": "Martin Ray 2007 Synthesis Red (Napa Valley)",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 75.0,
+    "points": 95,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-8742",
+    "title": "Caparzo 2011 Riserva  (Brunello di Montalcino)",
+    "variety": "Sangiovese",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 80.0,
+    "points": 93,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-23570",
+    "title": "Chandler Reach 2005 Estate Select Monte Regalo Red Red (Yakima Valley)",
+    "variety": "Red Blend",
+    "country": "US",
+    "province": "Washington",
+    "price": 22.0,
+    "points": 91,
+    "fails": "over budget"
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 9,
+  "query": "a sparkling wine for a celebration",
+  "rubric": {
+   "kw": [
+    "sparkling",
+    "bubbles",
+    "brut",
+    "champagne",
+    "mousse",
+    "effervescent",
+    "fizz"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-20188",
+    "title": "Bellavista 2004 Gran Cuvée Brut Rosé Sparkling (Franciacorta)",
+    "variety": "Sparkling Blend",
+    "country": "Italy",
+    "province": "Lombardy",
+    "price": null,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-22998",
+    "title": "Laetitia 2008 Brut de Blancs Sparkling (Arroyo Grande Valley)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 28.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-22573",
+    "title": "Methius 2004 Brut Riserva Sparkling (Trento)",
+    "variety": "Sparkling Blend",
+    "country": "Italy",
+    "province": "Northeastern Italy",
+    "price": 60.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-8411",
+    "title": "Schramsberg 2011 Methode Traditionelle Brut Sparkling (Carneros)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 75.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-21901",
+    "title": "La Montina 2007 Brut Millesimato Sparkling (Franciacorta)",
+    "variety": "Sparkling Blend",
+    "country": "Italy",
+    "province": "Lombardy",
+    "price": null,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-20302",
+    "title": "Iron Horse 2009 Russian Cuvée Sparkling (Green Valley)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 38.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-12077",
+    "title": "Balletto 2011 Methode Traditionelle Brut Sparkling (Russian River Valley)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 42.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-460",
+    "title": "Schramsberg 2007 Reserve Sparkling (North Coast)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 120.0,
+    "points": 96,
+    "fails": null
+   },
+   {
+    "id": "wine-10673",
+    "title": "Fratelli Berlucchi 2009 Pas Dosé Vintage Sparkling (Franciacorta)",
+    "variety": "Sparkling Blend",
+    "country": "Italy",
+    "province": "Lombardy",
+    "price": 50.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-25395",
+    "title": "Il Mosnel NV Brut Sparkling (Franciacorta)",
+    "variety": "Sparkling Blend",
+    "country": "Italy",
+    "province": "Lombardy",
+    "price": 29.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 10,
+  "query": "a sweet dessert wine to serve with a fruit tart",
+  "rubric": {
+   "kw": [
+    "sweet",
+    "dessert",
+    "honey",
+    "honeyed",
+    "botrytis",
+    "late harvest",
+    "luscious",
+    "sauternes",
+    "unctuous",
+    "sticky"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-23120",
+    "title": "Sylvester 2005 Port Syrah (Paso Robles)",
+    "variety": "Syrah",
+    "country": "US",
+    "province": "California",
+    "price": 25.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-22830",
+    "title": "Castello di Bossi 2004 Vin San Laurentino Red (Toscana)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 95.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-26495",
+    "title": "Rosenhof 2012 Eiswein Blaufränkisch (Burgenland)",
+    "variety": "Blaufränkisch",
+    "country": "Austria",
+    "province": "Burgenland",
+    "price": 37.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-24533",
+    "title": "Bonaccorsi 2010 Melville Vineyard Chardonnay (Sta. Rita Hills)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-15826",
+    "title": "Querciavalle 1998  Vin Santo del Chianti Classico",
+    "variety": "White Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 47.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-6446",
+    "title": "Novy 2006 Oley Dessert Wine Viognier (Russian River Valley)",
+    "variety": "Viognier",
+    "country": "US",
+    "province": "California",
+    "price": 14.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-21554",
+    "title": "Stephen & Walker 2009 Patrona Muscat Canelli (Alexander Valley)",
+    "variety": "Muscat Canelli",
+    "country": "US",
+    "province": "California",
+    "price": 38.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-11179",
+    "title": "Gini 2007 Col Foscarin  (Recioto di Soave)",
+    "variety": "Garganega",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": null,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-29889",
+    "title": "Quady 2014 Elysium Black Muscat (California)",
+    "variety": "Black Muscat",
+    "country": "US",
+    "province": "California",
+    "price": 22.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-15402",
+    "title": "Miraflores 2008 Botricelli Semillon-Sauvignon Blanc (California)",
+    "variety": "Semillon-Sauvignon Blanc",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 11,
+  "query": "a age-worthy Bordeaux-style red blend for the cellar",
+  "rubric": {
+   "kw": [
+    "age",
+    "aging",
+    "cellar",
+    "structured",
+    "tannic",
+    "firm",
+    "backbone",
+    "long",
+    "will improve",
+    "decade"
+   ],
+   "family": "red"
+  },
+  "hits": [
+   {
+    "id": "wine-2515",
+    "title": "Lineage 2009 Red Wine Red (Livermore Valley)",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 145.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-15014",
+    "title": "Newton 2009 The Puzzle Red (Napa Valley)",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 100.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-3554",
+    "title": "Captûre 2010 Harmonie Red (Pine Mountain-Cloverdale Peak)",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 120.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-21253",
+    "title": "Brian Carter Cellars 2004 L'Etalon Red (Columbia Valley (WA))",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "Washington",
+    "price": 30.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-2226",
+    "title": "Lauren Ashton Cellars 2009 Cuvée Arlette Red (Red Mountain)",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "Washington",
+    "price": 50.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-11101",
+    "title": "Gargiulo 2005 Five Seventy Five OVX G Major 7 Study Red (Oakville)",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 125.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-24371",
+    "title": "Stonestreet 2007 Legacy Red (Alexander Valley)",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "California",
+    "price": 85.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-17963",
+    "title": "Château Violette 2009  Pomerol",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-11286",
+    "title": "La Mondotte 2008  Saint-Émilion",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-26426",
+    "title": "JM Cellars 2009 Longevity Red Red (Columbia Valley (WA))",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "US",
+    "province": "Washington",
+    "price": 42.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v1",
+  "qid": 12,
+  "query": "a light, aromatic white with floral notes for a warm afternoon",
+  "rubric": {
+   "family": "white",
+   "kw": [
+    "aromatic",
+    "floral",
+    "flowers",
+    "blossom",
+    "perfumed",
+    "light",
+    "fragrant",
+    "jasmine",
+    "honeysuckle"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-17808",
+    "title": "Salomon-Undhof 2013 Steinterrassen Riesling (Kremstal)",
+    "variety": "Riesling",
+    "country": "Austria",
+    "province": "Kremstal",
+    "price": 25.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-19145",
+    "title": "Waters 2015 Prelude White (Washington)",
+    "variety": "White Blend",
+    "country": "US",
+    "province": "Washington",
+    "price": 28.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-1547",
+    "title": "Kracher 2011 Grande Cuvée Trockenbeerenauslese Nummer 6 White (Burgenland)",
+    "variety": "White Blend",
+    "country": "Austria",
+    "province": "Burgenland",
+    "price": 99.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-24669",
+    "title": "Knights Bridge 2015 Pont de Chevalier Sauvignon Blanc (Knights Valley)",
+    "variety": "Sauvignon Blanc",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-18927",
+    "title": "Dutton-Goldfield 2015 Dutton Ranch Shop Block Pinot Blanc (Green Valley)",
+    "variety": "Pinot Blanc",
+    "country": "US",
+    "province": "California",
+    "price": 30.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-21847",
+    "title": "Aigner 2016 Ried Weinzierlberg Riesling (Kremstal)",
+    "variety": "Riesling",
+    "country": "Austria",
+    "province": "Kremstal",
+    "price": 16.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-10134",
+    "title": "Maison Nicolas Perrin 2009 White (Hermitage)",
+    "variety": "Rhône-style White Blend",
+    "country": "France",
+    "province": "Rhône Valley",
+    "price": 79.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-7302",
+    "title": "Domdechant Werner 2012 Hochheimer Domdechaney Spätlese Riesling (Rheingau)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Rheingau",
+    "price": 35.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-8945",
+    "title": "Betz Family 2014 Heart of the Hill Cabernet Sauvignon (Red Mountain)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "Washington",
+    "price": 110.0,
+    "points": 93,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-25614",
+    "title": "Peter Lauer NV Brut Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 35.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 1,
+  "query": "a Barolo with firm tannins and notes of tar and roses",
+  "rubric": {
+   "variety_any": [
+    "nebbiolo"
+   ],
+   "province": "Piedmont",
+   "kw": [
+    "tar",
+    "rose",
+    "tannin",
+    "firm"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-22075",
+    "title": "Fratelli Seghesio 2012  Barolo",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 38.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-962",
+    "title": "Rivetto 2008 Briccolina  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 169.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-21448",
+    "title": "Mauro Veglio 2006 Vigneto Gattera  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 45.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-9581",
+    "title": "Fontanafredda 2011 del Comune di Serralunga d'Alba  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 45.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-7595",
+    "title": "Germano Ettore 2013 del Comune di Serralunga d'Alba  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 50.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-4822",
+    "title": "Mauro Veglio 2010 Rocche dell'Annunziata  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 70.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-12145",
+    "title": "Brandini 2011 Resa 56  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 90.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-16278",
+    "title": "Fratelli Alessandria 2012 San Lorenzo di Verduno  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 64.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-12332",
+    "title": "Paolo Scavino 2012 Cannubi  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 87.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-14820",
+    "title": "Giacomo Fenocchio 2011 Villero  (Barolo)",
+    "variety": "Nebbiolo",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": null,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 2,
+  "query": "a New Zealand Sauvignon Blanc with grapefruit and passion fruit",
+  "rubric": {
+   "variety_any": [
+    "sauvignon blanc"
+   ],
+   "country": "New Zealand",
+   "kw": [
+    "grapefruit",
+    "passion fruit",
+    "passionfruit",
+    "citrus",
+    "gooseberry",
+    "lime",
+    "tropical"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-23484",
+    "title": "Greywacke 2016 Sauvignon Blanc (Marlborough)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Marlborough",
+    "price": 23.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-22550",
+    "title": "Greywacke 2015 Sauvignon Blanc (Marlborough)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Marlborough",
+    "price": 23.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-8218",
+    "title": "Spy Valley 2014 Envoy Johnson Vineyard Sauvignon Blanc (Marlborough)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Marlborough",
+    "price": 33.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-8434",
+    "title": "Te Mata 2013 Cape Crest Sauvignon Blanc (Hawke's Bay)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Hawke's Bay",
+    "price": 30.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-29466",
+    "title": "Opawa 2016 Sauvignon Blanc (Marlborough)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Marlborough",
+    "price": 15.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-17532",
+    "title": "Marisco Vineyards 2015 The King's Favour Waihopai Sauvignon Blanc (Marlborough)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Marlborough",
+    "price": 18.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-26923",
+    "title": "Eradus 2009 Sauvignon Blanc (Marlborough)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Marlborough",
+    "price": 20.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-28732",
+    "title": "Seifried 2013 Sauvignon Blanc (Nelson)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Nelson",
+    "price": 18.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-21511",
+    "title": "Marisco Vineyards 2016 The Ned Waihopai River Sauvignon Blanc (Marlborough)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Marlborough",
+    "price": 13.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-28075",
+    "title": "Eradus 2013 Sauvignon Blanc (Awatere Valley)",
+    "variety": "Sauvignon Blanc",
+    "country": "New Zealand",
+    "province": "Awatere Valley",
+    "price": 18.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 3,
+  "query": "an Oregon Pinot Noir under $40 with earthy forest-floor notes",
+  "rubric": {
+   "variety_any": [
+    "pinot noir"
+   ],
+   "province": "Oregon",
+   "max_price": 40,
+   "kw": [
+    "earth",
+    "forest floor",
+    "mushroom",
+    "savory",
+    "underbrush"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-20365",
+    "title": "Stephen & Walker 2006 Pinot Noir (Monterey)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 39.0,
+    "points": 92,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-18379",
+    "title": "Adelsheim 2010 Pinot Noir (Willamette Valley)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "Oregon",
+    "price": 32.0,
+    "points": 92,
+    "fails": "style words missing"
+   },
+   {
+    "id": "wine-289",
+    "title": "Ken Wright 2012 Abbott Claim Vineyard Pinot Noir",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "Oregon",
+    "price": 65.0,
+    "points": 97,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-3981",
+    "title": "Della 2015 Keefer Ranch Vineyard Pinot Noir (Russian River Valley)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 70.0,
+    "points": 94,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-9974",
+    "title": "Waits-Mast 2013 Nash Mill Vineyard Pinot Noir (Anderson Valley)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 93,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-17135",
+    "title": "Ross Andrew 2011 Reserve Lachini Vineyard Pinot Noir (Willamette Valley)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "Oregon",
+    "price": 50.0,
+    "points": 92,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-25519",
+    "title": "J. Wilkes 2013 Pinot Noir (Sta. Rita Hills)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 30.0,
+    "points": 91,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-5274",
+    "title": "Cinnabar 2014 Tondre Grapefield Pinot Noir (Santa Lucia Highlands)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 44.0,
+    "points": 94,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-5530",
+    "title": "Tyler 2008 Clos Pepe Pinot Noir (Sta. Rita Hills)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 60.0,
+    "points": 94,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-21158",
+    "title": "E16 2013 Trenton 1880 Pinot Noir (Russian River Valley)",
+    "variety": "Pinot Noir",
+    "country": "US",
+    "province": "California",
+    "price": 48.0,
+    "points": 91,
+    "fails": "wrong place"
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 4,
+  "query": "a Napa Cabernet Sauvignon with cassis and cedar for a special occasion",
+  "rubric": {
+   "variety_any": [
+    "cabernet sauvignon"
+   ],
+   "province": "California",
+   "kw": [
+    "cassis",
+    "black currant",
+    "blackcurrant",
+    "cedar"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-188",
+    "title": "Caymus 2009 Special Selection Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 130.0,
+    "points": 97,
+    "fails": null
+   },
+   {
+    "id": "wine-21619",
+    "title": "Napa Cellars 2012 V Collection Cabernet Sauvignon (St. Helena)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 50.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-6348",
+    "title": "Herencia 2013 Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 65.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-28484",
+    "title": "Silenus 2012 Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 45.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-16258",
+    "title": "Patel 2012 Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 110.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-23009",
+    "title": "Merryvale 2010 Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 65.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-26434",
+    "title": "Robert Mondavi 2009 Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 28.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-3836",
+    "title": "Harrison 1997 Reserve Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 100.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-1149",
+    "title": "Hall 2012 Kathryn Hall Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 150.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-15370",
+    "title": "Chateau Montelena 2014 Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 58.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 5,
+  "query": "a Champagne with brioche and toasty notes",
+  "rubric": {
+   "country": "France",
+   "province": "Champagne",
+   "kw": [
+    "brioche",
+    "toast",
+    "yeast",
+    "bread"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-25228",
+    "title": "Vincent Couche NV Extra Brut  (Champagne)",
+    "variety": "Champagne Blend",
+    "country": "France",
+    "province": "Champagne",
+    "price": 40.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-4182",
+    "title": "Perrier Jouët 1998 Belle Epoque Brut  (Champagne)",
+    "variety": "Champagne Blend",
+    "country": "France",
+    "province": "Champagne",
+    "price": 150.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-20640",
+    "title": "J. Dumangin Fils 2004 Vintage Premier Cru Brut  (Champagne)",
+    "variety": "Champagne Blend",
+    "country": "France",
+    "province": "Champagne",
+    "price": 79.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-3687",
+    "title": "Taittinger 2002 Comtes de Champagne Blanc de Blancs Brut Chardonnay (Champagne)",
+    "variety": "Chardonnay",
+    "country": "France",
+    "province": "Champagne",
+    "price": 171.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-22880",
+    "title": "Boizel 2000 Joyau de France Brut  (Champagne)",
+    "variety": "Champagne Blend",
+    "country": "France",
+    "province": "Champagne",
+    "price": 116.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-9874",
+    "title": "Drappier 2005 Grande Sendrée Brut  (Champagne)",
+    "variety": "Champagne Blend",
+    "country": "France",
+    "province": "Champagne",
+    "price": null,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-26509",
+    "title": "Charles Ellner 2002 Séduction Brut  (Champagne)",
+    "variety": "Champagne Blend",
+    "country": "France",
+    "province": "Champagne",
+    "price": 60.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-14566",
+    "title": "Boude Baudin NV Brut Cuvée de Réserve Chardonnay (Champagne)",
+    "variety": "Chardonnay",
+    "country": "France",
+    "province": "Champagne",
+    "price": 54.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-13689",
+    "title": "Taittinger 1995 Brut  (Champagne)",
+    "variety": "Champagne Blend",
+    "country": "France",
+    "province": "Champagne",
+    "price": 56.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-16673",
+    "title": "Charlier & Fils 2007 Bacchus Millésime Brut  (Champagne)",
+    "variety": "Champagne Blend",
+    "country": "France",
+    "province": "Champagne",
+    "price": 40.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 6,
+  "query": "a dry rosé from Provence for a summer lunch",
+  "rubric": {
+   "variety_any": [
+    "rosé"
+   ],
+   "province": "Provence",
+   "kw": [
+    "dry",
+    "crisp",
+    "fresh",
+    "strawberry",
+    "red berry",
+    "light"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-24176",
+    "title": "Château la Mascaronne 2014 Quat'Saisons Rosé (Côtes de Provence)",
+    "variety": "Rosé",
+    "country": "France",
+    "province": "Provence",
+    "price": 23.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-12750",
+    "title": "Château Roubine 2014 Premium Rosé (Côtes de Provence)",
+    "variety": "Rosé",
+    "country": "France",
+    "province": "Provence",
+    "price": 23.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-21168",
+    "title": "Mas de Cadenet 2012 Rosé (Côtes de Provence Sainte-Victoire)",
+    "variety": "Rosé",
+    "country": "France",
+    "province": "Provence",
+    "price": null,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-28154",
+    "title": "Château d'Esclans 2013 Rosé (Côtes de Provence)",
+    "variety": "Rosé",
+    "country": "France",
+    "province": "Provence",
+    "price": 35.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-12744",
+    "title": "Château Coussin 2010 Rosé (Côtes de Provence Sainte-Victoire)",
+    "variety": "Rosé",
+    "country": "France",
+    "province": "Provence",
+    "price": 20.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-14245",
+    "title": "Bernard Magrez 2016 Excellence des Muraires Rosé (Côtes de Provence)",
+    "variety": "Rosé",
+    "country": "France",
+    "province": "Provence",
+    "price": 59.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-23871",
+    "title": "Château Sainte Marguerite 2009 Grande Réserve Cru Classé Rosé (Côtes de Provence)",
+    "variety": "Rosé",
+    "country": "France",
+    "province": "Provence",
+    "price": 22.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-29115",
+    "title": "Kale 2013 Rosé (Napa Valley)",
+    "variety": "Rosé",
+    "country": "US",
+    "province": "California",
+    "price": 22.0,
+    "points": 91,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-27094",
+    "title": "Domaine Saint-André de Figuière 2007 Réserve Rosé (Côtes de Provence)",
+    "variety": "Rosé",
+    "country": "France",
+    "province": "Provence",
+    "price": 27.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-14247",
+    "title": "Château Sainte Marguerite 2016 Fantastique Rosé (Côtes de Provence La Londe)",
+    "variety": "Rosé",
+    "country": "France",
+    "province": "Provence",
+    "price": 48.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 7,
+  "query": "a vintage Port with rich dark fruit and chocolate",
+  "rubric": {
+   "variety_any": [
+    "port"
+   ],
+   "country": "Portugal",
+   "kw": [
+    "chocolate",
+    "plum",
+    "black fruit",
+    "dark fruit",
+    "fig",
+    "raisin",
+    "rich"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-20824",
+    "title": "Cockburn's 2009 Quinta dos Canais Vintage  (Port)",
+    "variety": "Port",
+    "country": "Portugal",
+    "province": "Port",
+    "price": 50.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-896",
+    "title": "Quinta do Vallado 2011 Vintage  (Port)",
+    "variety": "Port",
+    "country": "Portugal",
+    "province": "Port",
+    "price": 110.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-1264",
+    "title": "Dow's 1963 Vintage  (Port)",
+    "variety": "Port",
+    "country": "Portugal",
+    "province": "Port",
+    "price": 467.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-28560",
+    "title": "Poças 2009 Vintage  (Port)",
+    "variety": "Port",
+    "country": "Portugal",
+    "province": "Port",
+    "price": 75.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-22205",
+    "title": "Churchill's 2011 Quinta da Gricha Vintage  (Port)",
+    "variety": "Port",
+    "country": "Portugal",
+    "province": "Port",
+    "price": null,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-2794",
+    "title": "Occasio NV Opportunity Port (Livermore Valley)",
+    "variety": "Port",
+    "country": "US",
+    "province": "California",
+    "price": 35.0,
+    "points": 94,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-11364",
+    "title": "Quinta de la Rosa 2004 Vintage  (Port)",
+    "variety": "Port",
+    "country": "Portugal",
+    "province": "Port",
+    "price": 50.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-143",
+    "title": "Taylor Fladgate 2011 Vintage  (Port)",
+    "variety": "Port",
+    "country": "Portugal",
+    "province": "Port",
+    "price": 116.0,
+    "points": 97,
+    "fails": null
+   },
+   {
+    "id": "wine-1947",
+    "title": "Niepoort 2009 Vintage  (Port)",
+    "variety": "Port",
+    "country": "Portugal",
+    "province": "Port",
+    "price": 90.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-4147",
+    "title": "Offley 2011 Vintage  (Port)",
+    "variety": "Port",
+    "country": "Portugal",
+    "province": "Port",
+    "price": null,
+    "points": 94,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 8,
+  "query": "a Grüner Veltliner from Austria with white pepper",
+  "rubric": {
+   "variety_any": [
+    "grüner"
+   ],
+   "country": "Austria",
+   "kw": [
+    "pepper",
+    "spice",
+    "spicy"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-21306",
+    "title": "Wieninger 2013 Herrenholz Grüner Veltliner (Vienna)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Vienna",
+    "price": 28.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-4122",
+    "title": "Geyerhof 2016 Rosensteig Grüner Veltliner (Kremstal)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Kremstal",
+    "price": 20.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-27319",
+    "title": "Wieninger 2015 Wiener Grüner Veltliner (Vienna)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Vienna",
+    "price": 18.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-17758",
+    "title": "Bernhard Ott 2014 Fass 4 Grüner Veltliner (Wagram)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Wagram",
+    "price": 32.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-27830",
+    "title": "Stadt Krems 2016 Grüner Veltliner (Kremstal)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Kremstal",
+    "price": 15.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-3141",
+    "title": "Bründlmayer 2013 Alte Reben Reserve Grüner Veltliner (Kamptal)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Kamptal",
+    "price": 25.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-18313",
+    "title": "Weingut Christ 2015 Bruch Grüner Veltliner (Vienna)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Vienna",
+    "price": 22.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-25215",
+    "title": "Josef Jamek 2014 Ried Achleiten Federspiel Grüner Veltliner (Wachau)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Wachau",
+    "price": 32.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-14712",
+    "title": "Tegernseerhof 2012 Höhereck Smaragd Grüner Veltliner (Wachau)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Wachau",
+    "price": 44.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-28437",
+    "title": "Nigl 2015 Senftenberger Piri Grüner Veltliner (Kremstal)",
+    "variety": "Grüner Veltliner",
+    "country": "Austria",
+    "province": "Kremstal",
+    "price": 25.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 9,
+  "query": "a Spanish Rioja with vanilla and dried cherry",
+  "rubric": {
+   "variety_any": [
+    "tempranillo"
+   ],
+   "country": "Spain",
+   "kw": [
+    "vanilla",
+    "cherry",
+    "oak",
+    "leather",
+    "tobacco"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-4404",
+    "title": "Bodegas Riojanas 1998 Monte Real Gran Reserva  (Rioja)",
+    "variety": "Tempranillo Blend",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 65.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-746",
+    "title": "La Rioja Alta 2005 Gran Reserva 904  (Rioja)",
+    "variety": "Red Blend",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 50.0,
+    "points": 96,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-23709",
+    "title": "Larchago 2008 Izarbe Reserva Selección  (Rioja)",
+    "variety": "Tempranillo",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 35.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-9600",
+    "title": "El Coto 2005 Coto de Imaz Gran Reserva  (Rioja)",
+    "variety": "Tempranillo",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 44.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-29505",
+    "title": "Bodegas Franco-Españolas 2006 Rioja Bordón Gran Reserva  (Rioja)",
+    "variety": "Tempranillo Blend",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 24.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-8629",
+    "title": "Valserrano 2010 Gran Reserva  (Rioja)",
+    "variety": "Tempranillo Blend",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 36.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-16663",
+    "title": "Finca Mayor 2004 Gran Reserva  (Rioja)",
+    "variety": "Tempranillo",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 49.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-28339",
+    "title": "Bodegas Escudero 2010 Solar de Becquer Reserva  (Rioja)",
+    "variety": "Tempranillo Blend",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 40.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-13969",
+    "title": "Finca La Emperatriz 2011 Parcela No 1  (Rioja)",
+    "variety": "Tempranillo",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 78.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-14860",
+    "title": "Beronia 2006 Gran Reserva  (Rioja)",
+    "variety": "Tempranillo",
+    "country": "Spain",
+    "province": "Northern Spain",
+    "price": 33.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 10,
+  "query": "a Chianti Classico to pair with tomato-based pasta",
+  "rubric": {
+   "variety_any": [
+    "sangiovese"
+   ],
+   "province": "Tuscany",
+   "kw": [
+    "cherry",
+    "acidity",
+    "bright",
+    "savory",
+    "herb",
+    "tomato"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-25070",
+    "title": "Rocca delle Macìe 2009 Riserva di Fizzano  (Chianti Classico)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 30.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-18442",
+    "title": "Castelli del Grevepesa 2008 Panzano  (Chianti Classico)",
+    "variety": "Sangiovese",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 38.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-21930",
+    "title": "Mazzei 1999 Fonterutoli  (Chianti Classico)",
+    "variety": "Sangiovese",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 27.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-7806",
+    "title": "Nittardi 2011 Casanuova di Nittardi  (Chianti Classico)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 35.0,
+    "points": 93,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-6283",
+    "title": "La Porta di Vertine 2011  Chianti Classico",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 30.0,
+    "points": 93,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-12279",
+    "title": "Monteraponi 2010  Chianti Classico",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 18.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-12675",
+    "title": "Castello della Paneretta 2010  Chianti Classico",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 19.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-10635",
+    "title": "Castellinuzza e Piuca 2010  Chianti Classico",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 16.0,
+    "points": 93,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-23247",
+    "title": "Rocca delle Macìe 2012 Famiglia Zingarelli Riserva  (Chianti Classico)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 26.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-14921",
+    "title": "Castello di Verrazzano 2010  Chianti Classico",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 24.0,
+    "points": 92,
+    "fails": "wrong grape"
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 11,
+  "query": "a Zinfandel with jammy blackberry fruit under $35",
+  "rubric": {
+   "variety_any": [
+    "zinfandel"
+   ],
+   "max_price": 35,
+   "kw": [
+    "jam",
+    "blackberry",
+    "bramble",
+    "ripe"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-25281",
+    "title": "Hartford 1999 Zinfandel (Russian River Valley)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 34.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-27901",
+    "title": "St. Francis 1998 Pagani Reserve Zinfandel (Sonoma Valley)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-2061",
+    "title": "Renwood 2014 Grand Wren Zinfandel (Amador County)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 100.0,
+    "points": 95,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-29795",
+    "title": "EOS 2015 Algunas Dias Zinfandel (Paso Robles)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 36.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-7258",
+    "title": "Earthquake 2012 Zinfandel (Lodi)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 26.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-24924",
+    "title": "Renwood 2013 Riker Vineyard Zinfandel (Amador County)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-29483",
+    "title": "Seven Deadly Zins 2012 Old Vine Zinfandel (Lodi)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 16.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-7022",
+    "title": "Newsome-Harlow 2011 Herbert Vineyard Zinfandel (El Dorado County)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 36.0,
+    "points": 93,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-15354",
+    "title": "John Tyler 2007 Bacigalupi Vineyard Zinfandel (Russian River Valley)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 38.0,
+    "points": 92,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-17519",
+    "title": "Artezin 2014 Old Vine Zinfandel (Mendocino County)",
+    "variety": "Zinfandel",
+    "country": "US",
+    "province": "California",
+    "price": 18.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 12,
+  "query": "a Washington State Merlot that offers good value under $30",
+  "rubric": {
+   "variety_any": [
+    "merlot"
+   ],
+   "province": "Washington",
+   "max_price": 30
+  },
+  "hits": [
+   {
+    "id": "wine-21990",
+    "title": "Chateau Ste. Michelle 2005 Canoe Ridge Estate Merlot (Horse Heaven Hills)",
+    "variety": "Merlot",
+    "country": "US",
+    "province": "Washington",
+    "price": 22.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-27442",
+    "title": "Beresan 2009 The Buzz Yellow Jacket Vineyard Red (Walla Walla Valley (WA))",
+    "variety": "Red Blend",
+    "country": "US",
+    "province": "Washington",
+    "price": 19.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-4875",
+    "title": "Leonetti Cellar 1998 Merlot (Columbia Valley (WA))",
+    "variety": "Merlot",
+    "country": "US",
+    "province": "Washington",
+    "price": 50.0,
+    "points": 94,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-26039",
+    "title": "Arbor Crest 2012 Four Vineyards Merlot (Columbia Valley (WA))",
+    "variety": "Merlot",
+    "country": "US",
+    "province": "Washington",
+    "price": 18.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-18625",
+    "title": "Guardian 2011 Confidential Source Merlot (Columbia Valley (WA))",
+    "variety": "Merlot",
+    "country": "US",
+    "province": "Washington",
+    "price": 30.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-12051",
+    "title": "Dumas Station 2012 Estate Merlot (Walla Walla Valley (WA))",
+    "variety": "Merlot",
+    "country": "US",
+    "province": "Washington",
+    "price": 32.0,
+    "points": 93,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-7746",
+    "title": "Market Vineyards 2010 Alpha Merlot (Red Mountain)",
+    "variety": "Merlot",
+    "country": "US",
+    "province": "Washington",
+    "price": 52.0,
+    "points": 93,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-22607",
+    "title": "Gordon Estate 2010 Estate Grown Merlot (Columbia Valley (WA))",
+    "variety": "Merlot",
+    "country": "US",
+    "province": "Washington",
+    "price": 21.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-22449",
+    "title": "DaMa 2012 Merlot (Walla Walla Valley (WA))",
+    "variety": "Merlot",
+    "country": "US",
+    "province": "Washington",
+    "price": 35.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-15407",
+    "title": "Dumas Station 2008 Estate Merlot (Walla Walla Valley (WA))",
+    "variety": "Merlot",
+    "country": "US",
+    "province": "Washington",
+    "price": 28.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 13,
+  "query": "a Mosel Riesling with a touch of sweetness",
+  "rubric": {
+   "variety_any": [
+    "riesling"
+   ],
+   "province": "Mosel",
+   "kw": [
+    "sweet",
+    "off-dry",
+    "honey",
+    "ripe",
+    "peach",
+    "apricot"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-29299",
+    "title": "Fritz Haag 2014 Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 22.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-11573",
+    "title": "Maximin Grünhäuser 2014 Herrenberg Kabinett Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 34.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-27515",
+    "title": "Johann Haart 2006 Piesporter Goldtröpfchen Auslese Goldcap Riesling (Mosel-Saar-Ruwer)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel-Saar-Ruwer",
+    "price": 46.0,
+    "points": 91,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-29526",
+    "title": "Dr. Loosen 2006 Wehlener Sonnenuhr Spätlese Riesling (Mosel-Saar-Ruwer)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel-Saar-Ruwer",
+    "price": 32.0,
+    "points": 91,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-21154",
+    "title": "Fritz Haag 2012 Brauneberger Juffer Sonnenuhr Spätlese #14 Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": null,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-26682",
+    "title": "Dr. H. Thanisch (Erben Thanisch) 2014 Berncasteler Doctor Auslese Gold Cap Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 89.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-24501",
+    "title": "Fritz Haag 2012 Brauneberger Juffer Sonnenuhr Spätlese Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 44.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-11450",
+    "title": "Dr. Loosen 2012 Eiswein Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 86.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-20751",
+    "title": "Markus Molitor 2012 Zeltinger Sonnenuhr Spätlese Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 33.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-5917",
+    "title": "Fritz Haag 2012 Brauneberger Juffer Auslese Goldkapsel Riesling (Mosel)",
+    "variety": "Riesling",
+    "country": "Germany",
+    "province": "Mosel",
+    "price": 42.0,
+    "points": 94,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 14,
+  "query": "a white Burgundy with hazelnut and minerality",
+  "rubric": {
+   "variety_any": [
+    "chardonnay"
+   ],
+   "province": "Burgundy",
+   "kw": [
+    "hazelnut",
+    "nut",
+    "mineral",
+    "flint",
+    "chalk"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-24695",
+    "title": "Armida 2015 Sauvignon Blanc (Russian River Valley)",
+    "variety": "Sauvignon Blanc",
+    "country": "US",
+    "province": "California",
+    "price": 25.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-22561",
+    "title": "Pieropan 2013 La Rocca  (Soave Classico)",
+    "variety": "White Blend",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 31.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-14600",
+    "title": "Paul Jaboulet Aîné 2010 Domaine Mule Blanche White (Crozes-Hermitage)",
+    "variety": "Rhône-style White Blend",
+    "country": "France",
+    "province": "Rhône Valley",
+    "price": 42.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-15049",
+    "title": "Louis Latour 2000  Bâtard-Montrachet",
+    "variety": "Chardonnay",
+    "country": "France",
+    "province": "Burgundy",
+    "price": 220.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-29044",
+    "title": "Negro Angelo e Figli 2014 Perdaudin  (Roero)",
+    "variety": "Arneis",
+    "country": "Italy",
+    "province": "Piedmont",
+    "price": 30.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-24109",
+    "title": "Buitenverwachting 2011 Chardonnay (Constantia)",
+    "variety": "Chardonnay",
+    "country": "South Africa",
+    "province": "Constantia",
+    "price": 20.0,
+    "points": 91,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-8485",
+    "title": "Patz & Hall 2013 Chardonnay (Sonoma Coast)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 38.0,
+    "points": 93,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-3070",
+    "title": "Gloria Ferrer 2005 Carneros Cuvée Sparkling (Carneros)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 75.0,
+    "points": 94,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-7912",
+    "title": "Byron 2014 Bien Nacido Vineyard Chardonnay (Santa Maria Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 93,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-22291",
+    "title": "Rizzi NV Metodo Classico Extra Brut White (Vino Spumante)",
+    "variety": "White Blend",
+    "country": "Italy",
+    "province": "Italy Other",
+    "price": 29.0,
+    "points": 91,
+    "fails": "wrong grape"
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 15,
+  "query": "an Alsace Gewürztraminer with lychee and rose petal",
+  "rubric": {
+   "variety_any": [
+    "gewürztraminer"
+   ],
+   "province": "Alsace",
+   "kw": [
+    "lychee",
+    "rose",
+    "floral",
+    "spice",
+    "ginger"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-28081",
+    "title": "Domaine Moltès 2014 Steinert Grand Cru Gewurztraminer (Alsace)",
+    "variety": "Gewürztraminer",
+    "country": "France",
+    "province": "Alsace",
+    "price": 32.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-15287",
+    "title": "Biecher & Schaal 2014 Altenberg de Bergheim Grand Cru White (Alsace)",
+    "variety": "Alsace white blend",
+    "country": "France",
+    "province": "Alsace",
+    "price": 45.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-10158",
+    "title": "Louis Sipp 2010 Osterberg Grand Cru Gewurztraminer (Alsace)",
+    "variety": "Gewürztraminer",
+    "country": "France",
+    "province": "Alsace",
+    "price": 27.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-13028",
+    "title": "Paul Blanck 2012 Altenbourg Gewurztraminer (Alsace)",
+    "variety": "Gewürztraminer",
+    "country": "France",
+    "province": "Alsace",
+    "price": 30.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-24114",
+    "title": "Domaine Albert Mann 2010 Steingrubler Grand Cru Gewurztraminer (Alsace)",
+    "variety": "Gewürztraminer",
+    "country": "France",
+    "province": "Alsace",
+    "price": null,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-2261",
+    "title": "Domaine Barmès-Buecher 2013 Grand Cru Pfersigberg Doux Gewurztraminer (Alsace)",
+    "variety": "Gewürztraminer",
+    "country": "France",
+    "province": "Alsace",
+    "price": 90.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-14289",
+    "title": "Domaine Ostertag 2013 Fronholz Gewurztraminer (Alsace)",
+    "variety": "Gewürztraminer",
+    "country": "France",
+    "province": "Alsace",
+    "price": 64.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-10796",
+    "title": "Jean-Marc Bernhard 2014 Mambourg Grand Cru Gewurztraminer (Alsace)",
+    "variety": "Gewürztraminer",
+    "country": "France",
+    "province": "Alsace",
+    "price": 34.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-11340",
+    "title": "Domaine Ostertag 2014 Vignoble d'E Gewurztraminer (Alsace)",
+    "variety": "Gewürztraminer",
+    "country": "France",
+    "province": "Alsace",
+    "price": 40.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-15260",
+    "title": "Willm 2011 Vendanges Tardives Gewurztraminer (Alsace)",
+    "variety": "Gewürztraminer",
+    "country": "France",
+    "province": "Alsace",
+    "price": 54.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 16,
+  "query": "a Malbec from Mendoza with violet aromas",
+  "rubric": {
+   "variety_any": [
+    "malbec"
+   ],
+   "country": "Argentina",
+   "kw": [
+    "violet",
+    "floral"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-6995",
+    "title": "Bodega Catena Zapata 2011 Argentino Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 135.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-9441",
+    "title": "El Enemigo 2011 Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 30.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-15254",
+    "title": "Capataz 2012 Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 35.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-10295",
+    "title": "Bodega Catena Zapata 2012 Adrianna Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 150.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-27963",
+    "title": "Riglos 2006 Gran Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 32.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-9588",
+    "title": "Monteviejo 2009 Lindaflor La Violeta Malbec (Uco Valley)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 111.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-22197",
+    "title": "Maal 2012 Imposible Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 28.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-29111",
+    "title": "Doña Silvina 2011 Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 27.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-3030",
+    "title": "Alta Vista 2012 Single Vineyard Alizarine Malbec (Luján de Cuyo)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 48.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-15080",
+    "title": "Mapema 2007 pz Malbec (Mendoza)",
+    "variety": "Malbec",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 70.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 17,
+  "query": "an Australian Shiraz that is big and ripe",
+  "rubric": {
+   "variety_any": [
+    "shiraz",
+    "syrah"
+   ],
+   "country": "Australia",
+   "kw": [
+    "ripe",
+    "big",
+    "bold",
+    "rich",
+    "jam",
+    "concentrated",
+    "powerful",
+    "full-bodied"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-7124",
+    "title": "Thistledown 2013 The Basket Case Old Vine Shiraz (Barossa Valley)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 33.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-3145",
+    "title": "Kilikanoon 2010 Miracle Hill Shiraz (McLaren Vale)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 70.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-1046",
+    "title": "Lambert 2013 The Family Tree Shiraz (Barossa Valley)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 65.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-7419",
+    "title": "Langmeil 2014 The Freedom 1843 Shiraz (Barossa)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 150.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-4072",
+    "title": "Kay Brothers 2010 Amery Vineyard Block 6 Shiraz (McLaren Vale)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 120.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-19840",
+    "title": "Yalumba 2008 Hand Picked Shiraz-Viognier (Barossa)",
+    "variety": "Shiraz-Viognier",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 31.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-24013",
+    "title": "Mitolo 2014 Jester Shiraz (McLaren Vale)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 22.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-8685",
+    "title": "Wolf Blass 2010 Grey Label Shiraz (McLaren Vale)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 38.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-17056",
+    "title": "Passing Clouds 2005 Reserve Shiraz (Bendigo)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "Victoria",
+    "price": 30.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-11067",
+    "title": "Henry's Drive Vignerons 2008 Reserve Shiraz (Padthaway)",
+    "variety": "Shiraz",
+    "country": "Australia",
+    "province": "South Australia",
+    "price": 50.0,
+    "points": 93,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 18,
+  "query": "a Loire Sauvignon Blanc like Sancerre with flinty minerality",
+  "rubric": {
+   "variety_any": [
+    "sauvignon blanc"
+   ],
+   "province": "Loire Valley",
+   "kw": [
+    "flint",
+    "mineral",
+    "chalk",
+    "stone"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-8423",
+    "title": "Henri Bourgeois 2012 Sancerre d'Antan  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 50.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-15487",
+    "title": "Henri Bourgeois 2012 La Chapelle des Augustins  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 30.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-9153",
+    "title": "Domaine Fouassier 2008 Les Chailloux  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 23.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-19375",
+    "title": "Henri Bourgeois 2014 La Chapelle des Augustins  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 30.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-16847",
+    "title": "Henri Bourgeois 2010 La Chapelle des Augustins  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 32.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-23896",
+    "title": "Domaine Fouassier 2014 Les Romains  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 30.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-26179",
+    "title": "Domaine Girard 2015 Philippe Girard  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 26.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-17316",
+    "title": "Domaine Matthias et Emile Roblin 2015 Ammonites  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 40.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-14022",
+    "title": "Fournier Père et Fils 2015 Cuvée Silex  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 38.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-28464",
+    "title": "Pascal Jolivet 2010 Clos du Roy  (Sancerre)",
+    "variety": "Sauvignon Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 45.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 19,
+  "query": "a Chenin Blanc with honey and quince notes",
+  "rubric": {
+   "variety_any": [
+    "chenin blanc"
+   ],
+   "kw": [
+    "honey",
+    "quince",
+    "apple",
+    "beeswax"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-1723",
+    "title": "Domaine Vincent Carême 2015 Le Clos  (Vouvray)",
+    "variety": "Chenin Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 40.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-17831",
+    "title": "DeMorgenzon 2015 Reserve Chenin Blanc (Stellenbosch)",
+    "variety": "Chenin Blanc",
+    "country": "South Africa",
+    "province": "Stellenbosch",
+    "price": 35.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-18206",
+    "title": "Ken Forrester 2009 T Noble Late Harvest Chenin Blanc (Stellenbosch)",
+    "variety": "Chenin Blanc",
+    "country": "South Africa",
+    "province": "Stellenbosch",
+    "price": 55.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-12665",
+    "title": "Domaine des Baumard 2011 Carte d'Or Chenin Blanc (Coteaux du Layon)",
+    "variety": "Chenin Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": null,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-2250",
+    "title": "Domaine Huët 2009 Clos du Bourg Moelleux  (Vouvray)",
+    "variety": "Chenin Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 49.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-27916",
+    "title": "Moulin Touchais 2005 Chenin Blanc (Coteaux du Layon)",
+    "variety": "Chenin Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 60.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-25353",
+    "title": "Morgenhof 2010 Estate Chenin Blanc (Simonsberg-Stellenbosch)",
+    "variety": "Chenin Blanc",
+    "country": "South Africa",
+    "province": "Simonsberg-Stellenbosch",
+    "price": 19.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-27079",
+    "title": "Musset-Roullier 2011 Le Moulin Chenin Blanc (Anjou)",
+    "variety": "Chenin Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": null,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-25429",
+    "title": "Domaine des Roches Neuves 2011 L'Insolite  (Saumur)",
+    "variety": "Chenin Blanc",
+    "country": "France",
+    "province": "Loire Valley",
+    "price": 35.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-29114",
+    "title": "Jean Daneel 2012 Signature Chenin Blanc (Western Cape)",
+    "variety": "Chenin Blanc",
+    "country": "South Africa",
+    "province": "Western Cape",
+    "price": 30.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 20,
+  "query": "an Amarone with dried fruit and raisin richness",
+  "rubric": {
+   "variety_any": [
+    "corvina"
+   ],
+   "province": "Veneto",
+   "kw": [
+    "raisin",
+    "dried",
+    "fig",
+    "prune",
+    "rich",
+    "chocolate"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-27020",
+    "title": "Nicolis 2007 Ambrosan  (Amarone della Valpolicella Classico)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 88.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-28784",
+    "title": "Valentina Cubi 1997 Morar  (Amarone della Valpolicella Classico)",
+    "variety": "Corvina, Rondinella, Molinara",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 50.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-20525",
+    "title": "Secondo Marco 2010  Amarone della Valpolicella Classico",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 70.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-15381",
+    "title": "Valentina Cubi 2008 Morar  (Amarone della Valpolicella)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 69.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-27038",
+    "title": "Monte dall'Ora 2008  Amarone della Valpolicella",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 58.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-23640",
+    "title": "La Dama 2008  Amarone della Valpolicella Classico",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 40.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-6061",
+    "title": "Le Salette 2012 Pergole Vece  (Amarone della Valpolicella Classico)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 152.0,
+    "points": 93,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-16891",
+    "title": "Viviani 2008 Casa dei Bepi  (Amarone della Valpolicella Classico)",
+    "variety": "Red Blend",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": null,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-18299",
+    "title": "Sartori 2004 I Saltari Le Vigne di Turano  (Amarone della Valpolicella)",
+    "variety": "Corvina, Rondinella, Molinara",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 62.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-20585",
+    "title": "Castellani Michele & Figli 2008 Colle Christi Collezione Ca' del Pipa  (Amarone della Valpolicella Classico)",
+    "variety": "Corvina, Rondinella, Molinara",
+    "country": "Italy",
+    "province": "Veneto",
+    "price": 52.0,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 21,
+  "query": "a light, fruity Beaujolais to serve slightly chilled",
+  "rubric": {
+   "variety_any": [
+    "gamay"
+   ],
+   "country": "France",
+   "kw": [
+    "light",
+    "fruity",
+    "fresh",
+    "juicy",
+    "bright",
+    "cherry",
+    "raspberry",
+    "strawberry"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-22358",
+    "title": "Georges Duboeuf 2009 Domaine des Rosiers  (Moulin-à-Vent)",
+    "variety": "Gamay",
+    "country": "France",
+    "province": "Beaujolais",
+    "price": null,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-21742",
+    "title": "Domaine Bertrand 2015 Les Déduits  (Fleurie)",
+    "variety": "Gamay",
+    "country": "France",
+    "province": "Beaujolais",
+    "price": 25.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-8551",
+    "title": "Domaine de Côtes Rémont 2015  Chénas",
+    "variety": "Gamay",
+    "country": "France",
+    "province": "Beaujolais",
+    "price": 18.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-22186",
+    "title": "Château de Lavernette 2014  Beaujolais-Villages",
+    "variety": "Gamay",
+    "country": "France",
+    "province": "Beaujolais",
+    "price": 19.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-29031",
+    "title": "Woodward Canyon 2013 Estate Sauvignon Blanc (Walla Walla Valley (WA))",
+    "variety": "Sauvignon Blanc",
+    "country": "US",
+    "province": "Washington",
+    "price": 26.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-13366",
+    "title": "Domaine Pascal Prunier-Bonheur 2015 Les Sizies Premier Cru  (Beaune)",
+    "variety": "Pinot Noir",
+    "country": "France",
+    "province": "Burgundy",
+    "price": 150.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-10730",
+    "title": "Gravner 2007 Ribolla Ribolla Gialla (Venezia Giulia)",
+    "variety": "Ribolla Gialla",
+    "country": "Italy",
+    "province": "Northeastern Italy",
+    "price": 115.0,
+    "points": 93,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-18460",
+    "title": "Brooks 2015 Bois Joli Vineyard Riesling (Eola-Amity Hills)",
+    "variety": "Riesling",
+    "country": "US",
+    "province": "Oregon",
+    "price": 24.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-21796",
+    "title": "Lucien Lardy 2015 Vignes de 1951  (Beaujolais-Villages)",
+    "variety": "Gamay",
+    "country": "France",
+    "province": "Beaujolais",
+    "price": 17.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-23001",
+    "title": "Château de Lacarelle 2011 Cuvée Grand Réserve  (Beaujolais-Villages)",
+    "variety": "Gamay",
+    "country": "France",
+    "province": "Beaujolais",
+    "price": 12.0,
+    "points": 91,
+    "fails": "style words missing"
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 22,
+  "query": "a Brunello di Montalcino worth cellaring for ten years",
+  "rubric": {
+   "variety_any": [
+    "sangiovese"
+   ],
+   "province": "Tuscany",
+   "kw": [
+    "age",
+    "aging",
+    "cellar",
+    "structure",
+    "tannin",
+    "years",
+    "decade"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-5788",
+    "title": "Tenuta di Sesta 2007  Brunello di Montalcino",
+    "variety": "Sangiovese Grosso",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 90.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-4998",
+    "title": "Citille di Sopra 2007  Brunello di Montalcino",
+    "variety": "Sangiovese Grosso",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 60.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-10931",
+    "title": "Tenuta di Sesta 2007 Riserva  (Brunello di Montalcino)",
+    "variety": "Sangiovese Grosso",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 140.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-12",
+    "title": "Casanova di Neri 2007 Cerretalto  (Brunello di Montalcino)",
+    "variety": "Sangiovese Grosso",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 270.0,
+    "points": 100,
+    "fails": null
+   },
+   {
+    "id": "wine-11131",
+    "title": "Argiano 2006 L'Orciaia  (Brunello di Montalcino)",
+    "variety": "Sangiovese Grosso",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": null,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-19406",
+    "title": "Citille di Sopra 2005  Brunello di Montalcino",
+    "variety": "Sangiovese",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": null,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-17544",
+    "title": "Terralsole 2004 Riserva  (Brunello di Montalcino)",
+    "variety": "Sangiovese Grosso",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 74.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-1920",
+    "title": "Casanova di Neri 2007  Brunello di Montalcino",
+    "variety": "Sangiovese Grosso",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 50.0,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-8884",
+    "title": "Canneta 2006 Riserva  (Brunello di Montalcino)",
+    "variety": "Sangiovese Grosso",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 49.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-11801",
+    "title": "Mastrojanni 1997  Brunello di Montalcino",
+    "variety": "Sangiovese",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 60.0,
+    "points": 93,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 23,
+  "query": "a California sparkling wine under $40",
+  "rubric": {
+   "province": "California",
+   "max_price": 40,
+   "kw": [
+    "sparkling",
+    "bubbles",
+    "brut",
+    "mousse",
+    "effervescent",
+    "fizz"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-17697",
+    "title": "Sonoma Coast Vineyards 2007 Sparkling (Sonoma Coast)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 25.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-22998",
+    "title": "Laetitia 2008 Brut de Blancs Sparkling (Arroyo Grande Valley)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 28.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-9005",
+    "title": "Roederer Estate NV Brut Rosé Sparkling (Anderson Valley)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 28.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-15325",
+    "title": "Roederer Estate NV Brut Sparkling (Anderson Valley)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 23.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-14085",
+    "title": "Roederer Estate NV Brut Rosé Sparkling (Anderson Valley)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 27.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-993",
+    "title": "Schramsberg 2008 Reserve Sparkling (North Coast)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 120.0,
+    "points": 95,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-11879",
+    "title": "Iron Horse 2000 Brut LD Sparkling (Green Valley)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 110.0,
+    "points": 93,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-11637",
+    "title": "Gloria Ferrer 2004 Royal Cuvée Brut Sparkling (Carneros)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 32.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-5757",
+    "title": "Schramsberg 2007 Blanc de Noirs Sparkling (North Coast)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 38.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-2669",
+    "title": "Schramsberg 2008 Extra Brut Sparkling (California)",
+    "variety": "Sparkling Blend",
+    "country": "US",
+    "province": "California",
+    "price": 75.0,
+    "points": 94,
+    "fails": "over budget"
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 24,
+  "query": "a Willamette Valley Chardonnay with bright acidity",
+  "rubric": {
+   "variety_any": [
+    "chardonnay"
+   ],
+   "province": "Oregon",
+   "kw": [
+    "acidity",
+    "bright",
+    "crisp",
+    "fresh",
+    "lively",
+    "zesty"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-4908",
+    "title": "Bergström 2015 Old Stones Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 35.0,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-25566",
+    "title": "WillaKenzie Estate 2011 Clos Marco Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 28.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-595",
+    "title": "Ponzi 2012 Aurora Vineyard Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 60.0,
+    "points": 96,
+    "fails": null
+   },
+   {
+    "id": "wine-28062",
+    "title": "Adelsheim 2011 Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 22.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-23452",
+    "title": "Lange 2013 Three Hills Cuvée Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 38.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-17637",
+    "title": "St. Innocent 2013 Freedom Hill Vineyard Dijon Clone Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 26.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-25590",
+    "title": "Ponzi 2011 Aurora Vineyard Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 60.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-9884",
+    "title": "Lange 2014 Freedom Hill Vineyard Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 65.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-29612",
+    "title": "Amalie Robert 2015 Her Silhouette Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 22.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-22391",
+    "title": "J. Christopher 2011 Cuvée Lunatique Chardonnay (Willamette Valley)",
+    "variety": "Chardonnay",
+    "country": "US",
+    "province": "Oregon",
+    "price": 20.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 25,
+  "query": "a Cabernet Franc with herbal and graphite notes",
+  "rubric": {
+   "variety_any": [
+    "cabernet franc"
+   ],
+   "kw": [
+    "herb",
+    "graphite",
+    "pencil",
+    "leaf",
+    "tobacco"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-12106",
+    "title": "Duemani 2011 Cabernet Franc (Costa Toscana)",
+    "variety": "Cabernet Franc",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 120.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-23622",
+    "title": "Stevens 2012 Stevens Franc Cabernet Franc (Yakima Valley)",
+    "variety": "Cabernet Franc",
+    "country": "US",
+    "province": "Washington",
+    "price": 32.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-9528",
+    "title": "El Enemigo 2014 Gran Enemigo Agrelo Single Vineyard Cabernet Franc (Mendoza)",
+    "variety": "Cabernet Franc",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 120.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-19341",
+    "title": "Le Macchiole 2013 Paleo Rosso Cabernet Franc (Toscana)",
+    "variety": "Cabernet Franc",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 110.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-26950",
+    "title": "Poggio al Tesoro 2010 Dedicato a Walter Cabernet Franc (Toscana)",
+    "variety": "Cabernet Franc",
+    "country": "Italy",
+    "province": "Tuscany",
+    "price": 90.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-13509",
+    "title": "Walla Walla Vintners 2006 Cabernet Franc (Columbia Valley (WA))",
+    "variety": "Cabernet Franc",
+    "country": "US",
+    "province": "Washington",
+    "price": 28.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-21320",
+    "title": "Silver Stag 2014 Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 60.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-26257",
+    "title": "Valdivieso 2013 Single Vineyard Cabernet Franc (Sagrada Familia)",
+    "variety": "Cabernet Franc",
+    "country": "Chile",
+    "province": "Sagrada Familia",
+    "price": 25.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-8738",
+    "title": "Robert Mondavi 2014 Cabernet Franc (Oakville)",
+    "variety": "Cabernet Franc",
+    "country": "US",
+    "province": "California",
+    "price": 65.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-25305",
+    "title": "El Enemigo 2014 Gran Enemigo Gualtallary Single Vineyard Cabernet Franc (Mendoza)",
+    "variety": "Cabernet Franc",
+    "country": "Argentina",
+    "province": "Mendoza Province",
+    "price": 120.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 26,
+  "query": "a Sauternes-style sweet white to pair with foie gras",
+  "rubric": {
+   "country": "France",
+   "family": "white",
+   "kw": [
+    "sweet",
+    "botrytis",
+    "honey",
+    "apricot",
+    "marmalade",
+    "unctuous",
+    "luscious",
+    "sauternes"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-3233",
+    "title": "Château Lafaurie-Peyraguey 2009  Sauternes",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-10259",
+    "title": "Château Lafaurie-Peyraguey 2005  Sauternes",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": 110.0,
+    "points": 93,
+    "fails": null
+   },
+   {
+    "id": "wine-5841",
+    "title": "Château Lafaurie-Peyraguey 2007  Sauternes",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-1757",
+    "title": "Château la Tour Blanche 2009  Sauternes",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 95,
+    "fails": null
+   },
+   {
+    "id": "wine-14552",
+    "title": "Château Lafaurie-Peyraguey 2014 La Chapelle  (Sauternes)",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": 25.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-3103",
+    "title": "Château Clos Haut-Peyraguey 2009  Sauternes",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 94,
+    "fails": null
+   },
+   {
+    "id": "wine-14072",
+    "title": "Château d'Arche 2010 Barrel sample  (Sauternes)",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-19924",
+    "title": "Château de Malle 2006  Sauternes",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-19",
+    "title": "Château d'Yquem 2009 Barrel sample  (Sauternes)",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 99,
+    "fails": null
+   },
+   {
+    "id": "wine-20174",
+    "title": "Château Filhot 2010  Sauternes",
+    "variety": "Bordeaux-style White Blend",
+    "country": "France",
+    "province": "Bordeaux",
+    "price": null,
+    "points": 92,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 27,
+  "query": "an Oregon Pinot Gris with pear and melon",
+  "rubric": {
+   "variety_any": [
+    "pinot gris"
+   ],
+   "province": "Oregon",
+   "kw": [
+    "pear",
+    "melon",
+    "apple",
+    "stone fruit",
+    "peach"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-27048",
+    "title": "Elk Cove 2007 Pinot Gris (Willamette Valley)",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 19.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-25341",
+    "title": "Elk Cove 2013 Pinot Gris (Willamette Valley)",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 19.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-28063",
+    "title": "Adelsheim 2011 Pinot Gris (Willamette Valley)",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 19.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-18028",
+    "title": "Panther Creek 2013 Pinot Gris (Willamette Valley)",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 18.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-23031",
+    "title": "Adelsheim 2013 Pinot Gris (Willamette Valley)",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 19.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-28927",
+    "title": "King Estate 2013 Signature Collection Pinot Gris (Oregon)",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 17.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-17818",
+    "title": "King Estate 2012 Three Bees Pinot Gris (Oregon)",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 24.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-24493",
+    "title": "Ponzi 2013 Pinot Gris (Willamette Valley)",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 17.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-14652",
+    "title": "Cristom 2015 Estate Pinot Gris (Eola-Amity Hills)",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 20.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-22303",
+    "title": "Wy'East Vineyards 2010 Pinot Gris (Columbia Gorge (OR))",
+    "variety": "Pinot Gris",
+    "country": "US",
+    "province": "Oregon",
+    "price": 18.0,
+    "points": 91,
+    "fails": null
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 28,
+  "query": "an Italian white to go with grilled fish",
+  "rubric": {
+   "country": "Italy",
+   "family": "white",
+   "kw": [
+    "crisp",
+    "mineral",
+    "citrus",
+    "fresh",
+    "lemon",
+    "saline",
+    "almond"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-20847",
+    "title": "Domaine Sigalas 2010 Assyrtico (Santorini)",
+    "variety": "Assyrtico",
+    "country": "Greece",
+    "province": "Santorini",
+    "price": 24.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-17267",
+    "title": "Le Casematte 2015 Peloro Bianco White (Terre Siciliane)",
+    "variety": "White Blend",
+    "country": "Italy",
+    "province": "Sicily & Sardinia",
+    "price": 20.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-18645",
+    "title": "Tsililis 2015 Theopetra Malagouzia-Assyrtiko White",
+    "variety": "White Blend",
+    "country": "",
+    "province": "",
+    "price": 28.0,
+    "points": 92,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-22372",
+    "title": "Franz Haas 2009 Manna White (Vigneti delle Dolomiti)",
+    "variety": "White Blend",
+    "country": "Italy",
+    "province": "Northeastern Italy",
+    "price": 40.0,
+    "points": 91,
+    "fails": "style words missing"
+   },
+   {
+    "id": "wine-3477",
+    "title": "Tardieu-Laurent 2014 Vieilles Vignes White (Châteauneuf-du-Pape)",
+    "variety": "Rhône-style White Blend",
+    "country": "France",
+    "province": "Rhône Valley",
+    "price": 66.0,
+    "points": 94,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-27138",
+    "title": "La Tunella 2006 Biancosesto White (Colli Orientali del Friuli)",
+    "variety": "White Blend",
+    "country": "Italy",
+    "province": "Northeastern Italy",
+    "price": 23.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-26683",
+    "title": "Donnafugata 2015 Sur Sur Grillo (Sicilia)",
+    "variety": "Grillo",
+    "country": "Italy",
+    "province": "Sicily & Sardinia",
+    "price": 19.0,
+    "points": 91,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-22767",
+    "title": "Attems 2008 Cicinis White (Collio)",
+    "variety": "White Blend",
+    "country": "Italy",
+    "province": "Northeastern Italy",
+    "price": 40.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-21087",
+    "title": "Feudi di San Gregorio 2010 Campanaro White (Irpinia)",
+    "variety": "White Blend",
+    "country": "Italy",
+    "province": "Southern Italy",
+    "price": 33.0,
+    "points": 92,
+    "fails": "style words missing"
+   },
+   {
+    "id": "wine-19566",
+    "title": "Gerovassiliou 2013 Single Vineyard Malagousia (Epanomi)",
+    "variety": "Malagousia",
+    "country": "Greece",
+    "province": "Epanomi",
+    "price": 23.0,
+    "points": 92,
+    "fails": "wrong grape"
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 29,
+  "query": "a Chilean Cabernet that drinks well now under $30",
+  "rubric": {
+   "variety_any": [
+    "cabernet sauvignon"
+   ],
+   "country": "Chile",
+   "max_price": 30
+  },
+  "hits": [
+   {
+    "id": "wine-21551",
+    "title": "Aresti 2001 Family Selection Cabernet Sauvignon (Curicó Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "Chile",
+    "province": "Curicó Valley",
+    "price": 45.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-17670",
+    "title": "Seña 2005 Red (Aconcagua Valley)",
+    "variety": "Bordeaux-style Red Blend",
+    "country": "Chile",
+    "province": "Aconcagua Valley",
+    "price": 78.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-6824",
+    "title": "Santa Rita 2007 Casa Real Cabernet Sauvignon (Maipo Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "Chile",
+    "province": "Maipo Valley",
+    "price": 75.0,
+    "points": 93,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-23558",
+    "title": "Montes 2006 Alpha Cabernet Sauvignon (Colchagua Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "Chile",
+    "province": "Colchagua Valley",
+    "price": 28.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-24241",
+    "title": "Porta 2006 Cima Cabernet Sauvignon (Aconcagua Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "Chile",
+    "province": "Aconcagua Valley",
+    "price": 50.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-21167",
+    "title": "Miguel Torres 2009 Manso de Velasco Viñas Viejas Cabernet Sauvignon (Curicó Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "Chile",
+    "province": "Curicó Valley",
+    "price": 65.0,
+    "points": 91,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-20113",
+    "title": "Estampa 2009 Gold Carménère-Cabernet Sauvignon-Cabernet Franc-Petit Verdot Red (Colchagua Valley)",
+    "variety": "Red Blend",
+    "country": "Chile",
+    "province": "Colchagua Valley",
+    "price": 24.0,
+    "points": 92,
+    "fails": "wrong grape"
+   },
+   {
+    "id": "wine-177",
+    "title": "Napa Angel 2006 by Montes Aurelio's Selection Cabernet Sauvignon (Napa Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "US",
+    "province": "California",
+    "price": 90.0,
+    "points": 97,
+    "fails": "wrong place"
+   },
+   {
+    "id": "wine-9077",
+    "title": "Enclave 2011 Cabernet Sauvignon (Maipo Valley)",
+    "variety": "Cabernet Sauvignon",
+    "country": "Chile",
+    "province": "Maipo Valley",
+    "price": 76.0,
+    "points": 93,
+    "fails": "over budget"
+   },
+   {
+    "id": "wine-13285",
+    "title": "San Pedro 2012 Cabo de Hornos Special Reserve Red (Cachapoal Valley)",
+    "variety": "Red Blend",
+    "country": "Chile",
+    "province": "Cachapoal Valley",
+    "price": null,
+    "points": 92,
+    "fails": "wrong grape"
+   }
+  ]
+ },
+ {
+  "set": "v2",
+  "qid": 30,
+  "query": "a Petite Sirah with inky color and black fruit",
+  "rubric": {
+   "variety_any": [
+    "petite sirah"
+   ],
+   "kw": [
+    "ink",
+    "black",
+    "dark",
+    "opaque"
+   ]
+  },
+  "hits": [
+   {
+    "id": "wine-12444",
+    "title": "C. Beck 2010 Petite Sirah (Napa Valley)",
+    "variety": "Petite Sirah",
+    "country": "US",
+    "province": "California",
+    "price": 38.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-24346",
+    "title": "Concannon 2010 Reserve Petite Sirah (Livermore Valley)",
+    "variety": "Petite Sirah",
+    "country": "US",
+    "province": "California",
+    "price": 40.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-16104",
+    "title": "Turley 2010 Pesenti Vineyard Petite Sirah (Paso Robles)",
+    "variety": "Petite Sirah",
+    "country": "US",
+    "province": "California",
+    "price": 35.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-28597",
+    "title": "Dalton 2014 D Oak Aged Petite Sirah (Israel)",
+    "variety": "Petite Sirah",
+    "country": "Israel",
+    "province": "Israel",
+    "price": 23.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-13898",
+    "title": "Clos LaChance 2013 Reserve Petite Sirah (Central Coast)",
+    "variety": "Petite Sirah",
+    "country": "US",
+    "province": "California",
+    "price": 30.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-21579",
+    "title": "Coquerel Family Wine Estates 2008 Petite Sirah (Napa Valley)",
+    "variety": "Petite Sirah",
+    "country": "US",
+    "province": "California",
+    "price": 35.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-25882",
+    "title": "Terra d'Oro 2013 Petite Sirah (Amador County)",
+    "variety": "Petite Sirah",
+    "country": "US",
+    "province": "California",
+    "price": 18.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-14705",
+    "title": "Sean Thackrey 2010 Sirius Eaglepoint Ranch Petite Sirah (Mendocino County)",
+    "variety": "Petite Sirah",
+    "country": "US",
+    "province": "California",
+    "price": 45.0,
+    "points": 92,
+    "fails": null
+   },
+   {
+    "id": "wine-27635",
+    "title": "HandCraft 2012 Petite Sirah (California)",
+    "variety": "Petite Sirah",
+    "country": "US",
+    "province": "California",
+    "price": 13.0,
+    "points": 91,
+    "fails": null
+   },
+   {
+    "id": "wine-9272",
+    "title": "Dalton 2012 Oak Aged Petite Sirah (Samson)",
+    "variety": "Petite Sirah",
+    "country": "Israel",
+    "province": "Samson",
+    "price": 25.0,
+    "points": 93,
+    "fails": null
+   }
+  ]
+ }
+]
