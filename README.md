@@ -1,12 +1,46 @@
 # Wine Sommelier RAG
 
+![In-browser search on the write-up: loading the self-hosted model, searching for an Italian white under $25 without Pinot Grigio, then turning the filters off to show results that break the limits](assets/demo.gif)
+
 A retrieval-augmented wine recommender: ask in plain English and get two or three bottles, each cited to a Wine Enthusiast review, with no invented bottles, scores or prices.
 
-Result: against dense retrieval alone, hybrid retrieval plus a cross-encoder reranker lifted nDCG@10 from 0.67 to 0.83 on the original 12 queries and from 0.59 to 0.76 on 30 queries frozen before their first run; retrieval takes 196 ms median on an Apple M4 and a Claude CLI answer 8.3 s and about $0.13 API-equivalent.
+Result (2026-11-13): on 28 requests with stated limits ("under twenty bucks", "not from France", "not oaky"), frozen before the run, plain hybrid search put a review that broke a limit in 217 of 280 top-ten slots. With Claude Sonnet extracting the limits into a validated JSON schema and the filters applied before ranking, 0 of 257 did ($0.053 and 2.4 s per request; Haiku: 3 of 257 at $0.003). Earlier result: hybrid retrieval plus a cross-encoder reranker lifted nDCG@10 from 0.59 to 0.76 over dense retrieval on 30 frozen queries. The search also runs in the browser on a self-hosted MiniLM.
 
 [Live site](https://lyhjeremy.github.io/wine-sommelier-rag/) · [Write-up](https://lyhjeremy.github.io/wine-sommelier-rag/overview/) · [Technical notes](writeup.md)
 
 Design and copy follow [these standards](https://github.com/lyhjeremy/lyhjeremy/blob/main/DESIGN_STANDARDS.md).
+
+## Constraint extraction (2026-11-13)
+
+`src/constraints.py` defines a pydantic `Constraints` schema: price range, minimum score, countries, provinces (US states and regions such as Oregon or Bordeaux), grapes, color, and excluded countries, grapes and words. Claude returns JSON for it; code checks types and ranges and checks every place and grape against the index's own vocabulary, and an invalid reply gets one repair attempt with the errors and the closest valid values. `src/filtered.py` masks the corpus before dense search, BM25 and the reranker run. A regex extractor (`extract_rules`) shares the schema and needs no model.
+
+`eval/constraints/queries.json` holds 28 requests and an answer key of the filters each states, committed in 2aa5f69 before any extractor ran. `python eval/constraints/run.py --extract sonnet haiku` then `python eval/constraints/run.py`:
+
+| System | Top-10 slots breaking a limit | Slots returned | Exact extraction | Cost per request |
+|---|---|---|---|---|
+| No filters (the app on the raw sentence) | 217 of 280 (77.5%) | 280 | | $0 |
+| Answer-key filters after fusion (today's CLI flags) | 0 | 186 | | $0 |
+| Regex extractor, filters first | 0 | 257 | 27 of 28 | $0 |
+| Sonnet 5.5, filters first | 0 | 257 | 27 of 28 | $0.053 median |
+| Haiku 5.5, filters first | 3 (1.2%) | 257 | 23 of 28 | $0.003 median |
+
+- Filtering after fusion avoids violations but leaves 14 requests short of ten results; filtering first returns all that exist (5 requests have fewer than ten matching reviews).
+- All 56 LLM replies validated on the first try. Haiku's 3 violations come from dropping the price in "a Chardonnay that is not oaky, under $30".
+- The regex extractor tied Sonnet, but I wrote it and the requests in the same session, so treat that as an upper bound.
+- "Not oaky" is a word filter: of 150 Chardonnays under $30 whose review mentions oak, it drops 17 that say unoaked or neutral oak (`eval/constraints/exclusion_check.json`).
+- No human labels; `eval/constraints/labeling_sheet.csv` is ready for a reader. Cost is the API-equivalent cost reported by the Claude CLI.
+
+### In the browser
+
+The write-up runs dense search over an int8 index of 8,000 of the reviews with the same all-MiniLM-L6-v2 model, through self-hosted transformers.js on WebAssembly (`assets/ai/`, about 58 MB, loaded only when you press Load; no third-party request). Filters come from the regex extractor ported to JavaScript, which matches the Python output on 35 of 35 test sentences (`eval/browser/rules_parity.py`). Over 12 queries the browser's top ten shared 8.8 of 10 reviews with the Python dense retriever on the same rows, with the same first result on 10 (`eval/browser/check_agreement.py`). One edit to the vendored `transformers.min.js`: GitHub push protection read the class name `Mistral3ForConditionalGeneration` as a Mistral API key, so that string is written as two joined halves.
+
+### MCP server
+
+`python src/mcp_server.py` serves `search_wines` (style query plus the filter fields, run through the same schema check) and `parse_constraints` over stdio with the `mcp` SDK. `python eval/mcp_smoke.py` calls both (`eval/mcp_smoke.json`).
+
+```bash
+claude mcp add wine-search -- /path/to/python /path/to/wine-sommelier-rag/src/mcp_server.py
+```
 
 ## Results
 

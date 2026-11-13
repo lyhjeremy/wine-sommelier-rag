@@ -119,6 +119,7 @@ let state = null;
 
 export async function load(base, onStage) {
   if (state) return state;
+  base = new URL(base, location.href).href;  // dynamic import() resolves against this module, not the page
   const t0 = performance.now();
   onStage?.("index");
   const [meta, buf] = await Promise.all([
@@ -129,7 +130,7 @@ export async function load(base, onStage) {
   const { pipeline, env } = await import(base + "vendor/transformers.min.js");
   env.allowRemoteModels = false;
   env.allowLocalModels = true;
-  env.localModelPath = base + "models/";
+  env.localModelPath = new URL(base).pathname + "models/";  // a path: a full URL here breaks the tokenizer load
   env.backends.onnx.wasm.wasmPaths = {
     mjs: new URL(base + "vendor/ort-wasm-simd-threaded.jsep.mjs", location).href,
     wasm: new URL(base + "vendor/ort-wasm-simd-threaded.jsep.wasm", location).href,

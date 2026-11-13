@@ -280,6 +280,45 @@
 </head>
 <body>
 <style>
+  /* constraint tables, demo */
+  .cmp-wrap { margin: 24px 0 0; overflow-x: auto; border-top: 1px solid var(--edge); }
+  .cmp { width: 100%; min-width: 40rem; border-collapse: collapse; font-family: var(--sans); font-size: 14.5px; color: var(--ink2); }
+  .cmp th, .cmp td { text-align: left; vertical-align: top; padding: 9px 12px 9px 0; border-bottom: 1px dotted var(--edge); }
+  .cmp thead th { font: 600 11.5px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--ink); }
+  .cmp tbody th { color: var(--ink); font-weight: 600; font-family: var(--sans); text-transform: none; letter-spacing: 0; font-size: 14.5px; }
+  .cmp td { font-family: var(--mono); font-size: 13.5px; }
+  .cmp b { color: var(--accent); }
+  .cap { font-family: var(--sans); font-size: 13px; color: var(--muted); margin: 10px 0 0; }
+  .demo { margin: 24px 0 0; border: 1px solid var(--edge); background: var(--card); padding: 18px 20px; }
+  .demo-note { font-family: var(--sans); font-size: 15px; color: var(--ink2); margin: 0 0 14px; max-width: none; }
+  .demo-status { font: 400 13px/1.5 var(--mono); color: var(--ink2); margin: 12px 0 0; max-width: none; }
+  .d-lab { display: block; font: 600 12px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 6px 0 6px; }
+  .d-row { display: flex; gap: 8px; }
+  .d-row input { flex: 1 1 auto; min-width: 0; font: 400 16px/1.3 var(--sans); padding: 9px 10px; border: 1px solid var(--edge); background: var(--paper); color: var(--ink); border-radius: 0; }
+  .d-ex { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+  .d-ex button { font: 400 13px/1.2 var(--sans); padding: 6px 9px; border: 1px solid var(--edge); background: var(--paper); color: var(--ink); cursor: pointer; text-align: left; }
+  .d-ex button:hover { background: var(--ink); color: var(--paper); }
+  .d-chk { display: block; font-family: var(--sans); font-size: 14.5px; color: var(--ink); margin: 8px 0; }
+  .d-filters { font-family: var(--sans); font-size: 14px; color: var(--ink2); margin: 6px 0 0; max-width: none; }
+  .chip { display: inline-block; font: 400 12.5px/1.4 var(--mono); border: 1px solid var(--edge); padding: 1px 6px; margin: 2px 2px 0 0; color: var(--ink); }
+  .d-res { margin: 12px 0 0; padding-left: 1.6rem; }
+  .d-res li { padding: 7px 0; border-bottom: 1px dotted var(--edge); font-family: var(--sans); font-size: 14.5px; }
+  .d-res .t { display: block; font-family: var(--serif); font-weight: 600; color: var(--ink); }
+  .d-res .m { display: block; font: 400 12.5px/1.5 var(--mono); color: var(--ink2); }
+  .d-res .v { display: block; font: 600 12.5px/1.5 var(--mono); color: var(--accent); }
+  .d-res .n { display: block; color: var(--ink2); font-size: 13.5px; }
+  .skeleton { background: var(--rule); border-radius: 0; }
+  .sk-line { height: 14px; margin: 10px 0 0; }
+  @media (prefers-reduced-motion: no-preference) { .skeleton { animation: sk 1.6s ease-in-out infinite; } @keyframes sk { 0%,100% { opacity: 1 } 50% { opacity: .55 } } }
+  #next ul { padding-left: 1.2rem; } #next li { margin: 0 0 8px; font-family: var(--serif); font-size: 16.5px; color: var(--ink2); }
+  @media (max-width: 560px) { .demo { padding: 14px 12px; } .d-row { flex-wrap: wrap; } .d-row .btn { width: 100%; } }
+  .issues { margin: 22px 0 0; border-top: 1px solid var(--edge); }
+  .issues .r { display: grid; grid-template-columns: minmax(0, 1fr) 4rem; gap: 4px 14px; padding: 11px 0; border-bottom: 1px dotted var(--edge); }
+  .issues .r.h { font: 600 11.5px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .issues .r.h span:not(:first-child), .issues .n { text-align: right; }
+  .issues .g { font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--ink); }
+  .issues .n { font-family: var(--display); font-weight: 600; font-size: 19px; color: var(--accent); }
+  .issues .ex { grid-column: 1 / -1; font-family: var(--serif); font-size: 15px; color: var(--ink2); }
   /* page-specific: metric stepper and the RRF calculator */
   .seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--edge); margin: 20px 0 0; }
   .seg button { font: 600 13px/1 var(--sans); padding: 9px 13px; background: var(--card); color: var(--ink); border: 0; cursor: pointer; }
@@ -360,7 +399,15 @@
 
   <section class="hero">
     <p class="kicker">Retrieval-augmented generation over 30,000 Wine Enthusiast reviews</p>
-    <h1>The reranker held up on 30 requests it had never seen</h1>
+    <h1>It now reads "under twenty bucks" out of the sentence</h1>
+
+    <p class="hero-sub">
+      On 28 requests with limits in them, frozen before the run, plain hybrid search put a
+      review that broke a stated limit in <strong>217 of 280</strong> top-ten slots. Claude
+      Sonnet now extracts those limits into a validated JSON schema and they filter the corpus
+      before ranking: <strong>0 of 257</strong> slots break one, at $0.05 and 2.4 s per request.
+      You can run the search itself in your browser below.
+    </p>
 
     <p class="hero-sub">
       Ask for "a bold red under $25 for a steak dinner" and the request goes through dense and
@@ -372,20 +419,23 @@
     </p>
 
     <div class="cta-row">
-      <a class="btn btn-primary" href="#errors">See where it fails</a>
+      <a class="btn btn-primary" href="#try">Try the in-browser search</a>
+      <a class="textlink" href="#errors">See where it fails</a>
       <a class="textlink" href="https://github.com/lyhjeremy/wine-sommelier-rag">Code and eval files on GitHub</a>
     </div>
 
     <div class="list" role="group" aria-labelledby="glance-h">
-      <div class="lh"><b id="glance-h">At a glance</b><span>measured 4 and 5 November 2026, files in <code>eval/</code></span></div>
+      <div class="lh"><b id="glance-h">At a glance</b><span>measured 4, 5 and 13 November 2026, files in <code>eval/</code></span></div>
       <dl>
         <div><dt>Task</dt><dd>Turn a plain-English wine request into 2 or 3 bottles from the reviews, each cited.</dd></div>
         <div><dt>Eval sets</dt><dd>12 queries from July (<code>src/eval.py</code>) and 30 held-out queries committed before their first run (<code>eval/queries_v2.json</code>). Relevance is a written rubric per query, with no human labels.</dd></div>
         <div><dt>Baseline</dt><dd>Dense vector search alone: nDCG@10 0.67 (12 queries), 0.59 (30).</dd></div>
         <div><dt>Result</dt><dd>Hybrid plus rerank: <b>0.83</b> and <b>0.76</b>. On the 30, the gain is +0.16 with a 95% bootstrap interval of 0.06 to 0.27; reranking won 19 queries, lost 6, tied 5.</dd></div>
-        <div><dt>Cost per query</dt><dd>Retrieval $0, all local. Generation <b>$0.13</b> median, the API-equivalent cost the Claude CLI reports (n = 20).</dd></div>
+        <div><dt>Constraints</dt><dd>28 requests with stated limits, frozen with an answer key before any run (<code>eval/constraints/queries.json</code>). Top-ten slots breaking a limit: <b>77.5%</b> unfiltered, <b>0%</b> with Sonnet extraction and filters first, 1.2% with Haiku.</dd></div>
+        <div><dt>In the browser</dt><dd>MiniLM over 8,000 reviews, self-hosted, 58 MB loaded on request. Top-ten overlap with the Python retriever 8.8 of 10 (n = 12).</dd></div>
+        <div><dt>Cost per query</dt><dd>Retrieval $0, all local. Constraint extraction $0.053 median on Sonnet, $0.003 on Haiku. Generation <b>$0.13</b> median, the API-equivalent cost the Claude CLI reports (n = 20).</dd></div>
         <div><dt>Latency</dt><dd>Retrieval <b>196 ms</b> median, 257 ms p95 (n = 126, Apple M4). Generation <b>8.3 s</b> median, 11.2 s p95 (n = 20).</dd></div>
-        <div><dt>Main failure</dt><dd>Of the 76 misses on the 30-query set, 20 are the wrong grape or color and 19 ignore a price stated in the sentence, which only a CLI flag can set.</dd></div>
+        <div><dt>Main failure</dt><dd>Before extraction: of 76 misses on the 30-query set, 19 ignored a price stated in the sentence. Now: "not oaky" is a word filter, and it drops the 17 under-$30 Chardonnays whose reviews say unoaked or neutral oak.</dd></div>
       </dl>
     </div>
   </section>
@@ -393,6 +443,143 @@
 
 <div class="wrap">
 <div class="route">
+
+  <section class="stop stop--key" id="constraints">
+    <p class="eyebrow">The upgrade, 2026-11-13</p>
+    <h2>Reading the limits out of the sentence</h2>
+    <p>
+      On 28 requests that state hard limits, frozen before anything ran on them, unfiltered
+      hybrid search put a review that broke one of those limits in <b>217 of 280</b> top-ten
+      slots (77.5%). With the limits extracted into a validated schema and applied before
+      ranking, Sonnet's extraction left <b>0 of 257</b> and Haiku's 3 of 257.
+    </p>
+    <p>
+      The pipeline: <code>src/constraints.py</code> asks Claude for JSON matching a pydantic
+      <code>Constraints</code> schema (price range, minimum score, countries, provinces such as
+      Oregon or Bordeaux, grapes, color, and excluded countries, grapes and words). Code checks
+      types and ranges, then checks every place and grape against the index's own vocabulary;
+      a value the index does not hold ("Napa Valley" as a province) goes back to the model with
+      the error and the closest valid values, once. <code>src/filtered.py</code> then masks the
+      corpus before dense search, BM25 and the reranker see it. The answer key for each request
+      (<code>eval/constraints/queries.json</code>, commit 2aa5f69) is the set of filters a careful
+      reader would take from the sentence.
+    </p>
+    <div class="cmp-wrap" role="region" aria-label="Constraint violations by system" tabindex="0">
+      <table class="cmp">
+        <thead><tr><th scope="col">System</th><th scope="col">Violating slots</th><th scope="col">Slots returned</th><th scope="col">Exact extraction</th><th scope="col">nDCG@10, 6 style requests</th><th scope="col">Cost per request</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">No filters (current app on the raw sentence)</th><td>217 (77.5%)</td><td>280</td><td>n/a</td><td>0.24</td><td>$0</td></tr>
+          <tr><th scope="row">Answer-key filters, applied after fusion (today's CLI flags)</th><td>0</td><td>186</td><td>n/a</td><td>0.72</td><td>$0</td></tr>
+          <tr><th scope="row">Rules extractor, filters first</th><td>0</td><td>257</td><td>27 of 28</td><td>0.87</td><td>$0</td></tr>
+          <tr><th scope="row">Sonnet 5.5 extraction, filters first</th><td><b>0</b></td><td>257</td><td>27 of 28</td><td>0.87</td><td>$0.053</td></tr>
+          <tr><th scope="row">Haiku 5.5 extraction, filters first</th><td>3 (1.2%)</td><td>257</td><td>23 of 28</td><td>0.87</td><td>$0.003</td></tr>
+          <tr><th scope="row">Answer-key filters, first (ceiling)</th><td>0</td><td>257</td><td>n/a</td><td>0.87</td><td>$0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cap">
+      28 requests, k = 10, the same 30,000 reviews as the other benchmarks. A slot violates when
+      the review breaks any answer-key clause. Fewer than 280 slots come back when fewer than ten
+      reviews satisfy a request (5 requests; "an Italian red for less than fifteen dollars" has 3).
+      Relevance for nDCG is the answer key plus style words, so it overlaps with the violation
+      count; it is reported only for the 6 requests that carry style words. Cost is the
+      API-equivalent median reported by the Claude CLI; Sonnet extraction took 2.4 s median,
+      Haiku 3.0 s; all 56 replies validated on the first try. From
+      <code>eval/constraints/summary.json</code>.
+    </p>
+    <p>
+      Two findings beyond the headline. Applying correct filters after fusion, the way the
+      existing <code>--max-price</code> flag works, avoids violations but returns only 186 of
+      280 slots: 14 requests come back short because the 80-review shortlist was chosen before
+      the filter. And the regex extractor tied Sonnet. I wrote the rules and the 28 requests in
+      the same session, so the rules have seen this phrasing; Sonnet had not. Treat 27 of 28 for
+      the rules as an upper bound until a set written by someone else exists.
+    </p>
+  </section>
+
+  <section class="stop stop--key" id="try">
+    <p class="eyebrow">Try it</p>
+    <h2>Search 8,000 reviews in your browser</h2>
+    <p>
+      The same MiniLM model as the Python side, run by transformers.js on WebAssembly, over an
+      int8 index of 8,000 reviews sampled from the 30,000. Filters come from the rules extractor,
+      ported to JavaScript; on the 28 frozen requests and 7 test sentences it returns exactly
+      what the Python version does (35 of 35, <code>eval/browser/rules_parity.json</code>).
+      There is no BM25 or reranker here: this is dense search with filters.
+    </p>
+    <div class="demo" id="demo">
+      <p class="demo-note">
+        Pressing Load downloads about 58 MB from this site: the ONNX runtime (28 MB), the
+        quantized model (23 MB) and the index (5.4 MB). Nothing is sent anywhere, and your
+        request never leaves the page.
+      </p>
+      <button type="button" class="btn btn-primary" id="d-load">Load the search, 58 MB</button>
+      <div id="d-sk" hidden aria-hidden="true">
+        <div class="skeleton sk-line" style="width:55%"></div>
+        <div class="skeleton sk-line" style="width:80%"></div>
+        <div class="skeleton sk-line" style="width:70%"></div>
+        <div class="skeleton sk-line" style="width:76%"></div>
+      </div>
+      <p id="d-status" class="demo-status" role="status" aria-live="polite"></p>
+      <div id="d-ui" hidden>
+        <label class="d-lab" for="d-q">Your request</label>
+        <div class="d-row">
+          <input id="d-q" type="text" value="an Italian white, not Pinot Grigio, under $25" autocomplete="off">
+          <button type="button" class="btn btn-primary" id="d-go">Search</button>
+        </div>
+        <div class="d-ex" role="group" aria-label="Example requests">
+          <button type="button">a Pinot Noir from Oregon under twenty bucks</button>
+          <button type="button">a Chardonnay that is not oaky</button>
+          <button type="button">sparkling wine, nothing over $25</button>
+          <button type="button">a peppery Syrah with smoked meat and olive</button>
+        </div>
+        <label class="d-chk"><input type="checkbox" id="d-f" checked> Apply the filters read from the request</label>
+        <p id="d-filters" class="d-filters"></p>
+        <ol id="d-res" class="d-res"></ol>
+      </div>
+    </div>
+    <p class="cap">
+      Checked on 12 requests in headless Chromium (Apple M4, <code>eval/browser/check_agreement.py</code>):
+      the browser's top ten shared 8.8 of 10 reviews with the Python dense retriever on the same
+      8,000 rows on average (never fewer than 8), with the same first result on 10 of 12. Query
+      embedding took 7 ms and ranking 4 ms, median. The page made no request outside its own
+      server. One edit to the vendored <code>transformers.min.js</code>: GitHub's push protection
+      read the class name <code>Mistral3ForConditionalGeneration</code> as an API key, so that
+      string is written as two joined halves.
+    </p>
+  </section>
+
+  <section class="stop" id="constraint-errors">
+    <p class="eyebrow">Error analysis</p>
+    <h2>What the extractors got wrong</h2>
+    <div class="issues" role="table" aria-label="Extraction and filtering errors on the constrained set">
+      <div class="r h" role="row"><span role="columnheader">Error</span><span role="columnheader">Count</span></div>
+      <div class="r" role="row"><span class="g" role="cell">Haiku dropped a stated price</span><span class="n" role="cell">1</span>
+        <span class="ex" role="cell">"a Chardonnay that is not oaky, under $30": Haiku returned the grape, the oak exclusion and a color, but no max_price. All 3 of its violating slots come from this request.</span></div>
+      <div class="r" role="row"><span class="g" role="cell">Extra or looser fields, no effect on results</span><span class="n" role="cell">6</span>
+        <span class="ex" role="cell">All three extractors set color to sparkling for "a Champagne under $50", which the index already implies. Haiku also added red to the Merlot and Nebbiolo requests, Italy to "Nebbiolo from Piedmont", and wrote "Cabernet" for "a California Cabernet", which would also admit Cabernet Franc. None put a violating review in the top ten, but they are why exact-match extraction (27, 27 and 23 of 28) sits below the violation numbers.</span></div>
+      <div class="r" role="row"><span class="g" role="cell">The word rule drops the wines the guest wants</span><span class="n" role="cell">17</span>
+        <span class="ex" role="cell">"Not oaky" becomes "exclude reviews containing oak". Of the 150 Chardonnays under $30 whose review mentions oak, 17 say unoaked, stainless steel or neutral oak, and the filter removes them, including the Marimar Estate 2010 Acero Unoaked Chardonnay (<code>eval/constraints/exclusion_check.json</code>). The answer key uses the same rule, so the violation count cannot see this.</span></div>
+      <div class="r" role="row"><span class="g" role="cell">Metadata satisfies the letter, not the intent</span><span class="n" role="cell">1</span>
+        <span class="ex" role="cell">For "a Pinot Noir from Oregon under twenty bucks" only 2 reviews in the index qualify, and one is the St. Innocent 2015 Oeil de Perdrix, a ros&eacute; of Pinot Noir.</span></div>
+    </div>
+  </section>
+
+  <section class="stop" id="mcp">
+    <p class="eyebrow">MCP</p>
+    <h2>Filtered search as a tool for Claude</h2>
+    <p>
+      <code>src/mcp_server.py</code> serves two tools over stdio with the official
+      <code>mcp</code> SDK: <code>search_wines</code>, which takes a style query plus the same
+      filter fields and runs the filtered hybrid search, and <code>parse_constraints</code>, the
+      rules extractor. Filters go through the schema and vocabulary check, so an unknown country
+      comes back as an error with close matches instead of an empty list.
+      <code>python eval/mcp_smoke.py</code> starts the server and calls both
+      (<code>eval/mcp_smoke.json</code>): Oregon Pinot Noir under $25 found 16 matching reviews,
+      and <code>countries: ["Narnia"]</code> returned the error.
+    </p>
+  </section>
+
 
   <section class="stop">
     <p class="eyebrow">One recorded run</p>
@@ -634,9 +821,28 @@
     <p>
       The index holds the 30,000 highest-scored reviews (<code>--limit 30000</code>), all rated
       91 or above, not all 129,971; <code>--all</code> indexes everything. The reviews come from
-      one magazine and carry its coverage gaps. Constraints such as price are set with CLI
-      flags; the system does not yet read "under twenty bucks" out of the sentence.
+      one magazine and carry its coverage gaps.
     </p>
+    <p>
+      The constrained set is 28 requests, and I wrote both its answer key and the regex
+      extractor, so the rules' 27 of 28 is not a fair test of them. Exclusions are substring
+      rules ("oak" removes "unoaked"). The extracted filters are scored for the retriever only;
+      the Claude CLI generation step and <code>src/cli.py</code> still take filters from flags.
+      No person has labeled any of it; <code>eval/constraints/labeling_sheet.csv</code> lists
+      the Sonnet top ten for every request with blank columns for a reader's verdict.
+    </p>
+  </section>
+
+  <section class="stop" id="next">
+    <p class="eyebrow">Next</p>
+    <h2>What I would do next</h2>
+    <ul>
+      <li>Have someone else write 25 constrained requests, so the rules and the LLM are tested on phrasing neither has seen.</li>
+      <li>Fill in <code>eval/constraints/labeling_sheet.csv</code> to get relevance judgments that are not the answer key restated.</li>
+      <li>Replace word exclusions with a negation-aware check ("unoaked" should satisfy "not oaky"), and measure the 17 Chardonnays it currently drops.</li>
+      <li>Wire extraction into <code>src/cli.py</code> and the generation step, falling back to the rules when no model is available.</li>
+      <li>Add BM25 and the reranker to the browser demo, or measure what leaving them out costs on the 42 unconstrained queries.</li>
+    </ul>
   </section>
 
   <section class="stop stop--end">
@@ -648,6 +854,9 @@
       <div class="spec"><dt>Vector store</dt><dd>Chroma, cosine similarity, persisted to disk</dd></div>
       <div class="spec"><dt>Sparse retrieval</dt><dd>BM25 (<code>rank-bm25</code>), fused with Reciprocal Rank Fusion, k = 60</dd></div>
       <div class="spec"><dt>Reranking</dt><dd>Cross-encoder <code>ms-marco-MiniLM-L-6-v2</code> over the fused shortlist (60 candidates by default, 80 in the benchmark)</dd></div>
+      <div class="spec"><dt>Constraints</dt><dd><code>src/constraints.py</code> (pydantic schema, vocabulary check, one repair; LLM and regex extractors) and <code>src/filtered.py</code> (mask before dense, BM25 and rerank)</dd></div>
+      <div class="spec"><dt>In the browser</dt><dd>transformers.js 4.3.2 and onnxruntime-web on WASM, q8 MiniLM, int8 index; <code>assets/ai/wine-search.js</code></dd></div>
+      <div class="spec"><dt>MCP</dt><dd><code>src/mcp_server.py</code>, stdio, <code>search_wines</code> and <code>parse_constraints</code></dd></div>
       <div class="spec"><dt>Generation</dt><dd>Claude through the Claude CLI by default; <code>ANTHROPIC_API_KEY</code> switches to the API</dd></div>
       <div class="spec"><dt>Evaluation</dt><dd><code>python -m src.eval</code> (12 queries) and <code>python eval/run_eval.py</code> (12 + 30, per query); <code>eval/latency.py</code>, <code>eval/generation.py</code>, <code>eval/error_analysis.py</code></dd></div>
       <div class="spec"><dt>Related</dt><dd>The same reviews are analyzed in <a href="https://lyhjeremy.github.io/wine-score-inflation/">Wine Score Inflation</a>, and this retriever is a tool inside the <a href="https://lyhjeremy.github.io/wine-pairing-agent/">Wine Pairing Agent</a></dd></div>
@@ -796,6 +1005,76 @@
   dIn.addEventListener("input", rrf); bIn.addEventListener("input", rrf);
   var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(draw, 120); });
   draw(); rrf();
+})();
+</script>
+<script>
+(function () {
+  // In-browser search. Nothing loads until the button is pressed.
+  var $ = function (id) { return document.getElementById(id); };
+  var mod = null, busy = false;
+  function esc(x) { return String(x == null ? "" : x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function money(p) { return p == null ? "no price" : "$" + (Math.round(p) === p ? p : p.toFixed(2)); }
+  var LABEL = { max_price: "max $", min_price: "min $", min_points: "min points", countries: "country", provinces: "region",
+    varieties: "grape", color: "color", exclude_countries: "not from", exclude_varieties: "not grape", exclude_terms: "not containing" };
+
+  $("d-load").addEventListener("click", function () {
+    var btn = this;
+    btn.disabled = true; $("d-sk").hidden = false;
+    $("d-status").textContent = "Loading the index, model and runtime...";
+    import("../assets/ai/wine-search.js").then(function (m) {
+      mod = m;
+      return m.load("../assets/ai/", function (stage) {
+        $("d-status").textContent = stage === "index" ? "Loading the 8,000-review index..." : "Loading the model and runtime...";
+      });
+    }).then(function (st) {
+      $("d-sk").hidden = true; btn.style.display = "none"; $("d-ui").hidden = false;
+      $("d-status").textContent = "Loaded in " + (st.loadMs / 1000).toFixed(1) + " s.";
+      run();
+    }).catch(function (e) {
+      $("d-sk").hidden = true; btn.disabled = false;
+      $("d-status").textContent = "The search could not load in this browser (" + e.message + ").";
+    });
+  });
+
+  function chips(c) {
+    var out = [];
+    Object.keys(LABEL).forEach(function (k) {
+      var v = c[k];
+      if (v == null || (Array.isArray(v) && !v.length)) return;
+      var txt = Array.isArray(v) ? v.join(", ") : v;
+      out.push('<span class="chip">' + (k.slice(-5) === "price" ? LABEL[k] + esc(txt) : LABEL[k] + " " + esc(txt)) + "</span>");
+    });
+    return out.length ? "Filters read from the request: " + out.join(" ") : "No hard limits found in the request; plain semantic search.";
+  }
+
+  function run() {
+    if (!mod || busy) return;
+    var q = $("d-q").value.trim();
+    if (!q) return;
+    busy = true;
+    var apply = $("d-f").checked;
+    mod.search(q, { applyFilters: apply, k: 10 }).then(function (r) {
+      busy = false;
+      $("d-filters").innerHTML = chips(r.constraints);
+      var bad = r.top.filter(function (t) { return t.violates.length; }).length;
+      $("d-status").textContent = (apply ? r.pool + " of 8,000 reviews pass the filters. " : "Filters off. ") +
+        (apply ? "" : bad + " of the top " + r.top.length + " break a limit in the request. ") +
+        "Embedding " + Math.round(r.embedMs) + " ms, ranking " + Math.round(r.rankMs) + " ms.";
+      $("d-res").innerHTML = r.top.length ? r.top.map(function (t) {
+        var w = t.row;
+        return "<li><span class=\"t\">" + esc(w[0]) + "</span><span class=\"m\">" + esc(w[1]) + ", " + esc(w[3] || "") + (w[2] ? ", " + esc(w[2]) : "") +
+          " &middot; " + w[5] + " pts &middot; " + money(w[4]) + "</span>" +
+          (t.violates.length ? "<span class=\"v\">breaks: " + esc(t.violates.join(", ")) + "</span>" : "") +
+          "<span class=\"n\">" + esc(w[7]) + "</span></li>";
+      }).join("") : "<li>No review in the 8,000 satisfies every filter. Untick the box to see what plain search returns.</li>";
+    }).catch(function (e) { busy = false; $("d-status").textContent = "Search failed: " + e.message; });
+  }
+  $("d-go").addEventListener("click", run);
+  $("d-f").addEventListener("change", run);
+  $("d-q").addEventListener("keydown", function (e) { if (e.key === "Enter") run(); });
+  document.querySelectorAll(".d-ex button").forEach(function (b) {
+    b.addEventListener("click", function () { $("d-q").value = b.textContent; run(); });
+  });
 })();
 </script>
 </body>

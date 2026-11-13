@@ -1,0 +1,28 @@
+{
+ "c03": {
+  "q": "a Chardonnay that is not oaky, under $30",
+  "match_other_clauses": 472,
+  "mention_oak": 150,
+  "oak_negated_or_neutral": 17,
+  "examples": [
+   "Marimar Estate 2010 Acero Don Miguel Vineyard Unoaked Chardonnay (Russian River Valley)",
+   "Balletto 2015 Teresa's Unoaked Estate Grown Estate Bottled Chardonnay (Russian River Valley)",
+   "Durant 2015 Raven Chardonnay (Dundee Hills)",
+   "DanCin 2015 Mélange Chardonnay (Southern Oregon)",
+   "Lusso Della Terra 2014 Clone 809 Chardonnay (Sonoma Coast)"
+  ]
+ },
+ "c15": {
+  "q": "a Washington Syrah with no oak",
+  "match_other_clauses": 513,
+  "mention_oak": 60,
+  "oak_negated_or_neutral": 5,
+  "examples": [
+   "Ardor 2012 Stoney Vine Vineyard Syrah (Walla Walla Valley (WA))",
+   "Co Dinn 2013 Roskamp Vineyard Block Two Syrah (Snipes Mountain)",
+   "Kerloo 2014 Syrah (Walla Walla Valley (WA))",
+   "Savage Grace 2016 Red Willow Vineyard Syrah (Yakima Valley)",
+   "Gorman 2005 The Pixie Syrah (Red Mountain)"
+  ]
+ }
+}

@@ -3,9 +3,9 @@
  "mean_overlap_at_10": 8.83,
  "min_overlap_at_10": 8,
  "same_top1": 10,
- "load_ms_cold": 379,
+ "load_ms_cold": 375,
  "embed_ms_median": 7.0,
- "rank_ms_median": 3.7,
+ "rank_ms_median": 3.8,
  "hosts_requested": [
   "blob://",
   "http://127.0.0.1:8828"
@@ -40,8 +40,8 @@
     3224,
     1419
    ],
-   "embed_ms": 41.3,
-   "rank_ms": 31.7
+   "embed_ms": 39.2,
+   "rank_ms": 31.9
   },
   {
    "q": "a New Zealand Sauvignon Blanc with grapefruit and passion fruit",
@@ -71,7 +71,7 @@
     5772,
     7181
    ],
-   "embed_ms": 9.9,
+   "embed_ms": 10,
    "rank_ms": 5.4
   },
   {
@@ -103,7 +103,7 @@
     5153
    ],
    "embed_ms": 7.7,
-   "rank_ms": 3.7
+   "rank_ms": 3.8
   },
   {
    "q": "a Champagne with brioche and toasty notes",
@@ -133,8 +133,8 @@
     2369,
     2986
    ],
-   "embed_ms": 7.6,
-   "rank_ms": 3.7
+   "embed_ms": 7.2,
+   "rank_ms": 3.9
   },
   {
    "q": "an Oregon Pinot Noir with earthy forest-floor notes",
@@ -164,8 +164,8 @@
     4457,
     6645
    ],
-   "embed_ms": 8.1,
-   "rank_ms": 4
+   "embed_ms": 7.9,
+   "rank_ms": 4.1
   },
   {
    "q": "a bold red for a steak dinner",
@@ -226,8 +226,8 @@
     3880,
     3084
    ],
-   "embed_ms": 5.2,
-   "rank_ms": 3.6
+   "embed_ms": 5.1,
+   "rank_ms": 3.7
   },
   {
    "q": "a sweet dessert wine with honey and apricot",
@@ -258,7 +258,7 @@
     3700
    ],
    "embed_ms": 7,
-   "rank_ms": 3.7
+   "rank_ms": 3.8
   },
   {
    "q": "a peppery Syrah with smoked meat and olive",
@@ -288,7 +288,7 @@
     7527,
     3483
    ],
-   "embed_ms": 7,
+   "embed_ms": 6.9,
    "rank_ms": 3.8
   },
   {
@@ -350,8 +350,8 @@
     7130,
     6423
    ],
-   "embed_ms": 5.1,
-   "rank_ms": 3.8
+   "embed_ms": 5.3,
+   "rank_ms": 3.6
   },
   {
    "q": "a Malbec from Argentina with plum and violet",
@@ -381,8 +381,8 @@
     3068,
     1356
    ],
-   "embed_ms": 7.1,
-   "rank_ms": 3.7
+   "embed_ms": 7,
+   "rank_ms": 3.6
   }
  ]
 }
