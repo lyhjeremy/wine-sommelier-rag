@@ -1,0 +1,140 @@
+{
+  "n_style_queries": 6,
+  "date": "2026-11-13",
+  "machine": "Apple M4",
+  "n_queries": 28,
+  "k": 10,
+  "corpus": 30000,
+  "systems": {
+    "none": {
+      "violation_rate": 0.775,
+      "violating_slots": 217,
+      "returned_slots": 280,
+      "queries_with_any_violation": 26,
+      "queries_returning_under_10": 0,
+      "ndcg10_mean": 0.2411,
+      "ndcg10_mean_style_queries": 0.2397,
+      "retrieval_ms_median": 250.3,
+      "retrieval_ms_p95": 334.5
+    },
+    "gold-post": {
+      "violation_rate": 0.0,
+      "violating_slots": 0,
+      "returned_slots": 186,
+      "queries_with_any_violation": 0,
+      "queries_returning_under_10": 14,
+      "ndcg10_mean": 0.6943,
+      "ndcg10_mean_style_queries": 0.7175,
+      "retrieval_ms_median": 88.1,
+      "retrieval_ms_p95": 135.6
+    },
+    "rules": {
+      "violation_rate": 0.0,
+      "violating_slots": 0,
+      "returned_slots": 257,
+      "queries_with_any_violation": 0,
+      "queries_returning_under_10": 5,
+      "ndcg10_mean": 0.9721,
+      "ndcg10_mean_style_queries": 0.8699,
+      "retrieval_ms_median": 251.0,
+      "retrieval_ms_p95": 303.2,
+      "extraction_exact_queries": "27 of 28",
+      "extraction_field_accuracy": {
+        "max_price": 1.0,
+        "min_price": 1.0,
+        "min_points": 1.0,
+        "countries": 1.0,
+        "provinces": 1.0,
+        "varieties": 1.0,
+        "color": 0.964,
+        "exclude_countries": 1.0,
+        "exclude_varieties": 1.0,
+        "exclude_terms": 1.0
+      }
+    },
+    "llm-sonnet": {
+      "violation_rate": 0.0,
+      "violating_slots": 0,
+      "returned_slots": 257,
+      "queries_with_any_violation": 0,
+      "queries_returning_under_10": 5,
+      "ndcg10_mean": 0.9721,
+      "ndcg10_mean_style_queries": 0.8699,
+      "retrieval_ms_median": 222.9,
+      "retrieval_ms_p95": 269.1,
+      "extraction_exact_queries": "27 of 28",
+      "extraction_field_accuracy": {
+        "max_price": 1.0,
+        "min_price": 1.0,
+        "min_points": 1.0,
+        "countries": 1.0,
+        "provinces": 1.0,
+        "varieties": 1.0,
+        "color": 0.964,
+        "exclude_countries": 1.0,
+        "exclude_varieties": 1.0,
+        "exclude_terms": 1.0
+      },
+      "model_flag": "sonnet",
+      "models_seen": [
+        "claude-sonnet-5-5"
+      ],
+      "valid_first_try": 28,
+      "repaired": 0,
+      "invalid_after_repair": 0,
+      "llm_calls": 28,
+      "cost_per_query_median": 0.0533,
+      "cost_per_query_p95": 0.0616,
+      "extract_s_median": 2.35,
+      "extract_s_p95": 2.84
+    },
+    "llm-haiku": {
+      "violation_rate": 0.0117,
+      "violating_slots": 3,
+      "returned_slots": 257,
+      "queries_with_any_violation": 1,
+      "queries_returning_under_10": 5,
+      "ndcg10_mean": 0.9628,
+      "ndcg10_mean_style_queries": 0.8699,
+      "retrieval_ms_median": 222.0,
+      "retrieval_ms_p95": 305.1,
+      "extraction_exact_queries": "23 of 28",
+      "extraction_field_accuracy": {
+        "max_price": 0.964,
+        "min_price": 1.0,
+        "min_points": 1.0,
+        "countries": 0.964,
+        "provinces": 1.0,
+        "varieties": 0.964,
+        "color": 0.857,
+        "exclude_countries": 1.0,
+        "exclude_varieties": 1.0,
+        "exclude_terms": 1.0
+      },
+      "model_flag": "haiku",
+      "models_seen": [
+        "claude-haiku-5-5"
+      ],
+      "valid_first_try": 28,
+      "repaired": 0,
+      "invalid_after_repair": 0,
+      "llm_calls": 28,
+      "cost_per_query_median": 0.0029,
+      "cost_per_query_p95": 0.0034,
+      "extract_s_median": 3.02,
+      "extract_s_p95": 5.27
+    },
+    "gold": {
+      "violation_rate": 0.0,
+      "violating_slots": 0,
+      "returned_slots": 257,
+      "queries_with_any_violation": 0,
+      "queries_returning_under_10": 5,
+      "ndcg10_mean": 0.9721,
+      "ndcg10_mean_style_queries": 0.8699,
+      "retrieval_ms_median": 219.1,
+      "retrieval_ms_p95": 274.5
+    }
+  },
+  "cost_note": "total_cost_usd from claude -p --output-format json: API-equivalent cost reported by the Claude CLI, nothing billed (Claude subscription)"
+}

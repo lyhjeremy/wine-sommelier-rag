@@ -3,6 +3,11 @@ pandas>=2.0
 sentence-transformers>=3.0     # query/document embeddings + cross-encoder reranker
 chromadb>=0.5
 rank-bm25>=0.2                  # sparse BM25 half of the hybrid retriever
+pydantic>=2.5                   # Constraints schema for filter extraction (src/constraints.py)
+
+# Optional: the MCP server (python src/mcp_server.py) and the browser check.
+mcp>=2.0
+playwright>=1.40
 
 # Evaluation harness + architecture diagram
 # (python -m src.eval, python assets/make_architecture.py).

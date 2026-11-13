@@ -1,0 +1,105 @@
+{
+ "date": "2026-11-13",
+ "server": "wine-search",
+ "startup_s": 0.33,
+ "tools": [
+  "search_wines",
+  "parse_constraints"
+ ],
+ "calls": [
+  {
+   "tool": "parse_constraints",
+   "args": {
+    "request": "a Pinot Noir from Oregon under twenty bucks"
+   },
+   "is_error": false,
+   "seconds": 0.0,
+   "result": {
+    "max_price": 20.0,
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [
+     "Pinot Noir"
+    ]
+   }
+  },
+  {
+   "tool": "search_wines",
+   "args": {
+    "query": "earthy Pinot Noir with cherry",
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [
+     "Pinot Noir"
+    ],
+    "max_price": 25,
+    "k": 3
+   },
+   "is_error": false,
+   "seconds": 10.33,
+   "result": {
+    "filters": {
+     "max_price": 25.0,
+     "provinces": [
+      "Oregon"
+     ],
+     "varieties": [
+      "Pinot Noir"
+     ]
+    },
+    "matching_reviews": 16,
+    "results": [
+     {
+      "title": "Andrew Rich 2013 Prelude Pinot Noir (Willamette Valley)",
+      "variety": "Pinot Noir",
+      "country": "US",
+      "province": "Oregon",
+      "points": 91,
+      "price": 23.0,
+      "review": "Pretty and plump, this is bursting with ripe cherry fruit. Highlights include a dusting of cocoa powder, and the wine sits perky on the palate with fine-grained tannins and ample acidity.",
+      "violates": []
+     },
+     {
+      "title": "Ken Wright 2014 Pinot Noir (Willamette Valley)",
+      "variety": "Pinot Noir",
+      "country": "US",
+      "province": "Oregon",
+      "points": 91,
+      "price": 25.0,
+      "review": "Ken Wright produces as many as a dozen or more single-vineyard Pinots in any given vintage. This wine is blended from many of those same sites, whose vines were often planted back in the 1980s. It's light and elegant, yet powerfully flavorful, with strawberry, raspberry and cherry fruit pushing deep into the palate. It's clean and fresh, with crisp defining acidity, perfect balance, refined tannins and a long finish. Best of all, it's widely available.",
+      "violates": []
+     },
+     {
+      "title": "de Lancellotti 2014 La Sorella Pinot Noir (Willamette Valley)",
+      "variety": "Pinot Noir",
+      "country": "US",
+      "province": "Oregon",
+      "points": 91,
+      "price": 25.0,
+      "review": "This outstanding value is sharp and precise, its black-cherry fruit holding down a compact core, annotated with streaks of coffee, truffle and chocolate. It punches well above its price, and should drink nicely into the early 2020s.",
+      "violates": []
+     }
+    ]
+   }
+  },
+  {
+   "tool": "search_wines",
+   "args": {
+    "query": "crisp white",
+    "countries": [
+     "Narnia"
+    ]
+   },
+   "is_error": false,
+   "seconds": 0.0,
+   "result": {
+    "error": "filters not in the index",
+    "details": [
+     "countries: 'Narnia' is not in the index; close values: ['Romania', 'Bulgaria', 'India', 'Argentina', 'Canada']"
+    ]
+   }
+  }
+ ]
+}

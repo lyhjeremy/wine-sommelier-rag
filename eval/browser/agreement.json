@@ -1,0 +1,388 @@
+{
+ "n_queries": 12,
+ "mean_overlap_at_10": 8.83,
+ "min_overlap_at_10": 8,
+ "same_top1": 10,
+ "load_ms_cold": 379,
+ "embed_ms_median": 7.0,
+ "rank_ms_median": 3.7,
+ "hosts_requested": [
+  "blob://",
+  "http://127.0.0.1:8828"
+ ],
+ "machine": "Apple M4, headless Chromium (Playwright), WASM backend",
+ "rows": [
+  {
+   "q": "a Barolo with firm tannins and notes of tar and roses",
+   "overlap10": 8,
+   "same_top1": true,
+   "python": [
+    7176,
+    2618,
+    6452,
+    5117,
+    1257,
+    2092,
+    3356,
+    1011,
+    3400,
+    6362
+   ],
+   "browser": [
+    7176,
+    6452,
+    2618,
+    2092,
+    1257,
+    3356,
+    1011,
+    5117,
+    3224,
+    1419
+   ],
+   "embed_ms": 41.3,
+   "rank_ms": 31.7
+  },
+  {
+   "q": "a New Zealand Sauvignon Blanc with grapefruit and passion fruit",
+   "overlap10": 9,
+   "same_top1": true,
+   "python": [
+    7870,
+    4225,
+    5402,
+    7609,
+    4737,
+    5772,
+    6295,
+    6438,
+    7181,
+    7038
+   ],
+   "browser": [
+    7870,
+    4225,
+    7609,
+    5402,
+    6295,
+    4737,
+    6438,
+    2317,
+    5772,
+    7181
+   ],
+   "embed_ms": 9.9,
+   "rank_ms": 5.4
+  },
+  {
+   "q": "a dry ros\u00e9 from Provence for a summer lunch",
+   "overlap10": 10,
+   "same_top1": true,
+   "python": [
+    7662,
+    5599,
+    6407,
+    7229,
+    7016,
+    3011,
+    5153,
+    4168,
+    3459,
+    7670
+   ],
+   "browser": [
+    7662,
+    5599,
+    6407,
+    7229,
+    7016,
+    3011,
+    7670,
+    3459,
+    4168,
+    5153
+   ],
+   "embed_ms": 7.7,
+   "rank_ms": 3.7
+  },
+  {
+   "q": "a Champagne with brioche and toasty notes",
+   "overlap10": 8,
+   "same_top1": true,
+   "python": [
+    4371,
+    7943,
+    1098,
+    3713,
+    496,
+    5562,
+    6741,
+    2986,
+    73,
+    4147
+   ],
+   "browser": [
+    4371,
+    7943,
+    1098,
+    3713,
+    496,
+    5562,
+    1788,
+    4147,
+    2369,
+    2986
+   ],
+   "embed_ms": 7.6,
+   "rank_ms": 3.7
+  },
+  {
+   "q": "an Oregon Pinot Noir with earthy forest-floor notes",
+   "overlap10": 9,
+   "same_top1": true,
+   "python": [
+    7256,
+    3232,
+    6824,
+    161,
+    6470,
+    3441,
+    4457,
+    6645,
+    3705,
+    3971
+   ],
+   "browser": [
+    7256,
+    3232,
+    161,
+    6824,
+    6470,
+    3441,
+    3705,
+    6490,
+    4457,
+    6645
+   ],
+   "embed_ms": 8.1,
+   "rank_ms": 4
+  },
+  {
+   "q": "a bold red for a steak dinner",
+   "overlap10": 9,
+   "same_top1": true,
+   "python": [
+    3843,
+    3774,
+    5214,
+    7130,
+    7243,
+    531,
+    2583,
+    1278,
+    7052,
+    5535
+   ],
+   "browser": [
+    3843,
+    3774,
+    7130,
+    5214,
+    7243,
+    1278,
+    4633,
+    7052,
+    2583,
+    531
+   ],
+   "embed_ms": 5.8,
+   "rank_ms": 3.5
+  },
+  {
+   "q": "a crisp white for oysters",
+   "overlap10": 8,
+   "same_top1": false,
+   "python": [
+    4580,
+    5407,
+    4074,
+    4823,
+    6897,
+    7209,
+    3544,
+    6779,
+    5392,
+    6459
+   ],
+   "browser": [
+    5407,
+    4580,
+    7209,
+    4823,
+    4074,
+    6897,
+    3544,
+    5392,
+    3880,
+    3084
+   ],
+   "embed_ms": 5.2,
+   "rank_ms": 3.6
+  },
+  {
+   "q": "a sweet dessert wine with honey and apricot",
+   "overlap10": 8,
+   "same_top1": true,
+   "python": [
+    7072,
+    5782,
+    4211,
+    157,
+    200,
+    2470,
+    6444,
+    3250,
+    3164,
+    3700
+   ],
+   "browser": [
+    7072,
+    4211,
+    5782,
+    157,
+    200,
+    2470,
+    908,
+    3164,
+    793,
+    3700
+   ],
+   "embed_ms": 7,
+   "rank_ms": 3.7
+  },
+  {
+   "q": "a peppery Syrah with smoked meat and olive",
+   "overlap10": 8,
+   "same_top1": true,
+   "python": [
+    6158,
+    694,
+    1930,
+    3727,
+    5068,
+    4195,
+    3792,
+    7897,
+    2071,
+    7527
+   ],
+   "browser": [
+    6158,
+    694,
+    3727,
+    1930,
+    4195,
+    7241,
+    5068,
+    7897,
+    7527,
+    3483
+   ],
+   "embed_ms": 7,
+   "rank_ms": 3.8
+  },
+  {
+   "q": "an oaky buttery Chardonnay",
+   "overlap10": 10,
+   "same_top1": true,
+   "python": [
+    6568,
+    4278,
+    5794,
+    4934,
+    6210,
+    5492,
+    7149,
+    3645,
+    735,
+    2056
+   ],
+   "browser": [
+    6568,
+    4278,
+    5794,
+    4934,
+    6210,
+    735,
+    5492,
+    2056,
+    3645,
+    7149
+   ],
+   "embed_ms": 6.1,
+   "rank_ms": 3.7
+  },
+  {
+   "q": "a light red to serve chilled",
+   "overlap10": 9,
+   "same_top1": true,
+   "python": [
+    7366,
+    3869,
+    7781,
+    1433,
+    7301,
+    2737,
+    3843,
+    272,
+    5535,
+    7130
+   ],
+   "browser": [
+    7366,
+    3869,
+    7781,
+    1433,
+    272,
+    7301,
+    5535,
+    2737,
+    7130,
+    6423
+   ],
+   "embed_ms": 5.1,
+   "rank_ms": 3.8
+  },
+  {
+   "q": "a Malbec from Argentina with plum and violet",
+   "overlap10": 10,
+   "same_top1": false,
+   "python": [
+    5899,
+    4091,
+    3075,
+    6514,
+    3836,
+    806,
+    1553,
+    3828,
+    1356,
+    3068
+   ],
+   "browser": [
+    3075,
+    5899,
+    4091,
+    6514,
+    806,
+    3836,
+    1553,
+    3828,
+    3068,
+    1356
+   ],
+   "embed_ms": 7.1,
+   "rank_ms": 3.7
+  }
+ ]
+}

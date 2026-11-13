@@ -182,7 +182,8 @@ def score(queries, corpus, emb, ex):
     (HERE / "top10.json").write_text(json.dumps(top10, indent=1, ensure_ascii=False))
 
     n = len(queries)
-    summ = {"date": time.strftime("%Y-%m-%d"), "machine": "Apple M4", "n_queries": n, "k": K,
+    style_ids = {q["id"] for q in queries if q.get("kw")}
+    summ = {"n_style_queries": len(style_ids), "date": time.strftime("%Y-%m-%d"), "machine": "Apple M4", "n_queries": n, "k": K,
             "corpus": len(corpus.ids), "systems": {}}
     for s in systems:
         r = [x for x in rows if x["system"] == s]
@@ -192,6 +193,8 @@ def score(queries, corpus, emb, ex):
              "queries_with_any_violation": sum(x["violating"] > 0 for x in r),
              "queries_returning_under_10": sum(x["returned"] < K for x in r),
              "ndcg10_mean": round(statistics.mean(x["ndcg10"] for x in r), 4),
+             "ndcg10_mean_style_queries": round(statistics.mean(
+                 x["ndcg10"] for x in r if x["id"] in style_ids), 4),
              "retrieval_ms_median": round(1000 * statistics.median(timings[s]), 1),
              "retrieval_ms_p95": round(1000 * pct(timings[s], 0.95), 1)}
         if s in extract_acc and s not in ("none", "gold", "gold-post"):

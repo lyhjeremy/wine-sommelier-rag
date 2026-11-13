@@ -1,0 +1,1640 @@
+{
+ "sonnet": {
+  "c01": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [
+     "Pinot Noir"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Oregon\"], \"varieties\": [\"Pinot Noir\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.06901,
+   "wall_s": 2.65,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c02": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 25, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.06134,
+   "wall_s": 2.43,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c03": {
+   "constraints": {
+    "max_price": 30.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [
+     "Chardonnay"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": [
+     "oak"
+    ]
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 30, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [\"Chardonnay\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": [\"oak\"]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05324,
+   "wall_s": 2.04,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c04": {
+   "constraints": {
+    "max_price": 15.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Italy"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 15, \"min_price\": null, \"min_points\": null, \"countries\": [\"Italy\"], \"provinces\": [], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05316,
+   "wall_s": 2.08,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c05": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "New Zealand"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "white",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [\"New Zealand\"], \"provinces\": [], \"varieties\": [], \"color\": \"white\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05315,
+   "wall_s": 2.17,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c06": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [],
+    "color": "sparkling",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 25, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [], \"color\": \"sparkling\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.06137,
+   "wall_s": 2.41,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c07": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Germany"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Riesling"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": [
+     "sweet"
+    ]
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\":null,\"min_price\":null,\"min_points\":null,\"countries\":[\"Germany\"],\"provinces\":[],\"varieties\":[\"Riesling\"],\"color\":null,\"exclude_countries\":[],\"exclude_varieties\":[],\"exclude_terms\":[\"sweet\"]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05599,
+   "wall_s": 4.12,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c08": {
+   "constraints": {
+    "max_price": 50.0,
+    "min_price": 30.0,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "California"
+    ],
+    "varieties": [
+     "Cabernet Sauvignon"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 50, \"min_price\": 30, \"min_points\": null, \"countries\": [], \"provinces\": [\"California\"], \"varieties\": [\"Cabernet Sauvignon\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05326,
+   "wall_s": 2.04,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c09": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Spain"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Tempranillo"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": null, \"min_points\": null, \"countries\": [\"Spain\"], \"provinces\": [], \"varieties\": [\"Tempranillo\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05322,
+   "wall_s": 1.96,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c10": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [],
+    "color": "rosé",
+    "exclude_countries": [
+     "France"
+    ],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [], \"color\": \"rosé\", \"exclude_countries\": [\"France\"], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05315,
+   "wall_s": 2.45,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c11": {
+   "constraints": {
+    "max_price": 30.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Australia"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Shiraz"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 30, \"min_price\": null, \"min_points\": null, \"countries\": [\"Australia\"], \"provinces\": [], \"varieties\": [\"Shiraz\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.06151,
+   "wall_s": 2.47,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c12": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Alsace"
+    ],
+    "varieties": [],
+    "color": "white",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Alsace\"], \"varieties\": [], \"color\": \"white\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.06144,
+   "wall_s": 2.59,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c13": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Argentina"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Malbec"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 25, \"min_price\": null, \"min_points\": null, \"countries\": [\"Argentina\"], \"provinces\": [], \"varieties\": [\"Malbec\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.06153,
+   "wall_s": 2.83,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c14": {
+   "constraints": {
+    "max_price": 60.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Burgundy"
+    ],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 60, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Burgundy\"], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05323,
+   "wall_s": 2.07,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c15": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Washington"
+    ],
+    "varieties": [
+     "Syrah"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": [
+     "oak"
+    ]
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\":null,\"min_price\":null,\"min_points\":null,\"countries\":[],\"provinces\":[\"Washington\"],\"varieties\":[\"Syrah\"],\"color\":null,\"exclude_countries\":[],\"exclude_varieties\":[],\"exclude_terms\":[\"oak\"]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05328,
+   "wall_s": 2.28,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c16": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": 10.0,
+    "min_points": null,
+    "countries": [
+     "Portugal"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": 10, \"min_points\": null, \"countries\": [\"Portugal\"], \"provinces\": [], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.0615,
+   "wall_s": 2.59,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c17": {
+   "constraints": {
+    "max_price": 50.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Champagne"
+    ],
+    "varieties": [],
+    "color": "sparkling",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 50, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Champagne\"], \"varieties\": [], \"color\": \"sparkling\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05327,
+   "wall_s": 2.25,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c18": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [
+     "Sauvignon Blanc"
+    ],
+    "color": null,
+    "exclude_countries": [
+     "New Zealand"
+    ],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [\"Sauvignon Blanc\"], \"color\": null, \"exclude_countries\": [\"New Zealand\"], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.0616,
+   "wall_s": 2.84,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c19": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Austria"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Grüner Veltliner"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": null, \"min_points\": null, \"countries\": [\"Austria\"], \"provinces\": [], \"varieties\": [\"Grüner Veltliner\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.06159,
+   "wall_s": 2.8,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c20": {
+   "constraints": {
+    "max_price": 18.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Chile"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 18, \"min_price\": null, \"min_points\": null, \"countries\": [\"Chile\"], \"provinces\": [], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05323,
+   "wall_s": 2.16,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c21": {
+   "constraints": {
+    "max_price": 30.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [
+     "Zinfandel"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": [
+     "jam"
+    ]
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 30, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [\"Zinfandel\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": [\"jam\"]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.06154,
+   "wall_s": 2.48,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c22": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Italy"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "white",
+    "exclude_countries": [],
+    "exclude_varieties": [
+     "Pinot Grigio"
+    ],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 25, \"min_price\": null, \"min_points\": null, \"countries\": [\"Italy\"], \"provinces\": [], \"varieties\": [], \"color\": \"white\", \"exclude_countries\": [], \"exclude_varieties\": [\"Pinot Grigio\"], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05335,
+   "wall_s": 2.25,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c23": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": 95,
+    "countries": [],
+    "provinces": [
+     "Bordeaux"
+    ],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"min_points\": 95, \"countries\": [], \"provinces\": [\"Bordeaux\"], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.06136,
+   "wall_s": 2.61,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c24": {
+   "constraints": {
+    "max_price": 40.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Piedmont"
+    ],
+    "varieties": [
+     "Nebbiolo"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 40, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Piedmont\"], \"varieties\": [\"Nebbiolo\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.0616,
+   "wall_s": 2.49,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c25": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "South Africa"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Chenin Blanc"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [\"South Africa\"], \"provinces\": [], \"varieties\": [\"Chenin Blanc\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.0533,
+   "wall_s": 2.23,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c26": {
+   "constraints": {
+    "max_price": 15.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [
+     "Merlot"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 15, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [\"Merlot\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05322,
+   "wall_s": 2.18,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c27": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [
+     "Pinot Noir"
+    ],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Oregon\"], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [\"Pinot Noir\"], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05334,
+   "wall_s": 2.29,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  },
+  "c28": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Mosel"
+    ],
+    "varieties": [
+     "Riesling"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\":25,\"min_price\":null,\"min_points\":null,\"countries\":[],\"provinces\":[\"Mosel\"],\"varieties\":[\"Riesling\"],\"color\":null,\"exclude_countries\":[],\"exclude_varieties\":[],\"exclude_terms\":[]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.05329,
+   "wall_s": 2.1,
+   "models": [
+    "claude-sonnet-5-5"
+   ]
+  }
+ },
+ "haiku": {
+  "c01": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [
+     "Pinot Noir"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Oregon\"], \"varieties\": [\"Pinot Noir\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00374,
+   "wall_s": 2.91,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c02": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 25, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00326,
+   "wall_s": 3.4,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c03": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [
+     "Chardonnay"
+    ],
+    "color": "white",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": [
+     "oak"
+    ]
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [\"Chardonnay\"], \"color\": \"white\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": [\"oak\"]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00274,
+   "wall_s": 1.93,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c04": {
+   "constraints": {
+    "max_price": 15.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Italy"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 15, \"min_price\": null, \"min_points\": null, \"countries\": [\"Italy\"], \"provinces\": [], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00286,
+   "wall_s": 3.06,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c05": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "New Zealand"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "white",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [\"New Zealand\"], \"provinces\": [], \"varieties\": [], \"color\": \"white\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00274,
+   "wall_s": 2.04,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c06": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [],
+    "color": "sparkling",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 25, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [], \"color\": \"sparkling\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00321,
+   "wall_s": 3.26,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c07": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Germany"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Riesling"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": [
+     "sweet"
+    ]
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [\"Germany\"], \"provinces\": [], \"varieties\": [\"Riesling\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": [\"sweet\"]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00324,
+   "wall_s": 6.27,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c08": {
+   "constraints": {
+    "max_price": 50.0,
+    "min_price": 30.0,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "California"
+    ],
+    "varieties": [
+     "Cabernet"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 50, \"min_price\": 30, \"min_points\": null, \"countries\": [], \"provinces\": [\"California\"], \"varieties\": [\"Cabernet\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00351,
+   "wall_s": 5.97,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c09": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Spain"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Tempranillo"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": null, \"min_points\": null, \"countries\": [\"Spain\"], \"provinces\": [], \"varieties\": [\"Tempranillo\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00284,
+   "wall_s": 2.9,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c10": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [],
+    "color": "rosé",
+    "exclude_countries": [
+     "France"
+    ],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [], \"color\": \"rosé\", \"exclude_countries\": [\"France\"], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00283,
+   "wall_s": 2.62,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c11": {
+   "constraints": {
+    "max_price": 30.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Australia"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Shiraz"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 30, \"min_price\": null, \"min_points\": null, \"countries\": [\"Australia\"], \"provinces\": [], \"varieties\": [\"Shiraz\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00323,
+   "wall_s": 2.96,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c12": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Alsace"
+    ],
+    "varieties": [],
+    "color": "white",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\":null,\"min_price\":null,\"min_points\":null,\"countries\":[],\"provinces\":[\"Alsace\"],\"varieties\":[],\"color\":\"white\",\"exclude_countries\":[],\"exclude_varieties\":[],\"exclude_terms\":[]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00324,
+   "wall_s": 3.16,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c13": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Argentina"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Malbec"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 25, \"min_price\": null, \"min_points\": null, \"countries\": [\"Argentina\"], \"provinces\": [], \"varieties\": [\"Malbec\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.0028,
+   "wall_s": 2.52,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c14": {
+   "constraints": {
+    "max_price": 60.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Burgundy"
+    ],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 60, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Burgundy\"], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00274,
+   "wall_s": 2.22,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c15": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Washington"
+    ],
+    "varieties": [
+     "Syrah"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": [
+     "oak"
+    ]
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Washington\"], \"varieties\": [\"Syrah\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": [\"oak\"]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00324,
+   "wall_s": 3.55,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c16": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": 10.0,
+    "min_points": null,
+    "countries": [
+     "Portugal"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": 10, \"min_points\": null, \"countries\": [\"Portugal\"], \"provinces\": [], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00293,
+   "wall_s": 3.97,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c17": {
+   "constraints": {
+    "max_price": 50.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Champagne"
+    ],
+    "varieties": [],
+    "color": "sparkling",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 50, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Champagne\"], \"varieties\": [], \"color\": \"sparkling\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00323,
+   "wall_s": 3.23,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c18": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [
+     "Sauvignon Blanc"
+    ],
+    "color": null,
+    "exclude_countries": [
+     "New Zealand"
+    ],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [\"Sauvignon Blanc\"], \"color\": null, \"exclude_countries\": [\"New Zealand\"], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00325,
+   "wall_s": 3.28,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c19": {
+   "constraints": {
+    "max_price": 20.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Austria"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Grüner Veltliner"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 20, \"min_price\": null, \"min_points\": null, \"countries\": [\"Austria\"], \"provinces\": [], \"varieties\": [\"Grüner Veltliner\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00296,
+   "wall_s": 3.93,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c20": {
+   "constraints": {
+    "max_price": 18.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Chile"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 18, \"min_price\": null, \"min_points\": null, \"countries\": [\"Chile\"], \"provinces\": [], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00326,
+   "wall_s": 3.48,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c21": {
+   "constraints": {
+    "max_price": 30.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [
+     "Zinfandel"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": [
+     "jam"
+    ]
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 30, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [\"Zinfandel\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": [\"jam\"]}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00286,
+   "wall_s": 3.18,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c22": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Italy"
+    ],
+    "provinces": [],
+    "varieties": [],
+    "color": "white",
+    "exclude_countries": [],
+    "exclude_varieties": [
+     "Pinot Grigio"
+    ],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 25, \"min_price\": null, \"min_points\": null, \"countries\": [\"Italy\"], \"provinces\": [], \"varieties\": [], \"color\": \"white\", \"exclude_countries\": [], \"exclude_varieties\": [\"Pinot Grigio\"], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00286,
+   "wall_s": 2.79,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c23": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": 95,
+    "countries": [],
+    "provinces": [
+     "Bordeaux"
+    ],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": 95, \"countries\": [], \"provinces\": [\"Bordeaux\"], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00321,
+   "wall_s": 2.98,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c24": {
+   "constraints": {
+    "max_price": 40.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "Italy"
+    ],
+    "provinces": [
+     "Piedmont"
+    ],
+    "varieties": [
+     "Nebbiolo"
+    ],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 40, \"min_price\": null, \"min_points\": null, \"countries\": [\"Italy\"], \"provinces\": [\"Piedmont\"], \"varieties\": [\"Nebbiolo\"], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00275,
+   "wall_s": 2.16,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c25": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [
+     "South Africa"
+    ],
+    "provinces": [],
+    "varieties": [
+     "Chenin Blanc"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [\"South Africa\"], \"provinces\": [], \"varieties\": [\"Chenin Blanc\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00282,
+   "wall_s": 2.6,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c26": {
+   "constraints": {
+    "max_price": 15.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [],
+    "varieties": [
+     "Merlot"
+    ],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 15, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [], \"varieties\": [\"Merlot\"], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00274,
+   "wall_s": 2.08,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c27": {
+   "constraints": {
+    "max_price": null,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [],
+    "color": "red",
+    "exclude_countries": [],
+    "exclude_varieties": [
+     "Pinot Noir"
+    ],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": null, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Oregon\"], \"varieties\": [], \"color\": \"red\", \"exclude_countries\": [], \"exclude_varieties\": [\"Pinot Noir\"], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00281,
+   "wall_s": 2.58,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  },
+  "c28": {
+   "constraints": {
+    "max_price": 25.0,
+    "min_price": null,
+    "min_points": null,
+    "countries": [],
+    "provinces": [
+     "Mosel"
+    ],
+    "varieties": [
+     "Riesling"
+    ],
+    "color": null,
+    "exclude_countries": [],
+    "exclude_varieties": [],
+    "exclude_terms": []
+   },
+   "valid": true,
+   "repaired": false,
+   "errors": [],
+   "raw": [
+    "{\"max_price\": 25, \"min_price\": null, \"min_points\": null, \"countries\": [], \"provinces\": [\"Mosel\"], \"varieties\": [\"Riesling\"], \"color\": null, \"exclude_countries\": [], \"exclude_varieties\": [], \"exclude_terms\": []}"
+   ],
+   "calls": 1,
+   "cost_usd": 0.00289,
+   "wall_s": 3.2,
+   "models": [
+    "claude-haiku-5-5"
+   ]
+  }
+ }
+}

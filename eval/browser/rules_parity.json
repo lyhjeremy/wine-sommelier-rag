@@ -1,0 +1,712 @@
+{
+ "n": 35,
+ "identical": 35,
+ "rows": [
+  {
+   "q": "a Pinot Noir from Oregon under twenty bucks",
+   "python": {
+    "max_price": 20.0,
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [
+     "Pinot Noir"
+    ]
+   },
+   "js": {
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [
+     "Pinot Noir"
+    ],
+    "max_price": 20.0
+   },
+   "same": true
+  },
+  {
+   "q": "a bold red under $25 for a steak dinner",
+   "python": {
+    "max_price": 25.0,
+    "color": "red"
+   },
+   "js": {
+    "max_price": 25.0,
+    "color": "red"
+   },
+   "same": true
+  },
+  {
+   "q": "a Chardonnay that is not oaky, under $30",
+   "python": {
+    "max_price": 30.0,
+    "varieties": [
+     "Chardonnay"
+    ],
+    "exclude_terms": [
+     "oak"
+    ]
+   },
+   "js": {
+    "varieties": [
+     "Chardonnay"
+    ],
+    "exclude_terms": [
+     "oak"
+    ],
+    "max_price": 30.0
+   },
+   "same": true
+  },
+  {
+   "q": "an Italian red for less than fifteen dollars",
+   "python": {
+    "max_price": 15.0,
+    "countries": [
+     "Italy"
+    ],
+    "color": "red"
+   },
+   "js": {
+    "countries": [
+     "Italy"
+    ],
+    "max_price": 15.0,
+    "color": "red"
+   },
+   "same": true
+  },
+  {
+   "q": "a crisp white from New Zealand",
+   "python": {
+    "countries": [
+     "New Zealand"
+    ],
+    "color": "white"
+   },
+   "js": {
+    "countries": [
+     "New Zealand"
+    ],
+    "color": "white"
+   },
+   "same": true
+  },
+  {
+   "q": "sparkling wine for a party, nothing over $25",
+   "python": {
+    "max_price": 25.0,
+    "color": "sparkling"
+   },
+   "js": {
+    "max_price": 25.0,
+    "color": "sparkling"
+   },
+   "same": true
+  },
+  {
+   "q": "a German Riesling that isn't too sweet",
+   "python": {
+    "countries": [
+     "Germany"
+    ],
+    "varieties": [
+     "Riesling"
+    ],
+    "exclude_terms": [
+     "sweet"
+    ]
+   },
+   "js": {
+    "countries": [
+     "Germany"
+    ],
+    "varieties": [
+     "Riesling"
+    ],
+    "exclude_terms": [
+     "sweet"
+    ]
+   },
+   "same": true
+  },
+  {
+   "q": "a California Cabernet between $30 and $50",
+   "python": {
+    "max_price": 50.0,
+    "min_price": 30.0,
+    "provinces": [
+     "California"
+    ],
+    "varieties": [
+     "Cabernet Sauvignon"
+    ]
+   },
+   "js": {
+    "provinces": [
+     "California"
+    ],
+    "varieties": [
+     "Cabernet Sauvignon"
+    ],
+    "min_price": 30.0,
+    "max_price": 50.0
+   },
+   "same": true
+  },
+  {
+   "q": "a Spanish Tempranillo under $20",
+   "python": {
+    "max_price": 20.0,
+    "countries": [
+     "Spain"
+    ],
+    "varieties": [
+     "Tempranillo"
+    ]
+   },
+   "js": {
+    "countries": [
+     "Spain"
+    ],
+    "varieties": [
+     "Tempranillo"
+    ],
+    "max_price": 20.0
+   },
+   "same": true
+  },
+  {
+   "q": "a dry rosé, not from France, under $20",
+   "python": {
+    "max_price": 20.0,
+    "color": "rosé",
+    "exclude_countries": [
+     "France"
+    ]
+   },
+   "js": {
+    "exclude_countries": [
+     "France"
+    ],
+    "max_price": 20.0,
+    "color": "rosé"
+   },
+   "same": true
+  },
+  {
+   "q": "an Australian Shiraz under $30",
+   "python": {
+    "max_price": 30.0,
+    "countries": [
+     "Australia"
+    ],
+    "varieties": [
+     "Shiraz"
+    ]
+   },
+   "js": {
+    "countries": [
+     "Australia"
+    ],
+    "varieties": [
+     "Shiraz"
+    ],
+    "max_price": 30.0
+   },
+   "same": true
+  },
+  {
+   "q": "a white wine from Alsace",
+   "python": {
+    "provinces": [
+     "Alsace"
+    ],
+    "color": "white"
+   },
+   "js": {
+    "provinces": [
+     "Alsace"
+    ],
+    "color": "white"
+   },
+   "same": true
+  },
+  {
+   "q": "Malbec from Argentina for under 25 dollars",
+   "python": {
+    "max_price": 25.0,
+    "countries": [
+     "Argentina"
+    ],
+    "varieties": [
+     "Malbec"
+    ]
+   },
+   "js": {
+    "countries": [
+     "Argentina"
+    ],
+    "varieties": [
+     "Malbec"
+    ],
+    "max_price": 25.0
+   },
+   "same": true
+  },
+  {
+   "q": "a red Burgundy under $60",
+   "python": {
+    "max_price": 60.0,
+    "provinces": [
+     "Burgundy"
+    ],
+    "color": "red"
+   },
+   "js": {
+    "provinces": [
+     "Burgundy"
+    ],
+    "max_price": 60.0,
+    "color": "red"
+   },
+   "same": true
+  },
+  {
+   "q": "a Washington Syrah with no oak",
+   "python": {
+    "provinces": [
+     "Washington"
+    ],
+    "varieties": [
+     "Syrah"
+    ],
+    "exclude_terms": [
+     "oak"
+    ]
+   },
+   "js": {
+    "provinces": [
+     "Washington"
+    ],
+    "varieties": [
+     "Syrah"
+    ],
+    "exclude_terms": [
+     "oak"
+    ]
+   },
+   "same": true
+  },
+  {
+   "q": "an affordable Portuguese red, ten to twenty dollars",
+   "python": {
+    "max_price": 20.0,
+    "min_price": 10.0,
+    "countries": [
+     "Portugal"
+    ],
+    "color": "red"
+   },
+   "js": {
+    "countries": [
+     "Portugal"
+    ],
+    "min_price": 10.0,
+    "max_price": 20.0,
+    "color": "red"
+   },
+   "same": true
+  },
+  {
+   "q": "a Champagne under $50 with brioche notes",
+   "python": {
+    "max_price": 50.0,
+    "provinces": [
+     "Champagne"
+    ],
+    "color": "sparkling"
+   },
+   "js": {
+    "provinces": [
+     "Champagne"
+    ],
+    "max_price": 50.0,
+    "color": "sparkling"
+   },
+   "same": true
+  },
+  {
+   "q": "a Sauvignon Blanc that's not from New Zealand",
+   "python": {
+    "varieties": [
+     "Sauvignon Blanc"
+    ],
+    "exclude_countries": [
+     "New Zealand"
+    ]
+   },
+   "js": {
+    "varieties": [
+     "Sauvignon Blanc"
+    ],
+    "exclude_countries": [
+     "New Zealand"
+    ]
+   },
+   "same": true
+  },
+  {
+   "q": "an Austrian Grüner Veltliner for under twenty dollars",
+   "python": {
+    "max_price": 20.0,
+    "countries": [
+     "Austria"
+    ],
+    "varieties": [
+     "Grüner Veltliner"
+    ]
+   },
+   "js": {
+    "countries": [
+     "Austria"
+    ],
+    "varieties": [
+     "Grüner Veltliner"
+    ],
+    "max_price": 20.0
+   },
+   "same": true
+  },
+  {
+   "q": "a Chilean red wine, nothing more than $18",
+   "python": {
+    "max_price": 18.0,
+    "countries": [
+     "Chile"
+    ],
+    "color": "red"
+   },
+   "js": {
+    "countries": [
+     "Chile"
+    ],
+    "max_price": 18.0,
+    "color": "red"
+   },
+   "same": true
+  },
+  {
+   "q": "a Zinfandel under $30 that isn't jammy",
+   "python": {
+    "max_price": 30.0,
+    "varieties": [
+     "Zinfandel"
+    ],
+    "exclude_terms": [
+     "jam"
+    ]
+   },
+   "js": {
+    "varieties": [
+     "Zinfandel"
+    ],
+    "exclude_terms": [
+     "jam"
+    ],
+    "max_price": 30.0
+   },
+   "same": true
+  },
+  {
+   "q": "an Italian white, not Pinot Grigio, under $25",
+   "python": {
+    "max_price": 25.0,
+    "countries": [
+     "Italy"
+    ],
+    "color": "white",
+    "exclude_varieties": [
+     "Pinot Grigio"
+    ]
+   },
+   "js": {
+    "countries": [
+     "Italy"
+    ],
+    "exclude_varieties": [
+     "Pinot Grigio"
+    ],
+    "max_price": 25.0,
+    "color": "white"
+   },
+   "same": true
+  },
+  {
+   "q": "a red Bordeaux rated 95 points or more",
+   "python": {
+    "min_points": 95,
+    "provinces": [
+     "Bordeaux"
+    ],
+    "color": "red"
+   },
+   "js": {
+    "provinces": [
+     "Bordeaux"
+    ],
+    "min_points": 95,
+    "color": "red"
+   },
+   "same": true
+  },
+  {
+   "q": "a Nebbiolo from Piedmont under $40 with tar and roses",
+   "python": {
+    "max_price": 40.0,
+    "provinces": [
+     "Piedmont"
+    ],
+    "varieties": [
+     "Nebbiolo"
+    ]
+   },
+   "js": {
+    "provinces": [
+     "Piedmont"
+    ],
+    "varieties": [
+     "Nebbiolo"
+    ],
+    "max_price": 40.0
+   },
+   "same": true
+  },
+  {
+   "q": "a South African Chenin Blanc",
+   "python": {
+    "countries": [
+     "South Africa"
+    ],
+    "varieties": [
+     "Chenin Blanc"
+    ]
+   },
+   "js": {
+    "countries": [
+     "South Africa"
+    ],
+    "varieties": [
+     "Chenin Blanc"
+    ]
+   },
+   "same": true
+  },
+  {
+   "q": "a cheap Merlot, under $15",
+   "python": {
+    "max_price": 15.0,
+    "varieties": [
+     "Merlot"
+    ]
+   },
+   "js": {
+    "varieties": [
+     "Merlot"
+    ],
+    "max_price": 15.0
+   },
+   "same": true
+  },
+  {
+   "q": "a red wine from Oregon that isn't Pinot Noir",
+   "python": {
+    "provinces": [
+     "Oregon"
+    ],
+    "color": "red",
+    "exclude_varieties": [
+     "Pinot Noir"
+    ]
+   },
+   "js": {
+    "provinces": [
+     "Oregon"
+    ],
+    "exclude_varieties": [
+     "Pinot Noir"
+    ],
+    "color": "red"
+   },
+   "same": true
+  },
+  {
+   "q": "a Mosel Riesling under $25 with slate and lime",
+   "python": {
+    "max_price": 25.0,
+    "provinces": [
+     "Mosel"
+    ],
+    "varieties": [
+     "Riesling"
+    ]
+   },
+   "js": {
+    "provinces": [
+     "Mosel"
+    ],
+    "varieties": [
+     "Riesling"
+    ],
+    "max_price": 25.0
+   },
+   "same": true
+  },
+  {
+   "q": "a Pinot Noir from Oregon for less than thirty bucks",
+   "python": {
+    "max_price": 30.0,
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [
+     "Pinot Noir"
+    ]
+   },
+   "js": {
+    "provinces": [
+     "Oregon"
+    ],
+    "varieties": [
+     "Pinot Noir"
+    ],
+    "max_price": 30.0
+   },
+   "same": true
+  },
+  {
+   "q": "a Spanish white between $12 and $22, not Albariño",
+   "python": {
+    "max_price": 22.0,
+    "min_price": 12.0,
+    "countries": [
+     "Spain"
+    ],
+    "color": "white",
+    "exclude_varieties": [
+     "Albariño"
+    ]
+   },
+   "js": {
+    "countries": [
+     "Spain"
+    ],
+    "exclude_varieties": [
+     "Albariño"
+    ],
+    "min_price": 12.0,
+    "max_price": 22.0,
+    "color": "white"
+   },
+   "same": true
+  },
+  {
+   "q": "a Merlot that's not from Chile, nothing buttery",
+   "python": {
+    "varieties": [
+     "Merlot"
+    ],
+    "exclude_countries": [
+     "Chile"
+    ],
+    "exclude_terms": [
+     "butter"
+    ]
+   },
+   "js": {
+    "varieties": [
+     "Merlot"
+    ],
+    "exclude_countries": [
+     "Chile"
+    ],
+    "exclude_terms": [
+     "butter"
+    ]
+   },
+   "same": true
+  },
+  {
+   "q": "a rosé from Provence",
+   "python": {
+    "provinces": [
+     "Provence"
+    ],
+    "color": "rosé"
+   },
+   "js": {
+    "provinces": [
+     "Provence"
+    ],
+    "color": "rosé"
+   },
+   "same": true
+  },
+  {
+   "q": "a 92-point Napa Cab under a hundred",
+   "python": {
+    "max_price": 100.0,
+    "min_points": 92,
+    "varieties": [
+     "Cabernet Sauvignon"
+    ]
+   },
+   "js": {
+    "varieties": [
+     "Cabernet Sauvignon"
+    ],
+    "max_price": 100.0,
+    "min_points": 92
+   },
+   "same": true
+  },
+  {
+   "q": "Grüner from the Wachau, not too sweet",
+   "python": {
+    "provinces": [
+     "Wachau"
+    ],
+    "varieties": [
+     "Grüner Veltliner"
+    ],
+    "exclude_terms": [
+     "sweet"
+    ]
+   },
+   "js": {
+    "provinces": [
+     "Wachau"
+    ],
+    "varieties": [
+     "Grüner Veltliner"
+    ],
+    "exclude_terms": [
+     "sweet"
+    ]
+   },
+   "same": true
+  },
+  {
+   "q": "bubbly under twenty-five",
+   "python": {
+    "max_price": 25.0,
+    "color": "sparkling"
+   },
+   "js": {
+    "max_price": 25.0,
+    "color": "sparkling"
+   },
+   "same": true
+  }
+ ]
+}
